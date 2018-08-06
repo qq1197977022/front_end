@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简介</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //数量词
+    console.log('------------------数量词');
+    let reg1 = /a|b/;   //推荐方式[ab]
+    let str1 = 'a';
+    let str2 = 'b';
+    let str3 = 'ba';
+    console.log(reg1.test(str1));
+    console.log(reg1.test(str2));
+    console.log(reg1.test(str3));
+
+
+    //字符集合
+    console.log('------------------字符集合');
+    let reg2 = /[a-z]/; //等价于: [abc...z] 或 a| b| c...z
+    /*
+    1./[a-z]/: 任意小写字母
+    2./[A-Z]/: 任意大写字母
+    3./[a-z]/i: 任意字母
+    4./[A-z]/: 任意字母        /[a-Z]/是错误的 Range out of order in character class, 因为小写ASCII码值 > 大写
+     */
+    let str4 = 'acef';
+    let str5 = 'ABC';
+    console.log(reg2.test(str4));
+    console.log(reg2.test(str5));
+
+    //反义字符集
+    let reg3 = /[^a-g]/;
+    /*
+    1./[^a-z]/: 任意非小写字母
+    2./[^A-Z]/: 任意非大写字母
+    3./[^a-z]/i: 任意非字母
+    4./[^A-z]/: 任意非字母        /[a-Z]/是错误的 Range out of order in character class, 因为小写ASCII码值 > 大写
+     */
+    let str6 = 'abg';
+    let str7 = 'agh';
+    console.log(reg3.test(str6));
+    console.log(reg3.test(str7));
+
+    let reg4 = /[^A-z]/;
+    let str8 = 'ab';
+    let str9 = '138';
+    console.log(reg4.test(str8));
+    console.log(reg4.test(str9));
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

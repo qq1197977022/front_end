@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+1.正则表达式: 字符串字符序列匹配规则
+-->
+
+<script>
+    var str1 = 'bcabccaabbaadab313111ma31';
+
+    var re1 = /a+b*(3+1*)*/g;
+
+    if (re1.test(str1)) {   //测试能否匹配成功
+        var arr1 = re1.exec(str1);
+        console.log(arr1, typeof arr1, re1.lastIndex); //输出匹配结果
+    }
+
+    if (str1.search(re1) !== -1) {  //测试能否匹配成功
+        var arr2 = str1.match(re1);
+        console.log(arr2, typeof arr2, re1.lastIndex); //输出匹配结果
+    }
+
+    var str2 = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ; Chris Hand ";
+    var re2 = /\s*;\s*/;
+    console.log(str2.split(re2));
+
+</script>

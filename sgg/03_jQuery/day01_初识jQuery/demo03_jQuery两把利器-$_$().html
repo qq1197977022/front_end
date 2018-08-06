@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery两把利器</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        console.log('1.jQuery函数---------------------------------------------------------------');
+        console.log($, typeof $);   //jQuery函数
+        console.log(jQuery, typeof jQuery);
+        console.log($ === jQuery);  //源码: window.jQuery = window.$ = jQuery
+
+        console.log('2.jQuery对象---------------------------------------------------------------');
+        console.log($(), typeof $());   //jQuery对象
+        console.log(jQuery(), typeof jQuery());
+        console.log($() === jQuery());  //为什么false?
+
+        console.log('\n\n\n\n************枚举jQuery函数对象 $/jQuery 属性************');
+        for (let attr in $) {   //枚举对象属性
+            if ($.hasOwnProperty(attr)) {   //过滤继承自原型链的属性
+                console.log(attr);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+一.jQuery两把利器
+    1.jQuery函数: $/jQuery
+    2.jQuery对象: $()/jQuery()
+二.看源码可以知道, jQuery为window对象添加两个属性, window.jQuery = window.$ = jQuery;
+    1.window.jQuery = window.$和jQuery函数对象绑定
+    2.jQuery函数返回jQuery对象
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

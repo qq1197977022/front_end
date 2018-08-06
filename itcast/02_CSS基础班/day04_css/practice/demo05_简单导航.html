@@ -1,0 +1,64 @@
+<!--
+浮动应用
+    1.文字环绕图片效果
+    2.导航栏
+    3.页面布局
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单导航</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        nav {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #6EC5ED;
+        }
+        ul li {
+            float: left;
+            padding: 10px 20px;
+            margin: 0 3.53%;
+        }
+        ul:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        ul li:hover {
+            background-color: #F0F0AF;
+        }
+        ul li a {
+            text-decoration: none;
+            font: 14px \5FAE\8F6F\96C5\9ED1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度一下</a></li>
+        </ul>
+    </nav>
+    <p>
+        本例亮点 <br>
+        1.同 <a href="../../day03_css/practice/demo10_02新浪导航案例.html">新浪导航案例</a> ~ 弹性高度 <br>
+        2.使用%(百分比)的形式各标题的左右外边距实现均匀分布 <br>
+        3.问: ~ 如何确定百分比数值? <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;1.当前确定百分比方式: ~ 调试模式下微调
+    </p>
+</body>
+</html>

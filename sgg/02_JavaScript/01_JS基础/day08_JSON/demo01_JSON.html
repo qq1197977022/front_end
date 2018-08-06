@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON操作</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // let str = "{'name':'张三', 'age':26, 'gender':'male'}";
+    /*键值对结构的名必须是双引号?
+    * VM257:1 Uncaught SyntaxError: Unexpected token ' in JSON at position 1 at JSON.parse (<anonymous>)
+    * */
+    let str1 = '{"name":"张三", "age":26, "gender":"male"}';   //JSON格式一: 键值对集合
+    let str2 = '["张三", "hello", 123, true]';    //JSON格式二: 值集
+    let keyValueJson = JSON.parse(str1);
+    let valueListJson = JSON.parse(str2);
+
+    console.log('------------JSON------------');
+    str1 = JSON.stringify(keyValueJson);
+    str2 = JSON.stringify(valueListJson);
+
+    console.log(keyValueJson);
+    console.log(keyValueJson['name'], keyValueJson.name);
+    console.log(keyValueJson['age'], keyValueJson.age);
+
+    console.log(valueListJson);
+    console.log(valueListJson[0]);
+    console.log(valueListJson[2]);
+    console.log(valueListJson[3]);
+
+    console.log(str1);
+    console.log(str2);
+
+
+    console.log('------------eval/uneval------------');
+    keyValueJson = eval(`(${str1})`);   //加(), 避免评估为代码块
+    console.log(keyValueJson);
+    console.log(keyValueJson['name']);
+    console.log(keyValueJson.name);
+
+    str1 = uneval(keyValueJson);
+    console.log(str1);
+
+
+</script>
+<!--
+一.JSON
+    1.简介
+        1.JavaScript Object Notation ~ JS对象表示法
+        2.基于ECMA-262的一个子集
+        3.易于人阅读/编写, 机器解析/生成
+        4.语言无关的轻量级数据交换语言/格式
+    2.两种结构
+        1.名/值对集合 ~ 不同语言理解不同
+            1.对象
+            2.记录
+            3.结构
+            4.字典
+            5.哈希表
+            6.有键列表
+        2.值的有序列表 ~ 大部分语言, 理解为数组
+-->
+<!--
+1.兼容性问题
+    1.IE<7对JavaScript实现中有没定义JSON
+2.解决
+    1.使用eval/uneval函数
+        1.性能低下
+        2.安全隐患
+    2.第三方库 ~ JSON官网
+        eg. json2.purJS
+-->

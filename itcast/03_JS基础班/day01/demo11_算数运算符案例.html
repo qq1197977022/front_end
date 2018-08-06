@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>算术运算符案例</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    alert('结果在控制台输出');
+
+    //第一题
+    var n1 = 123,
+        n2 = 34,
+        n3 = 78,
+        n4 = 34,
+        n5 = 543,
+        n6 = 9,
+        n7 = 324;
+
+    var v = (n1 + n2*n3) / (n4 + n5) - n6*(n7 - n4);
+    console.log('第一题: \t' + v);
+
+    //第二题
+    var num = parseInt(prompt('请输入鸡蛋数: '));
+    var num1 = num / 20;
+
+    if (num % 20 !== 0) {
+        num1 = parseInt(num / 20)  + 1;
+    }
+    console.log('第二题: \t' + num + '个鸡蛋,共需要' + num1 + '个盒子');
+
+    //第三题
+    var day;
+    switch (1000 % 7) {
+        case 1: day = 7; break;
+        case 2: day = 1; break;
+        case 3: day = 2; break;
+        case 4: day = 3; break;
+        case 5: day = 4; break;
+        case 6: day = 5; break;
+        case 7: day = 6; break;
+    }
+    if (day !== undefined) {
+        console.log('第三题: \t' + '今天是星期六, 100天后是周' + day);
+    }else {
+        alert('Error...');
+    }
+</script>

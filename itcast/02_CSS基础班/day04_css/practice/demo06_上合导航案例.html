@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上合导航</title>
+
+    <!--通过改变元素生成框的类型实现-->
+    <style>
+        body {
+            margin: 0;
+        }
+        ul#display {
+            padding: 0;
+            margin: 0 auto;
+            background-color: #F0F0AF;
+            width: 1000px;
+        }
+        ul#display li {
+            width: 100px;
+            height: 25px;
+            padding: 10px 0;
+            margin: 0 48px;
+            background-color: #6EC5ED;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+    <!--通过浮动实现-->
+    <style>
+        ul#float {
+            width: 1000px;
+            padding: 0;
+            margin: 0 auto;
+            background-color: #F0F0AF;
+        }
+        ul#float li {
+            float: left;
+            width: 100px;
+            height: 25px;
+            background-color: #6EC5ED;
+            list-style-type: none;
+            padding: 10px 0;
+            margin: 0 50px;
+            text-align: center;
+        }
+        ul#float:after {
+            content: "";
+            display: block;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.通过改变li元素生成框的类型,实现导航栏</h3>
+    <p>
+        相比浮动的优点: <br>
+            1.直接改变li元素生成框的类型,不用再单独处理列表项标记类型 <br>
+            2.不会产生因为浮动带来的副作用 <br>
+    </p>
+    <nav>
+        <ul id="display">
+            <li>百度一下</li>
+            <li>百度一下</li>
+            <li>百度一下</li>
+            <li>百度一下</li>
+            <li>百度一下</li>
+        </ul>
+    </nav>
+
+    <h3>2.通过浮动实现</h3>
+    <nav>
+        <ul id="float">
+            <li>百度一下</li>
+            <li>百度一下</li>
+            <li>百度一下</li>
+            <li>百度一下</li>
+            <li>百度一下</li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM增-删-改练习</title>
+    <link rel="stylesheet" href="./style/demo13-15.css">
+    <script src="JS/demo13-15.js" defer></script>
+</head>
+<body>
+<div id="main">
+    <div id="table">
+        <table>
+            <caption>员工信息表</caption>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td>Tom</td>
+                <td>tom@tom.com</td>
+                <td>500</td>
+                <td><button class="del">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Jerry</td>
+                <td>Jerry@sohu.com</td>
+                <td>8000</td>
+                <td><button class="del">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Bob@tom.com</td>
+                <td>10000</td>
+                <td><button class="del">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="add">
+        <form action="http://www.baidu.com">
+            <label for="name">Name: </label><input id="name" type="text" required>   <br>
+            <label for="email">Email: </label><input id="email" type="email" required>    <br>
+            <label for="salary">Salary: </label><input id="salary" type="number" required> <br>
+            <button id="tj">添加</button>
+        </form>
+    </div>
+</div>
+<a href="javascript:">或onclick return false</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

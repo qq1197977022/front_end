@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片和文字垂直对齐</title>
+    <style>
+        div {
+            border: 3px solid #019E8B;
+            margin-top: 50px;
+        }
+
+        #v1>img {
+            vertical-align: bottom;
+        }
+
+        #v2>img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body style="height: 1500px;">
+    <div>
+        <span>1.baseline: 元素默认放置在父元素基线上</span> <br>
+        <img src="practice/img/8-1.jpeg" alt="图片">图片和文字垂直对齐
+    </div>
+
+    <div id="v1">
+        <span>2.bottom: 元素顶端与行中最低元素顶端对齐</span> <br>
+        <img src="practice/img/8-1.jpeg" alt="图片">图片和文字垂直对齐
+    </div>
+
+    <div id="v2">
+        <span>3.middle: 元素放置在父元素中部</span> <br>
+        <img src="practice/img/8-1.jpeg" alt="图片">图片和文字垂直对齐
+    </div>
+</body>
+</html>

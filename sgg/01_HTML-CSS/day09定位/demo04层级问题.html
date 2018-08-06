@@ -1,0 +1,69 @@
+<!--
+一.层级:
+    1.默认优先级: fixed > absolute > relative > float > static
+    2.同级: 与解释先后顺序有关
+    3.z-index: 规定元素的堆叠顺序
+        1.父元素不会覆盖子元素 -- 水涨船高
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级问题</title>
+
+    <style>
+        body{
+            height: 1000px;
+        }
+        #box1{
+            width: 500px;
+            height: 250px;
+            background-color: #90EE90;
+        }
+        #box2{
+            width: 300px;
+            height: 200px;
+            background-color: #ff6781;
+            position: relative;
+            top: -100px;
+        }
+        #box3{
+            width: 250px;
+            height: 200px;
+            background-color: #FF0000;
+            position: absolute;
+            top: 5px;
+            left: 70px;
+        }
+        #box4{
+            width: 200px;
+            height: 200px;
+            background-color: #F0F0AF;
+            position: fixed;
+            top: 150px;
+            left: 70px;
+        }
+        #box5 {
+            width: 350px;
+            height: 350px;
+            background-color: #ABC;
+            float: left;
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box5">浮动</div>
+    <div id="box1">static</div>
+    <div id="box2">relative</div>
+    <div id="box3">absolute</div>
+    <div id="box4">fixed</div>
+
+    <p>一.默认层级</p>
+
+    <hr>
+    二.z-index : 规定元素的堆叠顺序
+</body>
+</html>

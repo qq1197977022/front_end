@@ -1,0 +1,255 @@
+<!--
+一.选择器优先级
+    1.同级选择器,后边的覆盖前边的(与解释器,解释执行顺序有关)
+    2.优先级高的覆盖优先级低的
+    3.优先级比较
+        1.将优先级用四个数字(1132)表示 --- 1132法则,好用...
+            No1: 内联式
+            No2: id总和
+            No3: 1.类, 2.属性, 3.伪类总和
+            No4: 1.标签, 2.伪元素总和
+            Note:
+                1.通配符选择器(*)优先级为0
+                2.继承优先级为-1
+                3.个人推测用户代理样式优先级为-1(见页面总结)
+
+        2.优先级权重值 --- 太麻烦,不用...
+            1.内联: 1000
+            2.id: 100
+            3.class: 10
+            4.标签: 1
+            5.通配符: 0
+            6.继承: -1
+            Note: 选择器权重值相加,最高优先级不会超过权重数值
+                e.g: 10个类选择器,权重数值为100,但是优先级低于100
+
+        3.在样式属性值后添加!important则该样式优先级最高
+
+二.样式继承
+    1.子元素会继承父元素的部分样式 -- 联系现实: 可以继承但不是继承所有
+    2.不能继承的样式
+        1.背景相关样式
+        2.边框相关
+        3.定位相关
+
+    3.用户代理样式覆盖继承样式
+        1.见页面总结
+
+    4.如何判断继承性? ~~~> 参考API
+        1.background-color: 默认样式为transparent ~~~> 透明
+        2.background-image: 默认样式为none ~~~> 无背景图
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="样式继承, 选择器优先级">
+    <meta name="description" content="样式继承, 选择器优先级学习">
+    <meta name="author" content="By: 狂草">
+    <title>样式继承-和-选择器优先级</title>
+
+    <style>
+        #p1{
+            font-size: 25px;
+            color: #8B0000;
+        }
+
+        #p2{
+            background-color: black;
+            color: #9932CC;
+        }
+        #fa {
+            height: 402px;
+            background: no-repeat url("img/0.gif");
+            color: #F00;
+        }
+        #so {
+            height: 301px;
+        }
+        #fa1 {
+            height: 402px;
+            background: no-repeat url("img/0.gif");
+            color: #F00;
+        }
+        #so1 {
+            height: 301px;
+            background-image: inherit;
+        }
+    </style>
+    <!--用户代理样式总结-->
+    <style>
+        /*第一次总结*/
+        #d1 {
+            color: #F00;
+        }
+        /*第二次总结*/
+        #d2 {
+            color: #F00;
+        }
+        #d2_1>* {
+            color: #F00;
+        }
+
+        #d3 {
+            font-size: 20px;
+        }
+    </style>
+
+    <style>
+        /*
+            选择器间是交叉关系
+            交集 = [.pri_fa .pri_so color] ∩ [p.pri_so color] = color属性
+                1.优先级(1132法则): [.pri_fa>.pri_so] > [p.pri_so]
+                2.结果: [.pri_fa .pri_so color] 覆盖 [p.pri_so color]
+        */
+        #priority .pri_fa>.pri_so{
+            color: #F00;
+        }
+        #priority p.pri_so {
+            color: #00F;
+            font-size: 25px;
+        }
+
+        /*
+            选择器间是平行关系
+            1.优先级: [p] > [继承#pri_fa1]
+            2.结果: [p color] 覆盖 [继承#pri_fa1 color]
+        */
+        #priority p {
+            color: #00F;
+        }
+        #priority #pri_fa1 {
+            color: #F00;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="width:350px; color: #9400D3; margin: 0 auto;">章节一: 样式继承</h1>
+    <h2>一.继承</h2>
+    <p id="p1">
+        父元素内容 <br>
+        <span>子元素内容</span> <br>
+        父元素内容
+    </p>
+    <img src="img/jc.png" alt="继承调试截图">
+
+    <hr>
+    <h2>二.无继承</h2>
+    <h3>1.默认无继承</h3>
+    <p id="p2">
+        父元素内容 <br>
+        <span>子元素内容</span> <br>
+        父元素内容
+    </p>
+    <p>
+        单纯从显示效果上看,似乎子类继承了父类的背景颜色,<br>
+        实际并非如此 <br>
+        因为背景属性默认是透明的
+    </p>
+    <img src="img/ujc1.png" alt="无继承调试截图">
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <h3>2.默认无继承</h3>
+    <div id="fa">
+        父元素
+        <div id="so">子元素 ~ 默认不继承</div>
+        父元素
+    </div>
+    <img src="img/ujc2.png" alt="无继承调试截图">
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <h3>3.手动设置继承</h3>
+    <div id="fa1">
+        父元素
+        <div id="so1">子元素 ~ 手动设置继承</div>
+        父元素
+    </div>
+    <img src="img/ujc3.png" alt="调试截图">
+    
+    <hr>
+    <h2>三.户代理样式覆盖继承样式</h2>
+    <h4>1.第一次总结</h4>
+    <div id="d1">
+        <a href="#">超链接前景色继承性测试</a>
+    </div>
+    <ol>
+        <li>父元素前景色(color)被a标签继承</li>
+        <li>但
+        <ul>
+            <li>(1).解释顺序</li>
+            <li>(2).继承优先级为-1</li>
+        </ul>
+        <li>决定了a标签最终应用的样式为用户代理样式</li>
+    </ol>
+    <img src="img/over.png" alt="调试截图">
+    
+    <hr style="border-color: #F00; width: 800px; margin-left: 0;">
+    <h4>2.第二次总结</h4>
+    <div id="d2">
+        <a href="#">超链接前景色继承性测试</a>
+    </div>
+    <div id="d2_1">
+        <a href="#">超链接前景色继承性测试</a>
+    </div>
+
+    <p style="margin-bottom: -16px;">测试用户代理样式优先级</p>
+    <ol>
+        <li>
+            解释执行顺序
+            <ol>
+                <li>先解释执行通配符选择器样式</li>
+                <li>后执行用户代理样式</li>
+                <li>最终样式: 通配符选择器指定样式</li>
+            </ol>
+        </li>
+        <li>说明: 通配符选择器(*)优先级 = 0 > 用户代理样式优先级 ~~~> 即用户代理样式优先级 < 0</li>
+        <li>
+            结果: 通配符选择器优先级 > 用户代理样式优先级 >= 继承优先级 ~~~> 0 > 用户代理样式优先级 >= -1
+            <ol>
+                <li>个人推测: 用户代理样式优先级 = 继承样式优先级 = -1</li>
+            </ol>
+        </li>
+    </ol>
+
+    <hr style="border-color: #F00; width: 800px; margin-left: 0;">
+    <dl>
+        <dt>h系列用户代理样式覆盖继承样式</dt>
+        <dd>1.h1~h3: 2.xem ~ 1.xem</dd>
+        <dd>2.h4: 1em</dd>
+        <dd>3.h5~h6: 0.xem</dd>
+    </dl>
+    <div id="d3">
+        <img src="img/h1.png" alt="h1用户代理样式和自定义样式调试截图">
+        <h1>h系列</h1>
+        <h2>h系列</h2>
+        <h3>h系列</h3>
+        <h4>h系列</h4>
+        <h5>h系列</h5>
+        <h6>h系列</h6>
+    </div>
+
+    <hr>
+    <h1 style="color: #9400D3; width: 500px; margin: 0 auto;">章节二: 选择器优先级 ~ <span style="color: #F00;">1132法则</span></h1>
+    <div id="priority">
+        <div class="pri_fa">
+            <p class="pri_so">选择器优先级</p>
+        </div>
+        <pre style="font: 16px \5FAE\8F6F\96C5\9ED1;">
+        选择器间是交叉关系
+        交集 = [.pri_fa .pri_so color] ∩ [p.pri_so color] = color属性
+            1.优先级(1132法则): [.pri_fa>.pri_so] > [p.pri_so]
+            2.结果: [.pri_fa .pri_so color] 覆盖 [p.pri_so color]
+        </pre>
+
+        <hr>
+        <div id="pri_fa1">
+            <p>选择器优先级</p>
+        </div>
+        <pre style="font: 16px \5FAE\8F6F\96C5\9ED1;">
+        选择器间是平行关系
+            1.优先级: [p] > [继承#pri_fa1]
+            2.结果: [p color] 覆盖 [继承#pri_fa1 color]
+        </pre>
+    </div>
+</body>
+</html>

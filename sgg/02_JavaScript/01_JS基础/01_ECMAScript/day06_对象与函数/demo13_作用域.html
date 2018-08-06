@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//一.变量隐式声明和提前声明
+    //变量隐式声明
+    v1 = 3;
+    console.log(v1);
+
+    //变量隐式声明
+    // console.log(v2);    //报错: Uncaught ReferenceError: v2 is not defined
+    // v2 = 4;
+
+    //变量隐式声明
+    console.log(v3);    //不报错: 因var声明的变量会在当前作用域内提前声明
+    var v3 = 4;
+
+//二.函数的提前声明
+    fun1();
+    // fun2(); //报错: TypeError: fun2 is not a function
+
+    function fun1() {
+        console.log(123);
+    }
+    var fun2 = function () {
+        console.log(456);
+    }
+
+
+    //遍历window对象的属性
+    // for (var i in window) {
+    //     console.log(i);
+    // }
+
+</script>
+<!--
+一.作用域
+    1.全局作用域
+        1.浏览器页面打开时创建,关闭时销毁
+        2.window对象表示包含DOM文档浏览器窗口
+            1.所有什么的变量都是window对象的属性 ~ 这就是为什么,变量可以隐式声明的原因
+            2.所有函数都是window对象的方法
+    2.局部作用域
+-->

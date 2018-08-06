@@ -1,0 +1,259 @@
+<!--
+一.问题: 垂直相邻外边距重叠问题
+	1.发生原因: 垂直方向外边距相邻
+		1.发生两要素
+			1.垂直方向上的外边距
+			2.外边距相邻
+	2.发生地
+		1.相邻兄弟元素
+		2.父子元素
+    3.显现
+        1.重叠: 取最大值,而不是累加
+二.解决思路: 隔离垂直方向上相邻的外边距
+	1.相邻兄弟元素
+		1.改变相邻关系,仍然是兄弟,但不再是相邻兄弟
+        2.相邻兄弟元素间添加生成框类型为table类型的(空内容)元素
+            1.参见: day11表格\demo05外边距重叠_和_高度塌陷综合解决方案.html
+	2.父子元素
+		1.父元素
+			1.border: 隔离同一垂直方向上父子元素外边距
+			2.padding
+			    1.分离: 使同一方向上父子元素垂直外边距不再相邻
+			    2.把设置子元素的margin属性,转变为设置父元素的padding属性
+            3.开启BFC隐藏属性
+                1.参见: day08高度塌陷\demo02解决高度塌陷问题.html
+            4.父子元素间添加生成框类型为table类型的(空内容)元素
+                1.参见: day11表格\demo05外边距重叠_和_高度塌陷综合解决方案.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直外边距相邻导致重叠问题</title>
+    <style>
+        #b1{
+            width: 300px;
+            height: 100px;
+            background-color: #90EE90;
+        }
+        #b2{
+            width: 300px;
+            height: 100px;
+            background-color: #F5DEB3;
+        }
+        /*相邻兄弟元素,垂直相邻外边距重叠*/
+        #b3{
+            width: 300px;
+            height: 100px;
+            background-color: #90EE90;
+            margin-bottom: 30px;
+        }
+        #b4{
+            width: 300px;
+            height: 100px;
+            background-color: #F5DEB3;
+            margin-top: 20px;
+        }
+        #f1{
+            width: 300px;
+            height: 300px;
+            background-color: #B0C4DE;
+        }
+        #s1{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+        }
+
+/*============================================================================================================================================*/
+
+        /*父子元素,垂直相邻外边距重叠*/
+
+        /*
+            垂直相邻外边距重叠,取最大值,而不是累加
+            父元素: 上外边距0px
+            子元素: 上外边距50px
+            现象: 父子元素垂直方向上外边距为50px
+        */
+        #f2{
+            width: 300px;
+            height: 300px;
+            background-color: #B0C4DE;
+        }
+        #s2{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+            margin-top: 50px;
+        }
+
+        /*
+            垂直相邻外边距重叠,取最大值,而不是累加
+            父元素: 上外边距100px
+            子元素: 上外边距50px
+            现象: 父子元素垂直方向上外边距为100px
+        */
+        #f3{
+            width: 300px;
+            height: 300px;
+            background-color: #B0C4DE;
+            margin-top: 100px;
+        }
+        #s4{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+            margin-top: 50px;
+        }
+
+        /*============================================================================================================================================*/
+        #b33{
+            width: 300px;
+            height: 100px;
+            background-color: #90EE90;
+            margin-bottom: 30px;
+        }
+        #b34{
+            border-top: 1px solid #FFF;
+            /*实际应用中要从把该起隔离作用的边框的1px像素值,从外边距累加中刨除*/
+        }
+        #b44{
+            width: 300px;
+            height: 100px;
+            background-color: #F5DEB3;
+            margin-top: 20px;
+        }
+        /*============================================================================================================================================*/
+        /*1.父元素添加边框*/
+        #f22{
+            width: 300px;
+            height: 300px;
+            background-color: #B0C4DE;
+            border-top: 1px solid #FFF;
+            /*
+                父元素加边框,隔离父子元素同一垂直方向上外边距
+                实际应用中,要从父元素中减去这多出的1px像素
+            */
+        }
+        #s22{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+            margin-top: 50px;
+        }
+        /*2.把子元素的margin属性转换为设置父元素的padding属性*/
+        #f222{
+            width: 300px;
+            height: 300px;
+            background-color: #B0C4DE;
+            padding-top: 50px;
+        }
+        #s222{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+        }
+        /*3.开启隐藏属性BFC*/
+        #ff_1{
+            width: 300px;
+            height: 300px;
+            background-color: #B0C4DE;
+            float: left;
+        }
+        #ss_1{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+            margin-top: 50px;
+        }
+    </style>
+    <!--update-->
+    <style>
+        a[update] {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>一.问题及现象</h1>
+
+    <h3>1.相邻兄弟元素</h3>
+    <div id="b1">相邻兄弟元素</div>
+    <div id="b2">相邻兄弟元素</div>
+
+    <hr>
+    <div id="b3">下外边距margin-bottom: 30px;</div>
+    <div id="b4">上外边距margin-top: 20px;</div>
+    <p>
+        现象: 取最大值,而不是累加
+        <img src="img/0.png" alt="垂直相邻外边距重叠" title="垂直相邻外边距重叠现象: 取最大值,而不是累加">
+    </p>
+<!--============================================================================================================================================-->
+    <hr>
+    <h3>2.父子元素</h3>
+    <div id="f1">
+        <div id="s1"></div>
+    </div>
+
+    <hr>
+    <div id="f2">
+        <div id="s2"></div>
+    </div>
+
+    <hr>
+    <div id="f3">
+        <div id="s4"></div>
+    </div>
+
+<!--============================================================================================================================================-->
+    <hr>
+    <h1>二.问题解决</h1>
+
+    <h3>1.相邻兄弟元素</h3>
+    <div id="b33">相邻兄弟元素</div>
+    <div id="b34"></div>
+    <div id="b44">相邻兄弟元素</div>
+    <p>
+        相邻兄弟元素,垂直相邻外边距重叠问题解决 <br>
+        仍然是兄弟,但不再是相邻兄弟
+        <img src="img/1.png" alt="相邻兄弟元素,垂直相邻外边距重叠问题解决" title="相邻兄弟元素,垂直相邻外边距重叠问题解决">
+    </p>
+
+    <hr>
+    <span>2.相邻兄弟元素间添加生成框类型为table类型的(空内容)元素</span> <br>
+    <a style="color: #FF0000;" href="../day11表格/demo05外边距重叠_和_高度塌陷综合解决方案.html">demo11表格/demo05外边距重叠_和_高度塌陷综合解决方案.html</a>
+
+    <hr>
+    <h3>2.父子元素</h3>
+    <div id="f22">
+        <div id="s22"></div>
+    </div>
+
+    <hr>
+    <div id="f222">
+        <div id="s222"></div>
+    </div>
+
+    <hr>
+    <span>3.开启隐藏属性BFC</span> <br>
+    <a style="color: #FF0000;" href="../day08高度塌陷/demo02解决高度塌陷问题.html">更多开启BFC隐藏属性方式参见: day08高度塌陷\demo02解决高度塌陷问题.html</a>
+    <br>
+    <div id="ff_1">
+        <div id="ss_1"></div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    <span>4.父子元素间添加生成框类型为table类型的(空内容)元素</span> <br>
+    <a style="color: #FF0000;" href="../day11表格/demo05外边距重叠_和_高度塌陷综合解决方案.html">demo11表格/demo05外边距重叠_和_高度塌陷综合解决方案.html</a>
+<!--============================================================================================================================================-->
+    <h1>三.总结:</h1>
+    <dl>
+        <dt>1.相邻兄弟元素垂直外边距重叠问题,简直就是,自己找麻烦</dt>
+        <dd>1.只设置其中一个不就ok?何必设置两个?</dd>
+    </dl>
+    <h2 style="background-color: #F00; font-size: 72px">更新2018年5月28日08:51:23</h2>
+    <a update href="update/update06_文档垂直等距排版.html">1.文档垂直等距排版</a>
+</body>
+</html>

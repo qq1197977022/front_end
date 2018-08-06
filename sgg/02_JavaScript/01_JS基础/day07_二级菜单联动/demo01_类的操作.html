@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的操作</title>
+    <style>
+        #main {
+            width: 500px;
+            /*background-color: #f28d61;*/
+            text-align: center;
+            margin: 0 auto;
+        }
+        .d1 {
+            height: 200px;
+            width: 200px;
+            background-color: #99ff99;
+            margin: 0 auto;
+        }
+        .d2 {
+            border: 5px ridge #000; /*边框*/
+            outline: #F00 double 10px;  /*轮廓*/
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="div" class = 'd1'></div>
+        <button id="add">添加</button>
+        <button id="remove">移除</button>
+        <button id="toggle">toggle(切换)</button>
+    </div>
+</body>
+</html>
+<script>
+    let div = document.getElementById('div');
+    let add = document.getElementById('add');
+    let remove = document.getElementById('remove');
+    let toggle = document.getElementById('toggle');
+
+    function hasClass(obj, cName) {
+        return new RegExp(`\\b${cName}\\b`).test(obj.className);
+    }
+    
+    function addClass(obj, cName) {
+        if (!hasClass(obj, cName)) {
+            obj.className += ` ${cName}`;
+        }
+    }
+
+    function removeClass(obj, cName) {
+        if (hasClass(obj, cName)) {
+            obj.className = obj.className.replace(new RegExp(`\\b ${cName}\\b`), '');
+        }
+    }
+
+    add.onclick = function () {
+        /*强耦合: 修改样式时必须修改JS代码
+        div.style.border = `${5}px ridge #000`;   //边框
+        div.style.outline = `#F00 double ${10}px`; //轮廓*/
+
+        // div.className += ' d2';   //低耦合: 修改样式, 无需改动JS代码
+
+        //提高代码复用性
+        addClass(div, 'd2');  //添加
+    };
+
+    remove.onclick = function () {
+        removeClass(div, 'd2');   //移除
+    };
+
+    toggle.onclick = function () {  //一键切换
+        if (!hasClass(div, 'd2')) {
+            div.className += ' d2';
+        } else {
+            div.className = div.className.replace(/ \bd2\b/, '');
+        }
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+<!--
+1.html4.01和html5中区别
+    1.html4.01中a标签既可以是超链接又可以是锚
+    2.html5中a标签仅仅是超链接,但是假如没有href属性,仅仅是超链接占位符,不是超链接
+2.链接到制定锚点
+    1.锚点名称可以使用全局属性id指定
+    2.页内跳转
+        1.<标签X id="name">
+        2.<a href="#name">
+    3.页间跳转
+        1.<标签X id="name">
+        2.<a href="url:#name">
+3.网站中的联系我们的实现
+    1.<a href="mailto:1197977022@qq.com">联系我们</a>
+        1.这里实际上使用了邮件协议
+        2.默认是文件协议,e.g: 链接到本地页面时
+        3.链接服务器端页面,必须指定http协议
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>超链接</title>
+    </head>
+    <body>
+        网站中的联系我们的实现(打开E-mail客户端): <br>
+        <a href="mailto:1197977022@qq.com">联系我们</a>
+    </body>
+</html>

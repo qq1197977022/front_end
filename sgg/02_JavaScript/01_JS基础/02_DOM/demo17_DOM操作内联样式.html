@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作内联样式</title>
+    <style>
+        div {
+            /*width: 800px;*/
+            height: 30em;
+            background-color: #222429;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 30em;
+        }
+        button {
+            padding: 10px 15px;
+            border: 2px solid #ff6781;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="changeColor">变色</button>
+        <button id="changeWidth">变宽</button>
+        <button id="changeHeight">变长</button>
+        <button id="currentBtn01">当前style值</button>
+    </div>
+</body>
+</html>
+<script>
+    let div = document.querySelector('div');
+
+    //变色
+    let colorBtn = document.getElementById('changeColor');
+    colorBtn.onclick = function () {
+        div.style.backgroundColor = window.prompt('请输入颜色值(#xxxxxx)');
+    };
+
+    //变宽
+    let widthBtn = document.getElementById('changeWidth');
+    widthBtn.onclick = function () {
+        div.style.width = window.prompt('请输入宽度(npx)');
+    };
+
+    //变长
+    let heightBtn = document.getElementById('changeHeight');
+    heightBtn.onclick = function () {
+        div.style.height = window.prompt('亲输入长度(npx)');
+    };
+
+    //当前style值
+    let currentBtn01 = document.getElementById('currentBtn01');
+    currentBtn01.onclick = function () {
+        //仅适用于内联style
+        console.log(`内联style\n\t背景色: \t${div.style.backgroundColor}\n\t宽: \t${div.style.width}\n\t高: \t${div.style.height}`);
+    };
+</script>
+<!--
+HTMLElement接口style属性
+    1.返回表示元素的style属性声明的CSSStyleDeclaration对象
+        1.该对象表示CSS property-value pairs集合 ~ 属性名值对集合
+    3.作用: 读写元素inline style
+    3.用于以下API
+        1.HTMLElement.style: 操作单个元素style
+        2.TODO: reword ...
+        3.CSSStyleDeclaration: window.getCoomputedStyle()结果的只读接口
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

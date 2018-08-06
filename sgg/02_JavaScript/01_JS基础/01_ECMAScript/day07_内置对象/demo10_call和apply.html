@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call和apply</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let obj1 = {
+        name: 'obj1',
+        sayName: function () {
+            console.log(this.name);
+        }
+    };
+    let obj2 = {
+        name: 'obj2',
+        sayName: function () {
+            console.log(this.name);
+        }
+    };
+
+
+    obj1.sayName.call(obj2);
+    obj2.sayName.call(obj1);
+    /*
+    1.在一个对象的上下文中应用另一个对象的上下文
+        apply与call等效, 只是传参方式不同
+     */
+</script>

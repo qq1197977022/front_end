@@ -1,0 +1,341 @@
+<!--
+1.浮动元素不会盖住文字,文字会自动环绕
+    1.应用: 文字环绕图片效果
+2.元素脱离文档流之后,生成框的类型均会变成行内块元素
+    1.块级元素脱离文档流之后,会变成行内块元素
+    2.内联元素脱离文档流之后,会变成行内块级元素
+    3.行内块元素脱离文档流之后,依然是行内块元素
+    4.更新 2017年10月24日13:05:55
+        1.通过调试信息发现,浮动并不会改变元素生成框的类型!!!
+        2.新的问题来了: 如何解释元素浮动后其特点和行内块一致的现象?
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动二</title>
+
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #FF00FF;
+        }
+        #box2{
+            height: 200px;
+            background-color: #F5DEB3;
+        }
+
+        #box1_1{
+            width: 100px;
+            height: 100px;
+            background-color: #FF00FF;
+            float: left;
+        }
+        #box2_2{
+            height: 200px;
+            background-color: #F5DEB3;
+        }
+        #box2_21 {
+            height: 200px;
+            background-color: #F5DEB3;
+        }
+        #box2_21>span {
+            float: left;
+            font-size: 50px;
+            line-height: 30px;
+        }
+
+        #box3{
+            background-color: #00FF00;
+        }
+        #box3_1{
+            background-color: #B0C4DE;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        #box3_2{
+            background-color: #F0F0AF;
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+        #box3_3{
+            background-color: #7B68EE;
+            float: right;
+            width: 200px;
+            height: 200px;
+        }
+
+        /*内联元素*/
+        .s{
+            background-color: #FF00FF;
+        }
+        #s_1{
+            width: 100px;
+            height: 100px;
+            background-color: #00FF00;
+            float: left;
+        }
+        #s_2{
+            width: 100px;
+            height: 100px;
+            background-color: #F0F0AF;
+            float: left;
+        }
+        #s_3{
+            width: 100px;
+            height: 100px;
+            background-color: #AFEEEE;
+            float: right;
+        }
+
+        #inb{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+        }
+        #inb_1{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+            float: right; /*浮动*/
+        }
+    </style>
+
+    <!--第一次更新 2017年10月24日13:13:44-->
+    <style>
+        ul#u1 {
+            background-color: #B0C4DE;
+        }
+        ul#u1 li {
+            background-color: #F0F0AF;
+        }
+
+        ul#u2 {
+            background-color: #B0C4DE;
+        }
+        ul#u2 li {
+            background-color: #F0F0AF;
+            display: block;
+        }
+
+        ul#u3 {
+            background-color: #B0C4DE;
+        }
+        ul#u3 li {
+            background-color: #F0F0AF;
+            display: inline-block;
+            height: 50px;
+        }
+
+        ul#u4 {
+            background-color: #B0C4DE;
+        }
+        ul#u4 li {
+            background-color: #F0F0AF;
+            display: inline;
+        }
+
+        ul#u5 {
+            background-color: #B0C4DE;
+        }
+        ul#u5 li {
+            background-color: #F0F0AF;
+            float: left;
+        }
+        ul#u5 li.l1 {
+            background-color: #F0F0AF;
+            float: left;
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2">
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+    </div>
+
+    <hr>
+    <h1>一.浮动元素不会覆盖文字</h1>
+    <span style="background-color: #00FF00">应用: 文字环绕图片效果</span> <span style="font-size: 12px; color: #F00;">(浮动本意就是用于文字环绕图片效果,只是现在多用于页面布局)</span> <br>
+    <div id="box1_1"></div>
+    <div id="box2_2">
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+    </div>
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <span style="background-color: #6EC5ED">浮动的其他应用: eg.首字下沉</span><br><br>
+    <div id="box2_21">
+        <span>你</span>终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+        你终于如愿以偿了：以几行代码实现的，包含一些数据驱动的HTML文本的Web服务器。 Go语言强大到能让很多事情以短小精悍的方式解决
+    </div>
+
+    <hr>
+    <h1>二.元素脱离文档流之后,生成框的类型均会变成行内块元素</h1>
+    <h3>1.块级元素浮动后,脱离文档流变成行内块元素</h3>
+    <div id="box3">块元素,不浮动</div>
+    <div id="box3_1">块元素,浮动:left</div>
+    <div id="box3_2">块元素,浮动:left</div>
+    <div id="box3_3">块元素,浮动:right</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h3>2.内联元素浮动后,脱离文档流变成行内块元素</h3>
+    <span class="s">内联元素不浮动</span>
+    <span class="s">内联元素不浮动</span>
+    <span class="s">内联元素不浮动</span>
+    <hr>
+    <span id="s_1">内联元素浮动:left</span>
+    <span id="s_2">内联元素浮动:left</span>
+    <span id="s_3">内联元素浮动:right</span>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h3>3.行内块元素浮动后,脱离文档流依然是行内块元素</h3>
+    <span id="inb">行内块元素,不浮动</span>
+    <span id="inb_1">行内块元素,浮动:right</span>
+
+    <hr style="border: 5px solid #4c4c4c;">
+    <h2 style="background-color: #000; text-align: center; color: #F00;">第一次更新 2017年10月24日13:13:44</h2>
+    <hr style="border: 5px solid #4c4c4c;">
+    <h3>1.更新一</h3>
+    <p>
+        1.通过调试信息发现,<span style="font-size: 25px; color: #fe7100;">浮动并不会改变元素生成框的类型!!!,但框的特点改变 ~ 变为和行内块元素框一致</span><br>
+        2.新的问题来了: 如何解释元素浮动后其特点和行内块一致的现象? <br>
+        <span>3.Note: 类比</span> <br>
+        <a href="../day09定位/demo02绝对定位.html" style="font-size: 25px;">1.类比绝对定位</a> <br>
+        <a href="../day09定位/demo03固定定位.html" style="font-size: 25px;">2.类比固定定位</a>
+    </p>
+    <p>1.列表</p>
+    <p>(1).display:改变元素生成框的类型</p>
+    <ul id="u1">
+        <li>ul和li标签默认元素生成框的类型分别为block和list-item</li>
+        <li>ul和li标签默认元素生成框的类型分别为block和list-item</li>
+        <li>ul和li标签默认元素生成框的类型分别为block和list-item</li>
+    </ul>
+
+    <ul id="u2">
+        <li>改变li标签元素生成框的类型为block</li>
+        <li>改变li标签元素生成框的类型为block</li>
+        <li>改变li标签元素生成框的类型为block</li>
+    </ul>
+
+    <ul id="u3">
+        <li>改变li标签元素生成框的类型为inline-block</li>
+        <li>改变li标签元素生成框的类型为inline-block</li>
+        <li>改变li标签元素生成框的类型为inline-block</li>
+    </ul>
+
+    <ul id="u4">
+        <li>改变li标签元素生成框的类型为inline</li>
+        <li>改变li标签元素生成框的类型为inline</li>
+        <li>改变li标签元素生成框的类型为inline</li>
+    </ul>
+
+
+    <p>(2).float浮动<span style="font-size: 12px; color: #F00;">(子元素li浮动,脱离文档流导致父元素ul高度塌陷)</span></p>
+    <ul id="u5">
+        <li class="l1">设置li标签float: left(并设置CSS列表样式list-style-position)</li>
+        <li class="l1">设置li标签float: left(并设置CSS列表样式list-style-position)</li>
+        <li class="l1">设置li标签float: left(并设置CSS列表样式list-style-position)</li>
+
+        <li>设置li标签float: left</li>
+        <li>设置li标签float: left</li>
+        <li>设置li标签float: left</li>
+    </ul>
+
+    <br>
+    <h3>2.更新二</h3>
+    <a style="font-size: 25px;" href="../../../itcast/02_CSS基础班/day04_css/practice/demo06_上合导航案例.html">1.参见: 上合导航案例</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

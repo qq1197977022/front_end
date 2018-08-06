@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三目运算</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    true ? console.log('ifTrue') : console.log('ifFalse');
+    false ? console.log('ifTrue') : console.log('ifFalse');
+
+    var a = 3,
+        b = 4,
+        c = 5;
+    var m = a > b ? a : b;
+
+    var max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+
+    console.log(m);
+    console.log(max);
+</script>
+
+<!--
+一.三目运算/条件表达式
+    1.condition ? ifTrue: ifFalse;
+-->

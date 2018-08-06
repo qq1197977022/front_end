@@ -1,0 +1,88 @@
+<!--
+一.选择器
+    1.基本选择器
+        1.标签选择器: E
+        2.属性选择器(全局属性)
+            1.id选择器: #id
+            2.class选择器: .class
+                1.class属性值可以有多个,以逗号分隔
+            3.Note
+                1.命名可以是非数字开头的各种字符(中文etc)
+                    1.即使中文乱码,但是选择器和id/class属性值乱码前是一致的,因而在同一编码下乱码值也是一样的
+        3.通配符选择器: *
+        4.群组选择器(并集选择器): s1, s2, sN
+        5.交集选择器: XY
+            1.交集选择器一般用于选择带有class属性的某个标签进行单独处理
+            2.一般不用于带有id属性的标签,因为带有id属性的标签已经能够被准确单独选择
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="选择器, 选择器分类">
+        <meta name="description" content="选择器学习,各种选择器">
+        <meta name="author" content="By:狂草(kc.com)">
+        <title>CSS选择器</title>
+        <style>
+            /*标签选择器*/
+            h1{
+                color: #FF00FF;
+                font-size: 20px;
+            }
+            /*属性选择器之id选择器*/
+            #h{
+                color: chartreuse;
+            }
+            #h1{
+                font-size: 30px;
+            }
+            /*属性选择器之class选择器*/
+            .h2{
+                font-family: \9ED1\4F53, cursive; /*escape("黑体")": %u9ED1%u4F53"*/
+            }
+            /*通配符选择器*/
+            *{
+                background-color: #F0F0AF;
+            }
+            /*群组选择器*/
+            #p1, h3, .sp{
+                background-color: #ff6781;
+                font-size: 25px;
+                font-weight: normal;
+            }
+            /*交集选择器*/
+            p.pp{
+                font-size: 35px;
+            }
+            p.ppp{
+                color: violet;
+            }
+        </style>
+    </head>
+    <body>
+        <hr>
+        <h1>标签选择器</h1>
+        <h1>标签选择器</h1>
+
+        <hr>
+        <h2 id="h">属性选择器之id选择器</h2>
+        <h2 id="h1">属性选择器之id选择器</h2>
+
+        <hr>
+        <h2 class="h2">属性选择器之class选择器</h2>
+        <h2 class="h2">属性选择器之class选择器</h2>
+
+        <hr>
+        <h2 class="h2">通配符选择器</h2>
+
+        <hr>
+        <p id="p1">群组选择器(并集选择器)</p>
+        <h3>群组选择器</h3>
+        <span class="sp">群组选择器(并集选择器)</span>
+
+        <hr>
+        <p class="pp">交集选择器</p>
+        <p class="pp ppp">交集选择器</p>
+    </body>
+</html>

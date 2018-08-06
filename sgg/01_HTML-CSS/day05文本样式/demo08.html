@@ -1,0 +1,171 @@
+<!--
+一.文本样式
+    1.text-transform -- 控制文本大小写
+    2.text-decoration -- 规定添加到文本的装饰效果
+        1.应用: 去掉超链接默认下划线
+    3.letter-spacing
+    4.word-spacing -- 单词间距
+        1.单词以空格(空白)定界,因而中文若要使用此属性必须添加空白
+    5.text-align -- 文本水平对齐方式
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本样式</title>
+    <style>
+        /*仅小写*/
+        #box1>#s1{
+            text-transform: lowercase;
+        }
+        /*仅大写*/
+        #box1>#s2{
+            text-transform: uppercase;
+        }
+        /*首字母大写*/
+        #box1>#s3{
+            text-transform: capitalize;
+        }
+
+        #box2{
+            font: 20px/ 4 微软雅黑;
+        }
+        /*下划线*/
+        #box2>#s22{
+            text-decoration: underline;
+        }
+        #box2>#s33{
+            text-decoration: overline;
+        }
+        /*上/下划线*/
+        #box2>#s33{
+            text-decoration: underline overline;
+            /*可以看到,上/下划线位置是行框中垂直居中字体的上部和下部,而不是行框的上边框和下边框*/
+        }
+        /*横穿线*/
+        #box2>#s44{
+            text-decoration: line-through;
+        }
+        #box2>#a1{
+            text-decoration: none;
+        }
+        /*字符间距*/
+        #box3 #sp1{
+            letter-spacing: -3px;
+        }
+        #box3 #sp2{
+            letter-spacing: 10px;
+        }
+
+        /*单词间距*/
+        #box4>#pp1{
+            word-spacing: 50px;
+        }
+        #box4>#pp2{
+            word-spacing: -10px;
+        }
+
+        /*文本水平对齐方式*/
+        #box5>#b51{
+            text-align: right;
+        }
+        #box5>#b52{
+            text-align: center;
+        }
+        #box5>#b53{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h3>控制文本大小写</h3>
+    <div id="box1">
+        <span>默认The summer vacation is coming soon, and I feel so excited. It is time to make some plans for the long time.</span> <br>
+        <span id="s1">仅小写The summer vacation is coming soon, and I feel so excited. It is time to make some plans for the long time.</span> <br>
+        <span id="s2">仅大写My mother have asked me to learn swimming, because she thinks it is a very important skill. So I decide to join the lesson.</span> <br>
+        <span id="s3">首字母大写I also plan to go BACK to my hometown and spend some time with my grandparents. I miss them so much.</span>
+    </div>
+
+    <hr>
+    <h3>添加文本装饰效果</h3>
+    <div id="box2">
+        <span id="s11">默认The summer vacation is coming soon, and I feel so excited. It is time to make some plans for the long time.</span> <br>
+        <span id="s22">下划线The summer vacation is coming soon, and I feel so excited. It is time to make some plans for the long time.</span> <br>
+        <span id="s33">上划线The summer vacation is coming soon, and I feel so excited. It is time to make some plans for the long time.</span> <br>
+        <span id="s44">横穿线The summer vacation is coming soon, and I feel so excited. It is time to make some plans for the long time.</span> <br>
+        <a href="#1">应用:删除超链接默认下划线</a> <br>
+        <a id="a1" href="#2">应用:删除超链接默认下划线</a>
+    </div>
+
+    <hr>
+    <h3>字符间距</h3>
+    <div id="box3">
+        <p>
+            默认The summer vacation is coming soon, and I feel so excited.大河向东流,风风火火闯九州
+        </p>
+        <p id="p1">
+            <span id="sp1">The summer vacation is coming soon, 大河向东流,风风火火闯九州</span> <span id="sp2">It is time to make some plans 大河向东流,风风火火闯九州</span>
+        </p>
+    </div>
+
+    <hr>
+    <h3>单词间距</h3>
+    <div id="box4">
+        <p>
+            默认The summer vacation is coming soon, and I feel so excited.大河向东流,风风火火闯九州 <br>
+            单 词 的 一 空 格 定 界, 无 空 格 视 为 一 个 单 词
+        </p>
+        <p id="pp1">
+            The summer vacation is coming soon, and I feel so excited. 大河向东流,风风火火闯九州, <br>
+            单 词 的 一 空 格 定 界, 无 空 格 视 为 一 个 单 词
+        </p>
+        <p id="pp2">
+            The summer vacation is coming soon, and I feel so excited.大河向东流,风风火火闯九州, <br>
+            单 词 的 一 空 格 定 界, 无 空 格 视 为 一 个 单 词
+        </p>
+    </div>
+
+    <hr>
+    <h3>文本水平对齐方式</h3>
+    <div id="box5">
+        <p>
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+            默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐默认左对齐
+        </p>
+        <p id="b51">
+            右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐
+            右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐
+            右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐
+            右对齐右对齐右对齐右对齐右对齐右对对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐
+            右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐
+            右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐
+            右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐右对齐
+        </p>
+        <p id="b52">
+            居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐
+            居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐
+            居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐
+            居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐
+            居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐
+            居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐
+            居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐居中对齐
+        </p>
+        <p id="b53">
+            两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐
+            两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐
+            两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐
+            两端对齐两端对齐两端对齐两端对齐两端端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐
+            两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐
+            两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐
+            两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐两端对齐
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字面量和变量</title>
+</head>
+<body>
+    <a href="../day06_对象与函数/demo13_作用域.html">变量可以隐式声明的原因</a>
+</body>
+</html>
+<script>
+    const a = 3;
+    // a = 33;  //常量不可变
+
+
+    var v1 = 1;
+    console.log(v1);
+
+    var v2 = 1, v3 = 2;
+    console.log(v2); console.log(v3);
+
+    var v4 = 1,
+        v5 = 2,
+        v6 = 3;
+    console.log(v4); console.log(v5); console.log(v6);
+
+    var v7;
+    console.log(v7);    //变量默认初始化值为undefined
+
+    var v8 = 8;
+    var v8;    //重复声明同一变量,其值不会丢失
+    console.log(v8);
+
+
+    //隐式声明
+    v9 = 9;
+    console.log(v9);
+</script>
+
+<!--
+一.常量
+    1.分类
+        1.字面: 数据类型常量值符号
+            1.只能使用一次
+        2.const: 常变量 ~ readonly variable
+            1.使用关键字const声明的变量不可变 ~ 只读变量
+            2.可以多次引用
+    2.特点
+        1.不可变,即只读
+二.变量
+    1.声明
+        1.单行
+            1.var v = 1;
+            2.var v1 = 1, v2 = 2;
+        2.跨行 ~
+            var v1 = 1,
+                v2 = 2,
+                v3 = 3;
+    Note:
+        1.变量默认初始化值为undefined
+-->

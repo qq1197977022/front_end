@@ -1,0 +1,77 @@
+<!--
+一.伪元素和伪类: 为选择器添加特殊效果 --- 查API
+    1.伪元素: https://www.w3cschool.cn/css/css-pseudo-elements.html
+        1.E:first-line ~ 仅用于块元素,选中文本首行
+        2.E:first-letter ~ 仅用于块元素,选中文本首字母(字符)
+        3.E:before ~ 选中元素内容前
+        4.E:after ~ 选中元素内容后
+
+    2.伪类: https://www.w3cschool.cn/css/css-pseudo-classes.html  |   https://www.w3cschool.cn/css3/css3-selector.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="伪元素, 伪类">
+        <meta name="description" content="伪元素,伪类学习, 使用伪类和伪元素作为选择器">
+        <meta name="author" content="By:狂草">
+        <title>伪类和伪元素</title>
+
+        <style>
+            .p1:first-letter{
+                font-size: 30px;
+                color: #7CFC00;
+            }
+            #p2:first-line{
+                font-size: 5px;
+                background-color: #ff6781;
+            }
+
+            #p3:before{
+                content: url("img/0.gif");
+            }
+            #p4:after{
+                content: url("img/0.gif");
+            }
+        </style>
+    </head>
+    <body>
+        <p class="p1">伪元素选择器,选中首字母(字符)</p>
+        <p class="p1">abcABC伪元素选择器,选中首字母(字符)</p>
+        <!--
+            这里发现一个兼容性问题
+            1.firefox中第一个字母可以选中,chrome中不能
+            2.firefox中以下格式解析效果一样
+                    格式一: <p id="p1">伪元素选择器,选中首字母</p>
+                    格式二: <p id="p1">
+                                伪元素选择器,选中首字母
+                            </p>
+                    格式三: <p id="p1">
+                                伪元素选择器,选中首字母
+                                <span>嘻嘻哈哈哈</span>
+                            </p>
+           但是在chrome中,标签与内容之间有无换行解析效果不一样
+               1.这里说的效果指的是能否被鼠标滑动选中,视觉效果无差别
+        -->
+
+        <hr>
+        <p id="p2">
+            伪元素选择器,选中首行 <br>
+            伪元素选择器,选中首行 <br>
+            伪元素选择器,选中首行 <br>
+        </p>
+
+        <hr>
+        <p id="p3">
+            伪元素选择器,选中内容之前部分,并插入图片
+        </p>
+
+        <hr>
+        <p id="p4">
+            伪元素选择器,选中内容之后部分,并插入图片
+        </p>
+    </body>
+</html>
+
+
+

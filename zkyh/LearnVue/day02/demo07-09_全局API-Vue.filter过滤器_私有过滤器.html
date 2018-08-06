@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局过滤器 和 私有过滤器</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo07-09.js" defer></script>
+    <style>
+        span {
+            color: #F00;
+        }
+        li {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h2>一.注册/ 获取全局过滤器 ~ 全局API之Vue.filter</h2>
+    <h2>二.私有过滤器 ~ 在组件选项filters中定义</h2>
+    <ol>
+        <li>过滤器适用于双花括号插值 和 v-bind表达式</li>
+        <li>过滤器应置于JS表达式尾部, 由管道符指示</li>
+        <li>全局API Vue.filter: 注册/ 获取<span>全局</span>过滤器 ~ <span>所有Vue实例对象可用</span></li>
+        <li>在组件选项filters中定义: <span>私有</span>过滤器 ~ <span>某Vue实例对象私有</span></li>
+    </ol>
+    <div id="app1">
+        <p>过滤前: {{msg}}</p>
+        <h3>过滤后: {{msg | msgReplace1}}</h3>
+        <h3>过滤后: {{msg | msgReplace2}} <span> ~ ES6语法</span></h3>
+        <h3>过滤后: {{msg | msgReplace3('*a*', '-A-')}} <span> ~ 过滤器本质是函数, 可接收参数</span></h3>
+    </div>
+</body>
+</html>

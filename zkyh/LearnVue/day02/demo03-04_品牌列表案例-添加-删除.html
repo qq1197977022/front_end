@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌列表案例-添加-删除</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo03-04.js" defer></script>
+    <style>
+        #app1 {
+            width: 500px;
+            margin: 100px auto 0;
+            border: 1px solid #F00;
+            text-align: center;
+        }
+        input {
+            margin: 8px 0;
+        }
+        hr {
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            text-align: center;
+            border: 1px solid #99ff99;
+            padding: 5px;
+        }
+        a {
+            text-decoration-line: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <label>ID: <input v-model="id" type="text"></label>
+        <label>Name: <input v-model="name" type="text"></label>
+        <button @click="add">添加</button>
+
+        <hr>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Ctime</th>
+                <th>Operation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="item in items" :key="item.id">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td v-text="item.ctime"></td>
+                <td><a @click.prevent="del(item)" href="">删除</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <hr>
+        <input v-model="keywords" type="text" placeholder="请输入搜索关键字">
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--
+参见demo10
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="By:狂草">
+    <title>样式优先级</title>
+    <style>
+        *{
+            font-size: 30px;
+        }
+        p{
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        父元素内容 <br>
+        <span>子元素内容</span>
+    </p>
+    <span>通配符选择器优先级(0)高于继承优先级(-1)</span>
+</body>
+</html>

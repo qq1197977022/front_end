@@ -1,0 +1,146 @@
+<!--
+一.结构伪类选择器
+    1.选取父元素中第n个子元素
+        1.:first-child
+        2.last-child
+        3.:nth-child(n) -- 正向
+            1.特殊参数
+                1.even: 偶数
+                2.odd: 奇数
+                3.2n+1 / 2n : 奇 / 偶 (n默认值是1)
+        4.:nth-last-child(n) -- 逆向
+            1.特殊参数,同上
+    2.选取父元素中第n个指定类型的元素
+        1.first-of-type
+        2.last-of-type
+        3.nth-of-type(n)
+        4.nth-last-of-type
+    3.其他
+        1.root -- 选取文档根元素
+        2.only-child -- 选取父元素中只有一个子元素的子元素
+        3.only-of-type -- 选取父元素中指定类型的唯一元素
+        4.empty -- 选取父元素中的空元素(无子元素, 无文本节点)
+Note: 父/子元素: 直接包含/被包含的元素 -- demo02中元素间关系
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="结构伪类选择器">
+    <meta name="description" content="结构伪类选择器学习">
+    <meta name="author" content="By:狂草">
+    <title>Title</title>
+
+    <style>
+        /*选取父元素第n个子元素*/
+        #d1>:first-child{
+            background-color: #F0F0AF;
+        }
+        #d1>:last-child{
+            color: #ff6781;
+            font-size: 20px;
+        }
+        #d1>:nth-child(2){
+            font-size: 25px;
+            color: #DC143C;
+        }
+        #d1>:nth-last-child(2){
+            font-size: 5px;
+            color: #DC143C;
+            background-color: black;
+        }
+        /*选取父元素中第n个指定类型的子元素*/
+        #d2>h3:first-of-type{
+            font-size: 30px;
+        }
+        #d2>h3:last-of-type{
+            font-size: 5px;
+            color: #9932CC;
+        }
+        #d2>span:nth-of-type(1){
+            background-color: black;
+            color: #7CFC00;
+        }
+        #d2>p:nth-last-of-type(1){
+            font-size: 45px;
+            background-color: #98FB98;
+        }
+        /*其他*/
+        /*1.选取父元素中指定类型的唯一元素*/
+        #d3>span:only-of-type{
+            background-color: yellowgreen;
+        }
+        /*选取父元素中的空元素(无子元素, 无文本节点)*/
+        #d3>input:empty{
+            background-color: thistle;
+            color: #FFFF00;
+            font-size: 25px;
+            width: 600px;
+            height: 30px;
+        }
+        /*选取父元素中只有一个子元素的子元素*/
+        #d3>p>span:only-child{
+            color: #8B0000;
+            font-size: 35px;
+        }
+        /*选取文档的根节点(即html元素)*/
+        :root{
+            background-image: url("img/1.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <p>选取父元素中第n个子元素</p>
+        <p>选取父元素中第n个子元素</p>
+        <p>选取父元素中第n个子元素</p>
+        <p>选取父元素中第n个子元素</p>
+    </div>
+
+    <hr>
+    <div id="d2">
+        <p>选取父元素中第n个指定类型的子元素</p>
+        <span>选取父元素中第n个指定类型的子元素</span>
+        <p>选取父元素中第n个指定类型的子元素</p>
+        <p>选取父元素中第n个指定类型的子元素</p>
+        <h3>选取父元素中第n个指定类型的子元素</h3>
+        <span>选取父元素中第n个指定类型的子元素</span>
+        <h3>选取父元素中第n个指定类型的子元素</h3>
+    </div>
+
+    <hr>
+    <div id="d3">
+        <h1>选取文档根节点(即html标签)</h1>
+        <p>
+            <span>选取父元素中只有一个子元素的子元素</span>
+        </p>
+        <input type="text" placeholder="选取父元素中的空元素(无子元素,不包含文本节点)"> <br>
+        <span>选取父元素中指定类型的唯一元素</span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

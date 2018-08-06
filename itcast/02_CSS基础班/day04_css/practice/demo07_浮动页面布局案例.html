@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #page {
+            width: 900px;
+            margin: 0 auto;
+        }
+        #head {
+            height: 35px;
+            background-color: #6EC5ED;
+            margin-bottom: 10px;
+        }
+        #content {
+            width: 820px;
+            margin: 0 auto;
+            background-color: #FAEBD7;
+            padding: 10px 30px;
+            border: 1px solid #00FF00;
+        }
+        #left, #right1 {
+            width: 500px;
+            height: 300px;
+        }
+        #right, #left1 {
+            width: 300px;
+            height: 300px;
+        }
+
+        #left, #left1 {
+            float: left;
+        }
+        #right, #right1 {
+            float: right;
+        }
+        #content:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #left {
+            background-color: #B0C4DE;
+        }
+        #right {
+            background-color: #242424;
+        }
+        #left1 {
+            background-color: #fe7100;
+            margin-top: 5px;
+        }
+        #right1 {
+            background-color: #7B68EE;
+            margin-top: 5px;
+        }
+
+        #foot {
+            height: 50px;
+            background-color: #019E8B;
+            margin-top: 20px;
+        }
+    </style>
+    <title>浮动页面布局</title>
+</head>
+<body>
+    <div id="page">
+        <div id="head"></div>
+        <div id="content">
+            <div id="left"></div>
+            <div id="right"></div>
+            <div id="left1"></div>
+            <div id="right1"></div>
+        </div>
+        <div id="foot"></div>
+    </div>
+</body>
+</html>

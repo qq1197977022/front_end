@@ -1,0 +1,467 @@
+<!--
+一.文档流
+    1.文档流处在页面最底层,表示页面中的位置,所有元素默认都处在文档流中
+        1.从整体看,文档流中所有元素都有靠右上的趋势
+
+        2.从局部看
+             1.块级元素
+                1.前后自带换行符(独占一行),垂直排列(自上而下排列)
+                2.默认宽度auto,高度由内容撑开
+                3.可以设置尺寸属性
+
+            2.内联元素
+                1.默认宽高由内容撑开,水平排列(从左向右排列)
+                2.若一行不足以容纳,则换行
+                3.不能设置尺寸属性
+
+            3.行内块元素: 同时具备内联和块元素的特点
+                1.默认宽高由内容撑开,水平排列(从左向右排列)
+                2.若一行不足以容纳,则换行
+                3.可以设置尺寸属性
+                Note: 常见行内块元素
+                    1.img
+                    2.input
+                    3.button
+                    4.~等
+            4.~~~等等
+                1.元素的生成框有很多种(参见CSS display属性值)
+                    eg.ul标签的元素生成框类型为block, li标签的元素生成框类型为list-item: 其特点和block一致,只是左边带有默认列表项标记类型
+
+        3.复杂布局往往需要改变元素默认布局方式
+            1.改变元素生成框的类型: display
+            2.使元素脱离文档流(元素不再在文档流中占据位置)
+                1.浮动
+                2.绝对定位
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档流</title>
+
+    <style>
+        h2>span{
+            color: #FF00FF;
+            font-size: 50px;
+        }
+        #d1{
+            background-color: #9ACD32;
+        }
+        #d2{
+            background-color: #9932CC;
+            padding-left: 100px;
+        }
+        .s1{
+            background-color: #7CFC00;
+        }
+        .s2{
+            background-color: #9932CC;
+        }
+        .s3{
+            background-color: #DC143C;
+        }
+/*======================================================改变元素生成框的类型======================================================*/
+        #di1{
+            width: 200px;
+            height: 100px;
+            background-color: #9932CC;
+        }
+        #di2{
+            width: 200px;
+            height: 100px;
+            background-color: #90EE90;
+        }
+        #di3{
+            width: 200px;
+            height: 100px;
+            background-color: #F0F0AF;
+        }
+        /*块级元素转行内块*/
+        #di11{
+            width: 200px;
+            height: 100px;
+            background-color: #9932CC;
+            display: inline-block;
+        }
+        #di22{
+            width: 200px;
+            height: 100px;
+            background-color: #90EE90;
+            display: inline-block;
+        }
+        #di33{
+            width: 200px;
+            height: 100px;
+            background-color: #F0F0AF;
+            display: inline-block;
+        }
+        /*块级元素转内联元素*/
+        #di111{
+            background-color: #9932CC;
+            display: inline;
+        }
+        #di222{
+            background-color: #90EE90;
+            display: inline;
+        }
+        #di333{
+            background-color: #F0F0AF;
+            display: inline;
+        }
+/*======================================================改变元素生成框的类型======================================================*/
+        .ss:nth-child(odd){
+            background-color: #00FF00;
+        }
+        .ss:nth-child(even){
+            background-color: #FF00FF;
+        }
+        /*内联元素,转块级元素*/
+        .ss1:nth-child(odd){
+            display: block;
+            background-color: #00FF00;
+            width: 200px;
+            height: 200px;
+        }
+        .ss1:nth-child(even){
+            display: block;
+            background-color: #FF00FF;
+            width: 200px;
+            height: 200px;
+        }
+        /*内联元素,转行内块*/
+        .ss2:nth-child(odd){
+            display: inline-block;
+            background-color: #00FF00;
+            width: 200px;
+            height: 200px;
+        }
+        .ss2:nth-child(even){
+            display: inline-block;
+            background-color: #FF00FF;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <!--第一次更新-->
+    <style>
+        #u1 {
+            width: 300px;
+            height: 150px;
+            background-color: #AABBCC;
+            float: left;
+            margin: 0 auto;
+        }
+        #u11 {
+            width: 300px;
+            height: 150px;
+            background-color: #AABBCC;
+            clear: left;
+            float: left;
+            margin: 0 50%;
+        }
+        #u111 {
+            width: 300px;
+            height: 150px;
+            background-color: #AABBCC;
+            clear: left;
+            float: left;
+            margin: 0 50%;
+            position: relative;
+            left: -150px;
+        }
+
+        #u2 {
+            width: 300px;
+            height: 150px;
+            background-color: #34A853;
+            position: absolute;
+            margin: 0 auto;
+        }
+        #u22 {
+            width: 300px;
+            height: 150px;
+            background-color: #34A853;
+            position: absolute;
+            margin: 0 50%;
+        }
+        #u222 {
+            width: 300px;
+            height: 150px;
+            background-color: #34A853;
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            top: 200px;
+        }
+        #u2222 {
+            width: 300px;
+            height: 150px;
+            background-color: #34A853;
+            position: absolute;
+            bottom: 0;
+            margin: 0 50%;
+            left: -150px;
+        }
+
+        #u3 {
+            width: 300px;
+            height: 200px;
+            background-color: #fe7100;
+            position: fixed;
+            margin: 0 auto;
+            bottom: 0;
+        }
+        #u33 {
+            width: 300px;
+            height: 200px;
+            background-color: #fe7100;
+            position: fixed;
+            margin: 0 50%;
+            bottom: 450px;
+        }
+        #u333 {
+            width: 300px;
+            height: 200px;
+            background-color: #F0F0AF;
+            position: fixed;
+            left: 50%;
+            right: 50%;
+            bottom: 250px;
+        }
+        #u3333 {
+            width: 300px;
+            height: 200px;
+            background-color: #F0F0AF;
+            position: fixed;
+            bottom: 0;
+            margin: 0 50%;
+            left: -150px;
+        }
+    </style>
+</head>
+<body style="height: 4500px;">
+    <h2><span>一.文档流中</span>的块元素和内联元素特点</h2>
+    <div>
+        <h3>1.块级元素</h3>
+        <ul>
+            <li>前后自带换行符(独占一行),自上而下排列</li>
+            <li>默认宽度auto, 高度由内容撑开</li>
+        </ul>
+        <hr>
+        <h3>2.内联元素</h3>
+        <ul>
+            <li>默认宽高由内容撑开,从左向右排列</li>
+            <li>若一行无法容纳,则自动换行</li>
+        </ul>
+        <hr>
+        <h3>3.行内块元素: <span style="color: #F00; font-size: 15px;">(同时具备内联和块元素的特点)</span></h3>
+        <ul>
+            <li>1.默认宽高由内容撑开,水平排列(从左向右排列)</li>
+            <li>2.若一行不足以容纳,则换行</li>
+            <li>3.可以设置尺寸属性</li>
+        </ul>
+        <dl>
+            <dt>Note一: 常见行内块元素</dt>
+            <dd>1.img</dd>
+            <dd>2.input</dd>
+            <dd>3.button</dd>
+            <dd>4.~</dd>
+        </dl>
+    </div>
+
+    <hr>
+    <div id="d1">a</div>
+    <div id="d2">a</div>
+
+    <hr>
+    <span class="s1">内联元素</span>
+    <span class="s1">内联元素</span>
+    <span class="s1">内联元素</span>
+    <span class="s1">内联元素</span>
+
+    <hr>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+    <span class="s2">内联元素</span>
+
+    <hr>
+    <h2 style="color: #DC143C;">2-1.内联元素之间的空白和标签书写方式有关</h2>
+    <hr>
+    <span class="s3">内联元素</span><span class="s3">内联元素</span><span class="s3">内联元素</span><span class="s3">内联元素</span><span class="s3">内联元素</span>
+
+    <hr>
+    <span class="s3">内联元素</span>
+    <span class="s3">内联元素</span>
+    <span class="s3">内联元素</span>
+    <span class="s3">内联元素</span>
+    <span class="s3">内联元素</span>
+
+    <hr>
+    <h2>二.复杂布局往往需要改变元素默认布局方式</h2>
+    <hr>
+    <h3>1.改变元素生成框的类型</h3>
+    <span>1.块级元素</span>
+    <div id="di1">块级元素</div>
+    <div id="di2">块级元素</div>
+    <div id="di3">块级元素</div>
+
+    <div id="di11">块级元素,转行内块</div>
+    <div id="di22">块级元素,转行内块</div>
+    <div id="di33">块级元素,转行内块</div>
+
+    <div id="di111">块级元素,转内联元素</div>
+    <div id="di222">块级元素,转内联元素</div>
+    <div id="di333">块级元素,转内联元素</div>
+
+    <hr>
+    <span>2.内联元素</span> <br>
+    <span class="ss">内联元素</span>
+    <span class="ss">内联元素</span>
+    <span class="ss">内联元素</span>
+
+    <br>
+    <br>
+
+    <span class="ss1">内联元素,转块级元素</span>
+    <span class="ss1">内联元素,转块级元素</span>
+    <span class="ss1">内联元素,转块级元素</span>
+
+    <br>
+
+    <span class="ss2">内联元素,转行内块</span>
+    <span class="ss2">内联元素,转行内块</span>
+    <span class="ss2">内联元素,转行内块</span>
+
+    <hr>
+    <h3>2.使元素脱离文档流(元素不再在文档流中占据位置)</h3>
+    <span>1.浮动</span> <br>
+    <span>2.定位</span>
+
+
+    <p style="font-size: 100px;">第一次更新 2017年10月29日19:20:11</p>
+    <h2>1.脱离文档流的元素,浏览器无法自动计算<span style="font-size: 16px; color: #F00;">(即CSS属性值 auto 失效)</span>,必须指定为确定的数值</h2>
+    <p>
+        <span style="font-size: 25px; color: #fe7100;">核心思想:</span> <br>
+            1.定位: 伪居中/微调 + 外边距: 微调/伪居中 <br>
+            2.定位: 微调/伪居中 + 外边距: 伪居中/微调 <br>
+            <span style="color: #fe7100;">3.实际应用,根据实际情况选择</span> <br>
+    </p>
+
+    <h3>1.浮动</h3>
+    <div id="u1">浮动 ~ auto值失效</div>
+    <div id="u11">
+        1.浮动 ~ 解决: 指定为确定的值 <br>
+        2.外边距margin: 0 50%;实现 <span style="color: #00F;"> ~ 伪居中</span>
+    </div>
+    <div id="u111">
+        1.浮动 ~ 解决: 指定为确定的值 <br>
+        2.相对定位 + 外边距 = 实现
+    </div>
+
+    <hr style="clear: left;">
+    <h3>2.绝对定位</h3>
+    <div style="height: 600px; position: relative; border: 1px solid #F0F;">
+        <div id="u2">绝对定位 ~ auto值失效</div>
+        <div id="u22">
+            1.绝对定位 ~ 解决: 指定为确定的值 <br>
+            2.外边距margin: 0 50%;实现 <span style="color: #00F;"> ~ 伪居中</span>
+        </div>
+        <div id="u222">
+            1.绝对定位 ~ 解决: 指定为确定的值 <br>
+            2.固定定位left/right: 50%;实现 <span style="color: #00F;"> ~ 伪居中</span>
+        </div>
+        <div id="u2222">
+            1.绝对定位 ~ 解决: 指定为确定的值 <br>
+            2.绝对定位 + 外边距 = 实现
+        </div>
+    </div>
+
+    <hr>
+    <h3>3.固定定位</h3>
+    <div id="u3">固定定位 ~ auto值失效</div>
+    <div id="u33">
+        1.固定定位 ~ 解决: 指定为确定的值 <br>
+        2.外边距margin: 0 50%;实现 <span style="color: #00F;"> ~ 伪居中</span>
+    </div>
+    <div id="u333">
+        1.固定定位 ~ 解决: 指定为确定的值 <br>
+        2.固定定位left/right: 50%;实现 <span style="color: #00F;"> ~ 伪居中</span>
+    </div>
+    <div id="u3333">
+        1.固定定位 ~ 解决: 指定为确定的值 <br>
+        2.固定定位 + 外边距 = 实现
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

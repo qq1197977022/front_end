@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>break和continue</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+1.break
+    1.用于循环/switch
+        1.跳出循环/switch代码块
+        2.跳出标签对应任意代码块(循环/非循环)
+2.continue
+    1.只用于循环中
+        1.中断本次循环,开始下次循环
+        2.中断标签对应循环的本次循环,开始下次循环
+-->
+<script>
+//break
+    console.log('------跳出当前循环------');
+    for (var i = 0; i < 2; i++) {
+        for (var j = 0; j < 5; j++) {
+            console.log('A');
+            break;
+        }
+    }
+    console.log('------跳出标签对应的当前循环------');
+    label1: for (var i = 0; i < 2; i++) {
+        for (var j = 0; j < 5; j++) {
+            console.log('A');
+            break label1;
+        }
+    }
+
+//continue
+    console.log('------中断当前循环,开始下次循环------');
+    for (var i = 0; i < 2; i++) {
+        for (var j = 0; j < 5; j++) {
+            console.log('B');
+            continue;
+        }
+    }
+    console.log('------中断标签对应的当前循环,开始下次循环------');
+    label2: for (var i = 0; i < 2; i++) {
+        for (var j = 0; j < 5; j++) {
+            console.log('B');
+            continue label2;
+        }
+    }
+</script>

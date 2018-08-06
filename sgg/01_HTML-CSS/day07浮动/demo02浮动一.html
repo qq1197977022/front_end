@@ -1,0 +1,351 @@
+<!--
+一.浮动float
+    1.none -- 不浮动
+    2.left -- 左浮动
+        1.左浮动现象是左上浮动,因为上方无元素,元素会自动向上
+    3.right -- 右浮动
+        1.现象同上类似
+    4.inherit -- 继承
+二.浮动限停因素
+    1.遇到其他元素
+        1.兄弟元素边框
+        2.父元素边框
+    2.其他浮动元素边框
+    3.内联元素生成框和行内块元素生成框会自动给浮动元素让路
+    4.兼容性问题
+        1.IE6.0相邻兄弟元素,当弟元素浮动,即使兄元素是内联元素,弟元素也会被限停
+        2.解决: 改变兄弟关系(兄变弟,弟变兄)
+三.Note
+    1.简单总结理解何谓浮动?
+        1.使元素脱离文档流,收回元素原来在文档流中占据空间位置使用权
+        2.但该元素依然存在(占用空间),只是变成了流浪汉,停在哪里就在哪里占据空间
+    2.当一行不足以容纳所有浮动元素,浮动元素会自动换行(元素脱离文档流后,其元素生成框的类型均变为行内块)
+    3.浮动元素不会高于它上方的浮动元素,最多齐平
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动一</title>
+
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background-color: #DC143C;
+        }
+        #d2{
+            width: 150px;
+            height: 150px;
+            background-color: #00FF00;
+        }
+        #d3{
+            width: 200px;
+            height: 200px;
+            background-color: #9932CC;
+        }
+        /*======================================================*/
+        #dd1{
+            width: 100px;
+            height: 100px;
+            background-color: #DC143C;
+            float: left;
+        }
+        #dd2{
+            width: 150px;
+            height: 150px;
+            background-color: #00FF00;
+        }
+        #dd3{
+            width: 200px;
+            height: 200px;
+            background-color: #9932CC;
+        }
+        /*======================================================*/
+        #f1{
+            background-color: #B0C4DE;
+        }
+        #d11{
+            width: 100px;
+            height: 100px;
+            background-color: #DC143C;
+            float: right;
+        }
+        #d22{
+            width: 150px;
+            height: 150px;
+            background-color: #00FF00;
+        }
+        #d33{
+            width: 200px;
+            height: 200px;
+            background-color: #9932CC;
+        }
+        /*======================================================*/
+        #d111{
+            width: 100px;
+            height: 100px;
+            background-color: #DC143C;
+            float: right;
+        }
+        #d222{
+            width: 150px;
+            height: 150px;
+            background-color: #00FF00;
+        }
+        #d333{
+            width: 200px;
+            height: 200px;
+            background-color: #9932CC;
+        }
+        /*======================================================*/
+        #d11_1{
+            width: 100px;
+            height: 100px;
+            background-color: #DC143C;
+        }
+        #d22_2{
+            width: 150px;
+            height: 150px;
+            background-color: #00FF00;
+            float: right;
+        }
+        #d33_3{
+            width: 200px;
+            height: 200px;
+            background-color: #9932CC;
+        }
+        /*======================================================*/
+        #d1111{
+            width: 100px;
+            height: 100px;
+            background-color: #DC143C;
+            float: right;
+        }
+        #d2222{
+            width: 150px;
+            height: 150px;
+            background-color: #00FF00;
+            float: right;
+        }
+        #d3333{
+            width: 200px;
+            height: 200px;
+            background-color: #9932CC;
+        }
+/*注意点*/
+        #note1{
+            width: 300px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: right;
+        }
+        #note2{
+            width: 300px;
+            height: 100px;
+            background-color: #00FF00;
+            float: right;
+        }
+        #note3{
+            width: 300px;
+            height: 100px;
+            background-color: #FF00FF;
+            float: right;
+        }
+
+        #note11{
+            width: 300px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+        #note22{
+            width: 300px;
+            height: 100px;
+            background-color: #00FF00;
+            float: left;
+        }
+        #note33{
+            width: 50px;
+            height: 100px;
+            background-color: #FF00FF;
+            float: right;
+        }
+
+        #note11_1{
+            width: 300px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+        #note22_1{
+            width: 300px;
+            height: 100px;
+            background-color: #00FF00;
+            float: left;
+        }
+        #note33_1{
+            width: 50px;
+            height: 100px;
+            background-color: #FF00FF;
+            float: right;
+        }
+    </style>
+    <!--第二次总结-->
+    <style>
+        #new2_1 {
+            width: 100px;
+            height: 100px;
+            background-color: #0F0;
+        }
+        #new2_2 {
+            width: 100px;
+            height: 100px;
+            background-color: #AAA;
+        }
+        #new2_3 {
+            width: 100px;
+            height: 100px;
+            background-color: #F00;
+        }
+
+        #new2_11 {
+            width: 100px;
+            height: 100px;
+            background-color: #0F0;
+            float: right;
+        }
+        #new2_22 {
+            width: 100px;
+            height: 100px;
+            background-color: #AAA;
+        }
+        #new2_33 {
+            width: 100px;
+            height: 100px;
+            background-color: #F00;
+        }
+
+        #new2_111 {
+            width: 100px;
+            height: 100px;
+            background-color: #0F0;
+            float: left;
+        }
+        #new2_222 {
+            width: 100px;
+            height: 100px;
+            background-color: #AAA;
+        }
+        #new2_333 {
+            width: 100px;
+            height: 100px;
+            background-color: #F00;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+
+    <hr>
+    <div id="dd1">浮动</div>
+    <div id="dd2"></div>
+    <div id="dd3"></div>
+
+    <h2>一.浮动限停因素</h2>
+    <hr>
+    <h3>1.遇到父元素边框,停止浮动</h3>
+    <div id="f1">
+        <div id="d11">遇到父元素边框,停止浮动</div>
+        <div id="d22"></div>
+        <div id="d33"></div>
+    </div>
+
+    <hr>
+    <h3>2.遇到其他(兄弟)元素边框,停止浮动</h3>
+    <div id="d111">遇到其他(兄弟)元素边框,停止浮动</div>
+    <div id="d222"></div>
+    <div id="d333"></div>
+
+    <hr>
+    <h3>3.遇到其他(兄弟)元素边框,停止浮动</h3>
+    <div id="d11_1"></div>
+    <div id="d22_2">遇到其他(兄弟)元素边框,停止浮动<br><br>{上面的元素生成框类型是块元素 ~ 前后自带换行,所以上不去}</div>
+    <div id="d33_3"></div>
+
+    <hr>
+    <h3>4.遇到其他浮动元素边框,停止浮动</h3>
+    <div id="d1111"></div>
+    <div id="d2222">遇到其他浮动元素边框,停止浮动</div>
+    <div id="d3333"></div>
+
+
+    <h2>二.注意点</h2>
+    <p style="margin: 0;">1.当一行不足以容纳所有浮动元素,浮动元素会自动换行<span style="color: #F00;">(元素脱离文档流后,其元素生成框的类型均变为行内块)</span></p>
+    <div id="note1"></div>
+    <div id="note2"></div>
+    <div id="note3"></div>
+    <img src="img/0.png" alt="浮动换行图">
+    <img src="img/1.png" alt="浮动换行图">
+
+    <hr>
+    <span>2.浮动元素不会高于它上方的浮动元素,最多齐平</span> <br>
+    <div id="note11">原现象</div>
+    <div id="note22">上</div>
+    <div id="note33">下</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="img/2.gif" alt="图示说明">
+    <br>
+
+    <div id="note11_1">改变元素上下关系后现象</div>
+    <div id="note33_1">下</div>
+    <div id="note22_1">上</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h3 style="font-size: 100px;">第二次总结: 2017年10月14日22:49:41</h3>
+    <div id="new2_1">1</div>
+    <div id="new2_2">2</div>
+    <div id="new2_3">3</div>
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <div id="new2_11">1</div>
+    <div id="new2_22">2</div>
+    <div id="new2_33">3</div>
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <div id="new2_111">1</div>
+    <div id="new2_222">2</div>
+    <div id="new2_333">3</div>
+    <p>第二个元素块的内容2被浮动元素挤下来了<span style="color: #F00;">(参见~Note3)</span></p>
+
+
+    <h3 style="font-size: 100px;">第三次总结: 2017年10月25日22:44:43</h3>
+    <h3>1.元素生成框类型为<span style="font-size: 20px; color: #F00;">内联元素框</span>和<span style="font-size: 20px; color: #F00;">行内块框</span>的标签元素会自动给浮动元素让路</h3>
+    <span style="background-color: #B0C4DE;">内联元素---内联元素</span>
+    <div style="width: 300px; height: 200px; background-color: #34A853;">不浮动---不浮动</div>
+
+    <hr style="width: 1000px; border-color: #F00; margin-left: 0;">
+    <span style="background-color: #B0C4DE;">内联元素---内联元素</span>
+    <div style="width: 300px; height: 200px; background-color: #34A853; float: left;">浮动---浮动</div>
+
+    <hr style="width: 1000px; border-color: #F00; margin-left: 0; clear: left;">
+    <span style="display: inline-block; width: 200px; height: 100px; background-color: #B0C4DE;">行内块素---行内块元素</span>
+    <div style="width: 300px; height: 200px; background-color: #34A853; float: left;">浮动---浮动</div>
+</body>
+</html>

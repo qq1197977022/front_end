@@ -1,0 +1,59 @@
+<!--
+一.问题: IE6中png24无法显示透明
+二.解决办法
+    1.改变图片格式 --- 使用png8
+        2.缺点: 清晰度png8 < png24
+    2.使用JS
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修复IE6png24无法显示透明</title>
+
+    <style>
+/*方式一: 改变图片格式 -- 使用png8*/
+        body{
+            background-color: #019E8B;
+        }
+        #box1{
+            width: 286px;
+            height: 240px;
+            font-size: 35px;
+            color: #FF0000;
+            background-image: url(img/p24.png);
+        }
+        #box2{
+            width: 286px;
+            height: 240px;
+            font-size: 35px;
+            color: #FF0000;
+            background-image: url(img/p8.png);
+        }
+        #box3{
+            width: 286px;
+            height: 240px;
+            font-size: 35px;
+            color: #FF0000;
+            background-image: url(img/p24.png);
+        }
+    </style>
+</head>
+<body>
+    <h1>修复IE6png24无法显示透明</h1>
+    <h3>解决方式一: 改变图片格式 --- 使用png8</h3>
+    <div id="box1">png24</div>
+    <br>
+    <div id="box2">png8</div>
+    <h3>解决方式二: 使用JS</h3>
+    <div id="box3">png24</div>
+    <div id="box4" style="font-size: 35px; color: #FF0000;">
+        png24
+        <img src="img/p24.png" alt="png24格式图片">
+    </div>
+
+    <!--方式二: 使用JS-->
+    <script src="js/DD_belatedPNG_0.0.8a.js"></script>  <!--引入外部JS文件-->
+    <script>DD_belatedPNG.fix("#box3, img");</script>   <!--调用JS函数,参数为CSS选择器-->
+</body>
+</html>

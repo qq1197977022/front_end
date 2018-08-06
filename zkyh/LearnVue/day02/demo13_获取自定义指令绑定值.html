@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取自定义指令绑定值</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo13.js" defer></script>
+    <style>
+        label {
+            display: block;
+            font-size: 2em;
+            margin: 100px 0 0 200px;
+        }
+        input {
+            height: 65px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>通过自定义指令focus实现自动获取焦点</li>
+        <li>通过获取自定义指令color绑定值, 设置颜色</li>
+        <li>Note: 查看控制台输出信息</li>
+    </ol>
+    <div id="app1">
+        <label>test: <input v-focus v-color="{bgColor: '#ffe5e5', color: '#EA4335'}" type="text" value="获取自定义指令传递的参数"></label>
+    </div>
+</body>
+</html>
+
+
+

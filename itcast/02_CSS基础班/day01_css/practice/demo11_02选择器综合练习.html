@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器综合练习</title>
+    <style>
+        /*
+            div.box p.p1, div.box div.div1 p, p
+            div.box: 交集选择器
+            div.box p.p1: 后代选择器
+            div.box p.p1, div.box div.div1 p, p: 群组选择器
+            p: 标签选择器
+         */
+        div.box p.p1, div.box div.div1 p, p {
+            font-size: 35px;
+            color: #FF00FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>段落</p>
+        <span>span文档节~~~>打酱油,辅助对比</span>
+        <p class="p1">段落</p>
+        <div class="div1">
+            div文档节~~~>打酱油,辅助对比
+            <p>段落</p>
+        </div>
+        <div>div文档节~~~>打酱油,辅助对比</div>
+    </div>
+    <p>段落</p>
+</body>
+</html>

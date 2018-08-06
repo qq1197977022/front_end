@@ -1,0 +1,152 @@
+<!--
+一.display: 规定元素生成框的类型
+    1.none - 不为元素生成任何类型的框
+        1.元素无框不占据页面空间,不可见
+二.visibility: 规定元素的可见性
+    1.hidden - 隐藏元素
+        1.元素不可见,但是占据页面空间
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display和visibility</title>
+
+    <style>
+        .bgc{
+            background-color: #B0C4DE;
+        }
+
+        #a1{
+            display: block;
+            height: 100px;
+            background-color: #ff6781;
+        }
+        #a11{
+            display: inline-block;
+            height: 100px;
+            background-color: #ff6781;
+        }
+
+        #p1{
+            display: inline-block;
+            height: 100px;
+            background-color: #00FF00;
+        }
+        #p11{
+            display: inline;
+            background-color: #00FF00;
+        }
+
+        #d1{
+            display: inline-block;
+            height: 100px;
+            background-color: #FFFF00;
+        }
+        #d11{
+            display: inline;
+            background-color: #FFFF00;
+        }
+/*=================================================================================================================================*/
+        #dv{
+            width: 250px;
+            height: 100px;
+            background-color: #FF00FF;
+        }
+        #dv1{
+            width: 250px;
+            height: 100px;
+            background-color: #FF00FF;
+            display: none;
+        }
+        #dv2{
+            width: 250px;
+            height: 100px;
+            background-color: #FF00FF;
+            visibility: hidden;
+        }
+    </style>
+    <!--行内块元素-->
+    <style>
+        /*行内块元素生成框的类型转为内联元素生成框的类型*/
+        #img1 {
+            display: inline;
+            width: 300px;
+            margin: 0 auto;
+        }
+        /*行内块元素生成框的类型转为块元素生成框的类型*/
+        #img2 {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>1.display</h1>
+    <hr>
+
+    <h3>1.1:内联元素和块元素</h3>
+    <a href="#" class="bgc">- a标签 - 默认生成的框的类型为inline</a>
+    <p class="bgc">- p标签 - 默认生成框的类型为block</p>
+    <div class="bgc">- div标签 - 默认生成框的类型为block</div>
+
+    <hr>
+    <a id="a1" href="#">改变 - a标签 - 生成的框的类型为block</a>
+    <a id="a11" href="#">改变 - a标签 - 生成的框的类型为inline-block</a>
+
+    <p id="p1">改变 - p标签 - 生成的框的类型为inline-block</p>
+    <p id="p11">改变 - p标签 - 生成的框的类型为inline</p>
+
+    <div id="d1">改变 - div标签 - 生成框的类型为inline-block</div>
+    <div id="d11">改变 - div标签 - 生成框的类型为inline</div>
+
+    <hr>
+    <h3>1.2:行内块元素(<span style="font-size: 14px; color: #F00;">--奇葩--</span>)</h3>
+    <p>~img~行内块元素</p>
+    <img src="img/little.png" alt="lol图片">
+    <span>~span~标签~辅助对比</span>
+    <p>~p标签~辅助对比</p>
+
+    <hr style="width: 800px; margin-left: 0; border-color: #9932CC;">
+    <dl>
+        <dt>1.改变~img~标签生成框的类型为inline</dt>
+        <dd style="color: #F00;">1.仍然具备行内块元素性质(or 仍然是行内块~可以设置尺寸属性)</dd>
+    </dl>
+    <img id="img1" src="img/little.png" alt="lol图片">
+    <span>span标签~辅助对比</span>
+    <p>p标签~辅助对比</p>
+
+    <hr style="width: 800px; margin-left: 0; border-color: #9932CC;">
+    <dl>
+        <dt>2.改变~img~标签生成框的类型为block</dt>
+        <dd style="color: #F00;">1.元素生成框的类型变为块元素(~仍然具备行内块元素的性质~宽高有内容撑开~<strong>仅仅是在行内块元素性质基础上多了块元素特有性质~~~>前后自带换行符</strong>)</dd>
+    </dl>
+    <img id="img2" src="img/little.png" alt="lol图片">
+    <span>span标签~辅助对比</span>
+    <p>p标签~辅助对比</p>
+
+    <hr style="width: 800px; margin-left: 0; border-color: #9932CC;">
+    <h1>2.display和visibility的不可见性区别</h1>
+
+    <hr>
+    <div id="dv">display和visibility的不可见性区别</div>
+    <hr>
+
+    <hr>
+    <div id="dv1">display和visibility的不可见性区别</div>
+    <p>
+        display: none <br>
+        display规定生成框的类型,none表示不为当前元素生成任何类型的框
+    </p>
+    <hr>
+
+    <hr>
+    <div id="dv2">display和visibility的不可见性区别</div>
+    <p>
+        visibility: hidden <br>
+        visibility规定元素的可见性(指的是元素的内容的可见性),hidden表示隐藏元素内容,但是生成的框依然存在
+    </p>
+    <hr>
+
+</body>
+</html>

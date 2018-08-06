@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件案例</title>
+    <style>
+        #userName {
+            border: 1px dashed;
+            background-color: #C0BFE8;
+        }
+        #userName:focus {
+            background-color: #F00;
+        }
+
+        #email {
+            border-style: none;
+            border-bottom: 1px dashed #F00;
+        }
+        #email:focus {
+            outline-style: none;
+        }
+
+        #search {
+            border: 1px solid;
+            background: url("img/search.jpg") right no-repeat;
+            background-size: 13px 13px;
+        }
+        #search:focus {
+            outline-style: none;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#">
+        <label for="userName">用户名:</label>
+        <input id="userName" type="text">
+
+        <br><br>
+        <label for="email">邮箱:</label>
+        <input id="email" type="email">
+
+        <br><br>
+        <label for="search">搜索</label>
+        <input id="search" type="search">
+    </form>
+</body>
+</html>

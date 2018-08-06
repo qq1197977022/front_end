@@ -1,0 +1,48 @@
+#main {
+    width: 150px;
+    /*border: 1px solid #8a8a8a;*/
+    margin: 0 auto;
+}
+ul {
+    height: 26px;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #EEE;
+    overflow-y: hidden;
+}
+li {
+    height: 25px;
+    border-bottom: 1px solid #DDD;
+    color: #FFF;
+    font-size: 14px;
+}
+li>a {
+    display: block;
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 25px;
+    color: #483D8B;
+}
+li>a:hover {
+    background: #414141 right center url("../img/linkarrow.gif") no-repeat;
+    color: #99ff99;
+}
+#topTitle {
+    background: left center url('../img/toptitle.gif') no-repeat;
+}
+/*#bottom {
+    background: center url("../img/bottom.gif") no-repeat;
+}*/
+.title:not(#topTitle) {
+    background: left center url("../img/title.gif");
+}
+.title>span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: left center url("../img/collapsed.gif") no-repeat;
+    margin: 0 10px;
+    line-height: 25px;  /*垂直居中*/
+}

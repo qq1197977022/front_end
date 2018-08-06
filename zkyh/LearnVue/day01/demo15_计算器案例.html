@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器案例</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo15.js" defer></script>
+    <style>
+        button, input, select {
+            font-size: 2em;
+        }
+        input {
+            width: 150px;
+        }
+        select {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calc">
+        <input type="number" placeholder="参数1" v-model="num1"> <br>
+        <input type="number" placeholder="参数2" v-model="num2"> <br>
+        <input type="number" disabled placeholder="结果" v-model="rest"> <br>
+        <label for="operator">运算符</label>
+        <select id="operator" v-model="operator">
+            <option value="+"> + </option>
+            <option value="-"> - </option>
+            <option value="*"> * </option>
+            <option value="/"> / </option>
+        </select> <br>
+        <button @click="calc">运算</button> <br>
+    </div>
+</body>
+</html>

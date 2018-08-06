@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on指令</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo10.js" defer></script>
+    <style>
+        h3 {
+            font-size: 2em;
+            color: #019E8B;
+        }
+        div {
+            width: 500px;
+            background-color: #d9e0ee;
+            border: 1px solid #019E8B;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>v-on指令: 绑定事件监听</h3>
+    <div>
+        <button id="app1" v-on:click="fun">v-on指令绑定事件监听: 不传参</button>
+        <button id="app2" v-on:mouseover="fun('参数')">v-on指令绑定事件监听: 传参</button>
+        <button id="app3" @dblclick="fun">v-on指令缩写</button>
+    </div>
+</body>
+</html>

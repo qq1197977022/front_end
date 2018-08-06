@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信复杂滑动门</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        div {
+            background: url("img/bg.jpg") repeat-x;
+        }
+        div>div {
+            width: 596px;
+            margin: 0 auto;
+            padding: 21px 0;
+        }
+        a, span {
+            float: left;
+            height: 33px;
+        }
+        a {
+            background: url("img/sprite.png") 0 -144px no-repeat;
+            padding-left: 20px;
+            margin: 0 34px;
+        }
+        span {
+            background: url("img/sprite.png") right -144px no-repeat;
+            padding-right: 20px;
+            color: #FFF;
+            line-height: 33px;
+        }
+        a:hover {
+            background: url("img/sprite.png") 0 -192px;
+        }
+        span:hover {
+            background: url("img/sprite.png") right -192px;
+        }
+        div>div:after {
+            content: "";
+            display: block;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <a href="#"><span>首页</span></a>
+            <a href="#"><span>下载吧</span></a>
+            <a href="#"><span>公共平台公共平台公共平台</span></a>
+        </div>
+    </div>
+</body>
+</html>

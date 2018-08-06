@@ -1,0 +1,128 @@
+<!--
+一.伪元素和伪类
+    1.作用: 为选择器添加特殊效果 --- 查API
+    2.伪类: https://www.w3cschool.cn/css/css-pseudo-classes.html  |   https://www.w3cschool.cn/css3/css3-selector.html
+    3.伪元素: https://www.w3cschool.cn/css/css-pseudo-elements.html
+二.伪类选择器
+    1.动态伪类选择器
+        1.链接伪类选择器
+            1.E:link
+            2.E:visited
+         2.用户行为选择器
+            1.E:active
+            2.E:hover
+            3.E:focus
+
+    2.目标伪类选择器
+    3.语言伪类选择器
+    4.UI元素状态伪类选择器
+    5.结构伪类选择器
+    6.否定伪类选择器
+
+三.伪元素选择器
+    1.E:first-line ~ 仅用于块元素,选中文本首行
+    2.E:first-letter ~ 仅用于块元素,选中文本首字母(字符)
+    3.E:before ~ 选中元素内容前
+    4.E:after ~ 选中元素内容后
+
+四.CSS3新增选择器
+    1.::selection
+        1.::selection --- 适用于大多数浏览器
+        2.::-moz-selection --- 适用于火狐浏览器
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="动态伪类选择器">
+        <meta name="description" content="伪类选择器之动态伪类选择器学习">
+        <meta name="author" content="狂草(kc.com)">
+        <title>伪类选择器之动态伪类选择器</title>
+
+        <style>
+            /*动态伪类选择器---之---链接伪类选择器*/
+            a:link{
+                color: #98FB98;
+                font-size: 30px;
+            }
+            /*动态伪类选择器---之---链接伪类选择器*/
+            a:visited{
+                color: #800000;
+                /*
+                1.浏览器通过历史记录判断链接是否访问过
+                    1.当多个超链接地址一样时,点击任意一个可以发现其他均处于已访问过状态
+                    2.修改链接地址并刷新后可以发现又变为未访问状态
+                2.出于对隐私保护,visited伪类只能设置color(文本颜色)这一个属性
+                */
+            }
+            /*动态伪类选择器---之---用户行为选择器*/
+            a:hover{
+                color: #FFFF00;
+                font-size: 50px;
+            }
+            /*动态伪类选择器---之---用户行为选择器*/
+            a:active{
+                color: #FF00FF;
+                font-size: 10px;
+            }
+
+            p{
+                font-size: 25px;
+            }
+            /*动态伪类选择器---之---用户行为选择器*/
+            p:hover{
+                background-color: #9932CC;
+            }
+            /*动态伪类选择器---之---用户行为选择器*/
+            p:active{
+                font-size: 50px;
+                color: #AFEEEE;
+                background-color: #000000;
+            }
+
+            /*动态伪类选择器---之---用户行为选择器*/
+            button:focus{
+                height: 100px;
+                width: 100px;
+                color: #FF0000;
+                font-size: 35px;
+            }
+            /*动态伪类选择器---之---用户行为选择器*/
+            input:focus{
+                height: 100px;
+                width: 100px;
+                background-color: #B0C4DE;
+            }
+
+            /*选择伪类选择器*/
+            h3::selection{
+                /*兼容大多数浏览器*/
+                color: red;
+                background-color: #90EE90;
+            }
+            h3::-moz-selection{
+                /*兼容火狐浏览器*/
+                color: red;
+                background-color: #90EE90;
+            }
+        </style>
+    </head>
+    <body>
+    <a href="#">动态伪类选择器---之---链接伪类选择器</a> <br>
+    <a href="#">动态伪类选择器---之---链接伪类选择器</a>
+
+    <hr>
+    <p>
+        动态伪类选择器之用户行为选择器<br>
+        动态伪类选择器之用户行为选择器<br>
+    </p>
+
+    <hr>
+    <span>点击获取焦点</span> <br>
+    <button type="button">按钮</button> <br>
+    <input type="text" title="文本框"> <br>
+
+    <hr>
+    <h3>选中选择器 --- CSS3新增选择器(暂不做分组...有待学习..)</h3>
+    </body>
+</html>

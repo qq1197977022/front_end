@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let a =3;
+    let b = 4;
+    if (a.prototype === b.prototype) {
+        alert(3);
+    }
+
+    function Fun1() {
+
+    }
+    function Fun2() {
+
+    }
+
+    let f = new Fun1();
+    // console.log(Fun1.prototype, Fun2.prototype);
+    // console.log(f.prototype, Fun1.prototype);
+    // console.log(f.__proto__, Fun1.prototype);
+    console.log(Fun1.prototype, Fun2.prototype);
+    console.log(Fun1.prototype.toString(), Fun1.prototype.toString());
+    console.log(Fun1.prototype === Fun1.prototype);
+
+    console.log(f.__proto__, f.prototype);
+    console.log(f.__proto__ === Fun1.prototype);
+
+</script>
+<!--
+疑问:
+    1.为什么构造函数的prototype和实例对象的prototype不相等而和其__proto__相等, 实例对象的prototype为undefined?
+-->

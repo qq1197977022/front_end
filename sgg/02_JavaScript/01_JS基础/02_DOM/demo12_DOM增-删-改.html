@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM增-删-改</title>
+    <style>
+        #main {
+            width: 700px;
+            background-color: #AFEEEE;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #left {
+            float: left;
+        }
+        #right {
+            float: right;
+            background-color: #e4d9ce;
+        }
+        #main:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        button {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid #222429;
+            font-size: 1.5em;
+            background-color: #FFFF00;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <!--左侧-->
+    <div id="left">
+        <p>
+            你喜欢哪个城市?
+        </p>
+        <ul id="city">
+            <li id="bj">北京</li>
+            <li>上海</li>
+            <li>东京</li>
+            <li id="se">首尔</li>
+        </ul>
+    </div>
+    <!--右侧-->
+    <div id="right">
+        <button id="btn01">创建一个广州节点, 添加到#city下</button>
+        <button id="btn02">将广州节点插入到#bj前面</button>
+        <button id="btn03">使用广州节点替换#bj节点</button>
+        <button id="btn04">删除#bj节点</button>
+        <button id="btn05">读取#city内的HTML代码</button>
+        <button id="btn06">读取#city内的文本内容</button>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    //创建广州节点, 添加到#city下
+    let btn01 = document.getElementById('btn01');
+    btn01.onclick = function () {
+        let gzEleNode = document.createElement('li');   //元素节点对象
+
+        /*let gzTxtNode = document.createTextNode('广州');  //文本节点对象
+        gzEleNode.append(gzTxtNode);    //ParentNode接口方法, 追加*/
+        gzEleNode.innerText = '广州';     //更简洁
+
+        let city = document.getElementById('city');
+
+        let se = document.getElementById('se');
+
+        /*方式一
+        city.appendChild(gzEleNode);*/
+
+        /*方式二
+        city.append(gzEleNode);*/
+
+        /*方式三
+        *
+        * city.insertAdjacentElement("beforeend", gzEleNode);
+        *
+        * beforebegin
+        * beforeend
+        * afterbegin
+        * afterend
+        * */
+
+        /*方式四
+        *
+        * city.innerHTML += '<li>广州</li>';  //效率低下
+        * */
+
+        /*方式五
+        *
+        * bj.parentNode.innerHTML += '<li>广州</li>';  //效率低下
+        * */
+
+        /*方式六
+        *
+        * bj.parentElement.innerHTML += '<li>广州</li>';  //效率低下
+        * */
+
+        //方式七
+        se.after(gzEleNode);  //ChildNode接口方法
+
+
+    };
+
+    //将广州节点添加到#bj前面
+    let btn02 = document.getElementById('btn02');
+    btn02.onclick = function () {
+        let gzEleNode = document.createElement('li');
+        /*let gzTxtNode = document.createTextNode('广州');
+        gzEleNode.appendChild(gzTxtNode);*/
+        gzEleNode.innerText = '广州';
+
+        // let city = document.getElementById('city');
+
+        let bj = document.getElementById('bj');
+        /*方式一
+        city.insertBefore(gzEleNode, bj);*/
+
+        /*方式二
+        *
+        *bj.parentNode.insertBefore(gzEleNode, bj);
+        * */
+
+        /*方式三
+        *
+        *bj.parentElement.insertBefore(gzEleNode, bj);
+        * */
+
+        /*方式四
+        *
+        * city.prepend(gzEleNode);    //ParentNode接口方法, 从前追加
+        * */
+
+        /*方式五
+            *
+            * bj.parentNode.prepend(gzEleNode);    //ParentNode接口方法, 从前追加
+            * */
+
+        /*方式六
+            *
+            * bj.parentElement.prepend(gzEleNode);    //ParentNode接口方法, 从前追加
+            * */
+
+        /*方式七
+        *
+        * city.insertAdjacentElement("afterbegin", gzEleNode);
+        * */
+
+        /*方式八
+        *
+        * bj.parentNode.insertAdjacentElement("afterbegin", gzEleNode);
+        * */
+
+        /*方式九
+        *
+        * bj.parentElement.insertAdjacentElement("afterbegin", gzEleNode);
+        * */
+
+        //方式四
+        bj.before(gzEleNode);     //ChildNode接口方法
+
+    };
+
+    //使用广州节点替换#bj节点
+    let btn03 = document.getElementById('btn03');
+    btn03.onclick = function () {
+        let gzEleNode = document.createElement('li');
+        /* let gzTxtNode = document.createTextNode('广州');
+         gzEleNode.append(gzTxtNode);*/
+        gzEleNode.innerText = '广州';
+
+        let bj = document.getElementById('bj');
+        // let city = document.getElementById('city');
+        if (bj !== null) {
+            /*方式一
+            *
+            * city.replaceChild(gzEleNode, bj);
+            * */
+
+            /*方式二
+            *
+            * bj.parentNode.replaceChild(gzEleNode, bj);
+            * */
+
+            /*方式三
+            *
+            * bj.parentElement.replaceChild(gzEleNode, bj);
+            * */
+
+            //方式四
+            bj.replaceWith(gzEleNode);  //ChildNode接口方法
+        } else {
+            alert('替换已完成');
+        }
+
+    };
+
+    //删除#bj节点
+    let btn04 = document.getElementById('btn04');
+    btn04.onclick = function () {
+        // let city = document.getElementById('city');
+
+        let bj = document.getElementById('bj');
+
+        if (bj !== null) {
+            /*方式一
+            *
+            * city.removeChild(bj);
+            * */
+
+            /*方式二
+            *
+            * bj.parentNode.removeChild(bj);
+            * */
+
+            /*方式三
+            *
+            * bj.parentElement.removeChild(bj);
+            * */
+
+            //方式四
+            bj.remove();    //ChildNode接口方法
+        } else {
+            alert('删除已完成');
+        }
+    };
+
+    //读取#city内的HTML代码
+    let btn05 = document.getElementById('btn05');
+    btn05.onclick = function () {
+        let city = document.getElementById('city');
+        let content = city.innerHTML;
+        alert(content);
+    };
+
+    //读取#city内的文本内容
+    let btn06 = document.getElementById('btn06');
+    btn06.onclick = function () {
+        let city = document.getElementById('city');
+        let content = city.innerText;
+        alert(content);
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

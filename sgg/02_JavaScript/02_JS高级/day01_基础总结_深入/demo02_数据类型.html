@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    console.log(typeof 'abc');  //string
+    console.log(typeof 666);    //number
+    console.log(typeof true);   //boolean
+    console.log(typeof null);   //object
+    console.log(typeof undefined);  //undefined
+
+    let obj = {name:'张三', age:18};
+    console.log(typeof obj);    //object
+    let arr = [1, 2, 'a', 'hello'];
+    console.log(typeof arr);    //object
+    console.log(typeof console.log);    //function
+
+
+    console.log(obj instanceof Object); //true
+    console.log(console.log instanceof Function);   //true
+    console.log(arr instanceof Array);  //true
+
+    console.log(null === null); //true
+    console.log(undefined === undefined);   //true
+</script>
+<!--
+一.数据类型
+    1.6种primitive(原始值/类型) ~ 非对象, 没有方法
+    2.Object ~ 包含数据和处理数据的方法的数据结构
+        1.在MDN单击, 查看Learn more ~ 各种对象类型
+二.类型判断
+    1.typeof
+      1.可判断
+        1.String
+        2.Number
+        3.Boolean
+        4.Undefined
+        5.Function
+      2.不能判断
+        1.Null 与 Object
+        2.Array 与 Object
+    2.instanceof
+        1.对象具体类型
+    3.===
+        1.Undefined
+        2.Null
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

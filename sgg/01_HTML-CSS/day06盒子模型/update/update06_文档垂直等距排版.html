@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin合并</title>
+    <style>
+        #main {
+            width: 500px;
+            background-color: #ffe5e5;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+        .box {
+            margin: 30px 20px;
+            /*
+                1.垂直外边距取最大值合并, 可以方便实现垂直方向等距排版
+                2.可见该特性是W3C有意为之, 而不是bug
+            */
+            background-color: #00bfff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="box">垂直外边距取最大值合并</div>
+        <div class="box">垂直外边距取最大值合并</div>
+        <div class="box">垂直外边距取最大值合并</div>
+        <div class="box">垂直外边距取最大值合并</div>
+        <div class="box">垂直外边距取最大值合并</div>
+        <div class="box">垂直外边距取最大值合并</div>
+    </div>
+</body>
+</html>

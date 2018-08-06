@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米定位案例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #banner {
+            width: 1226px;
+            height: 460px;
+            background-color: #AABBCC;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        #banner>#product_list, #banner>#left, #banner>#right {
+            position: absolute;
+        }
+        #banner>#product_list {
+            left: 0;
+            top: 2px;
+        }
+        #banner>#left, #banner>#right{
+            top: 195px;
+        }
+        #banner>#left {
+            left: 254px;
+        }
+        #banner>#right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <img src="img/banner.jpg" alt="banner图1">
+        <img id="product_list" src="img/product_list.png" alt="产品列表图">
+        <img id="left" src="img/left.png" alt="左方向标识图">
+        <img id="right" src="img/right.png" alt="右方向标识图">
+    </div>
+</body>
+</html>

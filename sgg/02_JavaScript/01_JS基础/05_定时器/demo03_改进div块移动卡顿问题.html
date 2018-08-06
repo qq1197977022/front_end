@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改进div块移动卡顿问题</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #66CDAA;
+            border: 2px solid #EA4335;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<!--
+1.问题: 之前移动div块的例子, 存在首次移动卡顿问题
+2.原因
+    1.与系统设置有关, 避免误操作
+    2.
+3.改进: 使用间歇定时器
+-->
+<script>
+    let div = document.querySelector('div');
+    let offsetLeft = div.offsetLeft;    //当前元素左边框距其偏移父元素左边框距离
+    let offsetTop = div.offsetTop;
+    let speed;
+    let interID;
+    let preKeyCode;
+    document.onkeydown = function (e) {
+        if (e.altKey) { //变速
+            speed = 50;
+        } else {
+            speed = 10;
+        }
+
+        function move() {
+            switch (e.keyCode) {
+                //左右
+                case 37:
+                    offsetLeft -= speed;
+                    div.style.marginLeft = `${offsetLeft}px`;
+                    break;
+                case 39:
+                    offsetLeft += speed;
+                    div.style.marginLeft = `${offsetLeft}px`;
+                    break;
+                //上下
+                case 38:
+                    offsetTop -= speed;
+                    div.style.marginTop = `${offsetTop}px`;
+                    break;
+                case 40:
+                    offsetTop += speed;
+                    div.style.marginTop = `${offsetTop}px`;
+                    break;
+            }
+        }
+
+        /*window.clearInterval(interID);  //取消间歇定时器: 当按键按下不放时, 会一直触发onkeydown事件, 创建多个间歇定时器
+        console.log(interID);   //检测间歇定时器数量
+        interID = window.setInterval(move, 30);*/
+
+
+        //继续改进: 避免长按时不断创建和取消间歇定时器
+        console.log(interID);   //检测间歇定时器数量
+        if (e.keyCode === preKeyCode) {
+            return;
+        }
+        interID = window.setInterval(move, 30);
+        preKeyCode = e.keyCode;
+    };
+    document.onkeyup = function () {
+        window.clearInterval(interID);  //取消最后一个间歇定时器
+        preKeyCode = undefined;
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS位置</title>
+    <style>
+        a, button {
+            font-size: 25px;
+        }
+        p>span {
+            color: #F00;
+            font-size: 20px;
+        }
+    </style>
+
+
+    <!--内部 ~ 内部脚本-->
+    <script>
+        window.alert('内部脚本');
+        function outF1() {
+            alert('内部脚本');
+        }
+    </script>
+
+    <!--外部 ~ 外部脚本-->
+    <script src="js/demo03.js"></script>                <!--默认: 优先执行,后解析-->
+    <!--<script src="purJS/demo03.purJS" async></script>-->   <!--异步: 边执行,边解析-->
+    <!--<script src="purJS/demo03.purJS" defer></script>-->   <!--延迟: 先执行,后解析-->
+</head>
+<body>
+    <h1>一.内部</h1>
+
+<!--  -----------------------------内部 ~ 内联脚本----------------------------- -->
+    <h3>1.内联脚本</h3>
+    <dl>
+        <dt>特点:</dt>
+            <dd>1.耦合性强</dd>
+    </dl>
+
+    <button onclick="alert('内联脚本')">内联脚本 ~ 内联方式一</button>
+    <br>
+
+    <a href="javascript:alert('内联脚本')">内联脚本 ~ 内联方式二</a>
+    <p>
+        <span>应用:</span>给超链接添加跳转条件
+    </p>
+    <br>
+
+    <a href="javascript:">内联脚本 ~ 内联方式二</a>
+    <p>
+        <span>应用:</span>阻断超链接跳转
+    </p>
+
+<!--  -----------------------------内部 ~ 内部脚本----------------------------- -->
+    <hr>
+    <h3>2.内部脚本</h3>
+    <dl>
+        <dt>1.执行顺序相关因素</dt>
+        <dd>1.JS引擎解释顺序</dd>
+        <dd>2.代码写位置</dd>
+        <dd>3.Note: 在firefox中效果明显</dd>
+    </dl>
+
+    <button onclick="outF1()">内部脚本</button>
+
+    <hr>
+    <h1>二.外部</h1>
+    <h3>1.外部脚本</h3>
+    <dl>
+        <dt>1.执行顺序相关因素</dt>
+        <dd>1.默认优先 ~ 先执行,后解析</dd>
+        <dd>2.defer: 延迟 ~ 先解析,后执行</dd>
+        <dd>3.async: 异步执行 ~ 边解析边执行</dd>
+        <dt>2.Note:</dt>
+        <dd>1.script标签内不能有内部脚本代码</dd>
+    </dl>
+</body>
+</html>
+<!--
+一.JS位置
+    1.内部
+        1.内联脚本
+        2.内部脚本
+    2.外部
+        1.外部脚本
+-->

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他样式相关属性</title>
+    <style>
+        div {
+            width: 300px;
+            background-color: #66CDAA;
+            margin: 0 auto;
+            text-align: center;
+        }
+        p {
+            width: 200px;
+            height: 600px;
+            background-color: #F0F0AF;
+            overflow: auto;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>小案例</h3>
+        <p>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+            注册协议 <br>
+        </p>
+        <form action="#">
+            <input id="agree" type="checkbox" disabled><label for="agree">已阅读, 并同意</label>
+            <button disabled>注册</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    let p = document.querySelector('p');
+    let agree = document.getElementById('agree');
+    let regBtn = document.querySelector('button');
+    p.onscroll = function () {
+        let innerHeight = p.clientHeight;    //内部高度
+        let scroVieHeight = p.scrollHeight; //滚动视图高度
+        let scroOffset = p.scrollTop;   //滚动偏移
+        if (scroOffset + innerHeight === scroVieHeight) {
+            agree.disabled = false;
+            regBtn.disabled = false;
+        } else {
+            agree.disabled = true;
+            agree.checked = false;
+            regBtn.disabled = true;
+        }
+    };
+</script>
+<!--
+
+一言蔽之: 访问盒子模型相关属性
+
+clientHeight
+
+
+scrollHeight
+scrollLeft
+scrollLeftMax
+
+
+offsetLeft
+offsetParent
+
+
+etc...查文档
+-->

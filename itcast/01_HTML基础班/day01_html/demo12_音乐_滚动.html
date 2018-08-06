@@ -1,0 +1,37 @@
+<!--
+1.audio: 音频流标签
+2.video: 视频流标签
+3.source: 定义media元素资源
+4.marquee: 微软制定的滚动标签
+    1.与结构, 表现, 行为分离原则不符 - - -> 弃用
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐和滚动</title>
+</head>
+<body>
+    <p>1.音频流标签</p>
+    <!--audio: 音频流标签-->
+    <audio src="practice/music/horse.mp3" controls autoplay loop>您的浏览器不支持audio标签</audio>
+    <br>
+    <audio controls>
+        <!--source: 定义media元素资源-->
+        <source src="practice/music/horse.mp3">
+        <source src="practice/music/horse.ogg">
+    </audio>
+
+    <hr>
+
+    <p>2.视频流标签</p>
+    <!--video: 视频流标签-->
+    <video src="practice/movie/movie.mp4" controls autoplay loop>您的浏览器不支持video标签</video>
+    <br>
+    <video controls>
+        <!--source: 定义media元素资源-->
+        <source src="practice/movie/movie.mp4">
+        <source src="practice/movie/movie.ogg">
+    </video>
+</body>
+</html>

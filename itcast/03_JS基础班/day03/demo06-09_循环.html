@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+1.while
+2.do...while
+3.for
+    1.for (可选; 可选; 可选) {}
+4.for/in ~ 遍历对象属性
+-->
+<script>
+    console.log('-------------第一/二题-------------');
+    //第一题
+    var i = 1;
+    var sum = 0;
+    while (i <= 100) {
+        if (i % 3 === 0) {
+            console.log(i);    //第一题
+        }
+        sum += i;
+        i++;
+    }
+    console.log(sum);   //第二题
+
+    console.log('-------------第三题-------------');
+    //第三题
+    while (true) {
+        var userName = prompt('账号: ');
+        var pass = prompt('密码: ');
+        if (userName === 'admin' && pass === '888') {
+            alert('登录成功!');
+            break;
+        } else {
+            alert('账号或密码错误');
+        }
+    }
+
+    console.log('-------------第四题-------------');
+    //第四题
+    var j = 1;
+    while (j <= 50) {
+        if (j % 2 !== 0) {
+            console.log(j);
+        }
+        j++;
+    }
+
+    //for循环
+    for (;;) {
+        var sc = prompt('stop?');
+        if (sc === 'stop') {
+            break;
+        }
+    }
+
+    //for/in
+    var person = {'name': '张三', 'age': 18}
+    for (var p in person) {
+        console.log(p);
+    }
+</script>

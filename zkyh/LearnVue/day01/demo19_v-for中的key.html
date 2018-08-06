@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for中的key</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo19.js" defer></script>
+    <style>
+        #app1 {
+            width: 600px;
+            border: 1px solid #EA4335;
+            margin: 300px auto 0;
+        }
+        table {
+            border-spacing: 50px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <div>
+            <label>Name: <input type="text" v-model="name"></label>
+            <label>Age: <input type="text" v-model="age"></label>
+            <button  @click="add">Add</button>
+
+            <hr>
+            <button @click="remove">Remove</button>
+            <button @click="reverse">Reverse</button>
+            <button @click="shift">Shift</button>
+
+            <hr>
+            <label>Name: <input type="text" v-model="name"></label>
+            <label>Age: <input type="text" v-model="age"></label>
+            <button @click="unshift">UnShift</button>
+        </div>
+        <table>
+            <tr v-for="person in persons" :key="person.name">
+                <td><input type="checkbox" title="&#8730;表示选中"></td>
+                <td>{{person.name}}</td>
+                <td v-text="person.age"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

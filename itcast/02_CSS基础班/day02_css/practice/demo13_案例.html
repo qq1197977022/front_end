@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景案例</title>
+    <style>
+        input {
+            height: 30px;
+            background: url("img/search.jpg") no-repeat right;
+        }
+    </style>
+    <style>
+        /*列表样式实现*/
+        li {
+            list-style-image: url("img/video.gif")
+        }
+        /*背景样式实现*/
+        div>a {
+            padding: 23px;
+            background: url("img/video.gif") no-repeat left;
+        }
+    </style>
+</head>
+<body>
+    <h2>1.案例一</h2>
+    <form action="#">
+        <input type="search" title="搜索">
+    </form>
+
+    <hr>
+    <h2>2.案例二</h2>
+    <h5>1.列表样式实现</h5>
+    <ul id="lst">
+        <li><a href="#">列表样式实现</a></li>
+        <li><a href="#">列表样式实现</a></li>
+        <li><a href="#">列表样式实现</a></li>
+    </ul>
+
+    <h5>2.背景样式实现</h5>
+    <div>
+        <a href="#">背景样式实现</a> <br>
+        <a href="#">背景样式实现</a> <br>
+        <a href="#">背景样式实现</a> <br>
+    </div>
+</body>
+</html>

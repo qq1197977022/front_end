@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习</title>
+    <style>
+        table {
+            width: 350px;
+            height: 450px;
+            background-color: #FFE4C4;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        #s {
+            text-align: center;
+        }
+    </style>
+    <style>
+        .star {
+            color: #FF0000;
+        }
+
+        fieldset {
+            border: 2px solid #7B68EE;
+        }
+
+        legend {
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <p>1.练习一</p>
+    <form action="#">
+        <table border="1">
+            <tr>
+                <th colspan="2">京东会员</th>
+            </tr>
+            <tr>
+                <td>用户名:</td>
+                <td><input type="text" placeholder="请输入用户名" maxlength="6" title="用户名"> <span>最多6个字符</span></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input type="password" placeholder="请输入密码" title="密码"></td>
+            </tr>
+            <tr>
+                <td>验证码:</td>
+                <td>
+                    <input type="text" title="验证码">
+                    <br>
+                    <img src="practice/img/yzm.jpg" alt="验证码图片无法显示">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="s">
+                    <input type="submit" value="登录" title="登录"> |
+                    <input type="submit" value="注册" formaction="http://www.baidu.com">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr>
+    <p>2.练习二</p>
+    <form action="#">
+        <fieldset>
+            <legend>账户信息</legend>
+            <label for="userName"><span class="star">&#8727;</span>用户名:</label>
+            <input id="userName" type="text" required>
+            <br>
+
+            <label for="password"><span class="star">&#8727;</span>密码:</label>
+            <input id="password" type="password" title="密码">
+            <br>
+
+            <label for="man">男</label>
+            <input id="man" type="radio" name="gender" checked title="男">
+
+            <label for="woman">女</label>
+            <input id="woman" type="radio" name="gender" title="女">
+        </fieldset>
+        <fieldset>
+            <legend>公司信息</legend>
+            <span>公司名称:</span>
+            <input type="text" title="公司名称">
+            <br>
+
+            <span>公司地址: 省</span>
+            <select name="province" title="省">
+                <option value="">--请选择--</option>
+                <option value="gds">广东省</option>
+                <option value="hns">河南省</option>
+                <option value="sds">山东省</option>
+            </select>
+            <span>市:</span>
+            <select name="city" title="市">
+                <option value="">--请选择--</option>
+                <option value="gzs">广州市</option>
+                <option value="zzs">郑州市</option>
+                <option value="qds">青岛市</option>
+            </select>
+            <span>区:</span>
+            <select name="area" title="区">
+                <option value="">--请选择--</option>
+                <optgroup label="广州市">
+                    <option value="slz">狮岭镇</option>
+                    <option value="qlz">期临镇</option>
+                </optgroup>
+                <optgroup label="郑州市">
+                    <option value="eqq">二七区</option>
+                    <option value="jsq">金水区</option>
+                </optgroup>
+                <optgroup label="青岛市">
+                    <option value="eqq">二七区</option>
+                    <option value="jsq">金水区</option>
+                </optgroup>
+            </select>
+            <br>
+
+            <span>行业类别:</span>
+            <label for="it">IT</label>
+            <input id="it" type="checkbox" name="industry">
+            <label for="home">家电</label>
+            <input id="home" type="checkbox" name="industry">
+            <label for="equipment">通讯设备</label>
+            <input id="equipment" type="checkbox" name="industry">
+            <label for="sale">零售</label>
+            <input id="sale" type="checkbox" name="industry">
+
+            <select name="mulAddress" multiple title="分公司所在地">
+                <option value="" selected>--请选择--</option>
+                <option value="bj">北京</option>
+                <option value="sh">上海</option>
+                <option value="hn">河南</option>
+            </select>
+
+            <span>公司简介:</span>
+            <textarea name="introduce" cols="30" rows="3" title="公司简介"></textarea>
+
+            <span>营业执照:</span>
+            <input type="file">
+            <br>
+
+            <input type="image" src="practice/img/reg.jpg">
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-Sprite</title>
+
+    <style>
+        #a1{
+            display: inline-block;
+            width: 93px;
+            height: 29px;
+            background: url(img/link.png) no-repeat;
+        }
+        #a1:hover{
+            background: url(img/hover.png) no-repeat;
+        }
+        #a1:active{
+            background: url(img/active.png) no-repeat;
+        }
+        pre{
+            font-size: 20px;
+        }
+
+/*CSS-Sprite*/
+        #a2{
+            display: inline-block;
+            width: 93px;
+            height: 29px;
+            background: url(img/btn.png) no-repeat;
+        }
+        #a2:hover{
+            background-position: -93px;
+        }
+        #a2:active{
+            background-position: -186px;
+        }
+    </style>
+</head>
+<body>
+    <a id="a1" href="#"></a>
+    <pre style="font: 16px \5FAE\8F6F\96C5\9ED1; margin-left: -20px;">
+    1.可以发现,首次访问时,会出现"跳白"
+        1.因为背景图片是引用的外部资源,只有在使用时,才会浏览器才会请求对应资源
+        2.用户行为伪类hover和active没有被触发,所以资源hover.pn和active.pn没有被使用到,所以暂时没有加载
+        3.当鼠标移入,用行为伪类hover和active被触发,浏览器请求对应资源,在请求资源时间段,资源没有就位,显示的是背景色(白色),造成跳白现象,降低用户体验
+            1.网速越慢,"跳白"越明显
+    </pre>
+
+    <hr>
+    <h3>解决方案: 使用CSS-Sprite雪碧图</h3>
+    <a id="a2" href="#"></a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

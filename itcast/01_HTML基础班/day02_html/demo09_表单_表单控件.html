@@ -1,0 +1,20 @@
+<!--
+1.get: 表单数据以URL变量形式发送- -> 表单数据以键值对的形式附加到URL中
+2.post: 表单数据以HTTP post事物的形式发送- -> 表单数据附加到HTTP请求的body内
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单_表单控件</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="user">账号</label>:<input id="user" type="text" placeholder="请输入账号" name="userName"> <br>
+        <label for="pass">密码</label>:<input id="pass" type="password" name="password"> <br>
+        <label for="man">男</label><input id="man" type="radio" name="gender" value="man"> <label for="woman">女</label><input id="woman" type="radio" name="gender" value="woman"> <br>
+        <input type="submit" value="登录"> <!--提交表单数据到from标签action属性指定的action-->
+        <input type="submit" formaction="http://www.baidu.com" value="管理员登录"> <!--提交表单数据到input标签formaction属性指定的action-->
+    </form>
+</body>
+</html>

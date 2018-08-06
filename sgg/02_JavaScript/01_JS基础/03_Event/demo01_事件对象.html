@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style>
+        #main {
+            width: 500px;
+            margin: 100px auto 0;
+            background-color: #66CDAA;
+        }
+        #areaDiv {
+            width: 300px;
+            height: 200px;
+            background-color: #e4d9ce;
+            border: 1px solid #FF0000;
+            margin: 0 auto;
+        }
+        #coodinate {
+            width: 300px;
+            height: 60px;
+            background-color: #000;
+            color: #FFF;
+            border: 1px solid #ff6781;
+            margin: 20px auto 0;
+        }
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="areaDiv"></div>
+        <div id="coodinate"></div>
+    </div>
+</body>
+</html>
+<script>
+    let areaDiv = document.getElementById('areaDiv');
+    let coodinate = document.getElementById('coodinate');
+
+    //鼠标移入
+    areaDiv.onmouseover = function (e) {
+        console.log(`鼠标移入: ${e}`);
+    };
+    //移出
+    areaDiv.onmouseout = function (e) {
+        console.log(`鼠标移出: ${e}`);
+        coodinate.innerText = '';
+    };
+    //移动
+    areaDiv.onmousemove = function (e) {
+
+        /*兼容性问题
+        * 1.IE < 8规范中
+        *   1.当响应函数被触发, 不会将事件对象作为默认参数传递, 而是以全局对象window的event属性存在, 泛指所有事件对象
+        * */
+
+        /*
+        原理:
+            1.函数调用
+                1.无实参: 形参 = undefined, 在Boolean环境自动转换为false
+        if (!e) {
+           e = window.event;
+        }*/
+        e = e || window.event;   //简写
+
+        coodinate.innerHTML = `x = ${e.offsetX}, y = ${e.offsetY} <br> x = ${e.clientX}, y = ${e.clientY} <br> x = ${e.pageX}, y = ${e.pageY}`;
+
+        /*//适用于不支持模板字符串的浏览器
+        coodinate.innerHTML = 'x = ' +e.offsetX+', y = '+e.offsetY+' <br> x = '+e.clientX+', y = '+e.clientY+'';*/
+    };
+</script>
+
+<!--
+1.Event接口表示DOM中任何可能发生的事件
+    1.分类
+        1.用户生成
+            eg. 鼠标/键盘事件
+        2.API生成
+            eg. 动画/视频播放, 暂停等
+2.当事件响应函数被触发时, 事件对象作为默认参数传递给响应函数
+    1.事件对象封装了当前事件的一切信息
+-->

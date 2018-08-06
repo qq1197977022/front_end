@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承的盒子一般不被撑大</title>
+    <style>
+        #fa {
+            width: 300px;
+            height: 300px;
+            background-color: #8a8a8a;
+        }
+        #so {
+            height: 50px;
+            background-color: #019E8B;
+        }
+        #tmp {
+            width: 300px;
+            height: 50px;
+            background-color: #90EE90;
+        }
+    </style>
+
+    <style>
+        #fa1 {
+            width: 300px;
+            height: 300px;
+            background-color: #8a8a8a;
+        }
+        #so1 {
+            height: 50px;
+            background-color: #019E8B;
+            padding-left: 30px;
+        }
+        #tmp1 {
+            width: 300px;
+            height: 50px;
+            background-color: #90EE90;
+            padding-left: 30px;
+        }
+    </style>
+
+    <style>
+        #fa11 {
+            width: 300px;
+            height: 300px;
+            background-color: #8a8a8a;
+        }
+        #so11 {
+            height: 50px;
+            background-color: #019E8B;
+            padding-left: 500px;
+        }
+        #tmp11 {
+            width: 300px;
+            height: 50px;
+            background-color: #90EE90;
+            padding-left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #F00;">Note: 个人认为这节课讲废了,纯属对经验的死记硬背</h1>
+    <div id="fa">
+        <div id="so"></div>
+    </div>
+
+    <br>
+    <div id="tmp"></div>
+
+    <hr>
+    <div id="fa1">
+        <div id="so1"></div>
+    </div>
+
+    <br>
+    <div id="tmp1"></div>
+    <p>
+        1.为什么说讲师完全是在废话? <br>
+        2.因为子盒子so1的CSS尺寸属性width默认值为auto(浏览器自动计算) <br>
+        3.CSS尺寸属性作用对象是盒子的内容 <br>
+        4.盒子尺寸与其内容 + 内边距 + 边框有关
+    </p>
+
+    <hr>
+    <div id="fa11">
+        <div id="so11"></div>
+    </div>
+
+    <br>
+    <div id="tmp11"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

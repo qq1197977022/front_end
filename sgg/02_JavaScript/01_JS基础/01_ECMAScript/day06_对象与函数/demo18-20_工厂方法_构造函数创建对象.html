@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工厂方法_构造函数创建对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //自定义对象字面
+    let obj1 = {
+        name: '杨一帆',
+        age: 18,
+        sayName: function () {
+            console.log(this.name);
+        }
+    };
+
+    obj1.sayName();
+    console.log(obj1, typeof obj1);
+
+
+    //工厂方法
+    function dog(name, age, fun) {
+        let obj =  Object();
+        obj.name = name;
+        obj.age = age;
+        obj.sayName = fun;
+        return obj;
+    }
+    obj2 = dog('哮天犬', 16, function () {
+        console.log(this.name);
+    });
+
+    obj2.sayName();
+    console.log(obj2, typeof obj2);
+
+
+    //构造函数
+    function Person(name, age, /*fun*/) {
+        this.name = name;
+        this.age = age;
+        /*this.sayName = fun;*/
+    }
+    /*这种做法不好
+        1.麻烦: 每创建一个对象都要写一遍方法
+        2.性能低: 需要创建多个函数对象, 浪费空间
+    obj3 = new Person('范冰冰', 20, function () {
+        console.log(this.name);
+    });
+
+    obj3.sayName();
+    */
+    Person.prototype.sayName = function () {
+        console.log(this.name);
+    };
+
+    obj3.sayName();
+    console.log(obj3, typeof obj3);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

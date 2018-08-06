@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容移出</title>
+
+    <style>
+        #d1 {
+            width: 143px;
+            height: 76px;
+            background: url("practice/img/logo.png") no-repeat;
+        }
+        #d1>#a1 {
+            display: inline-block;
+        }
+
+        #d11 {
+            width: 143px;
+            height: 76px;
+            background: url("practice/img/logo.png") no-repeat;
+        }
+        #d11>#a11 {
+            display: inline-block;
+            text-indent: -5000em;   /*方法一*/
+        }
+    </style>
+
+    <style>
+        #d2 {
+            width: 143px;
+            height: 76px;
+        }
+        #d22 {
+            width: 143px;
+            height: 76px;
+            background: url("practice/img/logo.png") no-repeat;
+        }
+
+        #d21 {
+            width: 143px;
+            height: 76px;
+        }
+        #d221 {
+            width: 143px;
+            height: 76px;
+            background: url("practice/img/logo.png") no-repeat;
+            line-height: 200px;
+            overflow: hidden;   /*方法二*/
+        }
+    </style>
+</head>
+<body>
+    <p>搜狐之前采用的方式</p>
+    <div id="d1">
+        <a id="a1" href="#">搜狐首页</a>
+    </div>
+
+    <br>
+    <div id="d11">
+        <a id="a11" href="#">搜狐首页</a>
+    </div>
+
+    <hr>
+    <p>搜狐现在采用的方式</p>
+    <div id="d2">
+        <div id="d22">
+            <a id="a2" href="#">搜狐首页</a>
+        </div>
+    </div>
+
+    <br>
+    <div id="d21">
+        <div id="d221">
+            <a id="a21" href="#">搜狐首页</a>
+        </div>
+    </div>
+</body>
+</html>

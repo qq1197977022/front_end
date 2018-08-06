@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播练习</title>
+    <style>
+        #main {
+            width: 800px;
+            background-color: #D1D1D1;
+            text-align: center; /*设置内联元素在父块元素居中*/
+            margin: 0 auto;
+        }
+        p {
+            margin: 0;
+        }
+        img {
+            vertical-align: top;    /*清除图片默认样式*/
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p id="info">1/5</p>
+        <img id="img" src="img/1.jpg" alt="图片"> <br>
+        <button id="pre">< 上一张</button>
+        <button id="next">下一张 ></button>
+    </div>
+</body>
+</html>
+<script>
+    let pre = document.getElementById('pre');
+    let next = document.getElementById('next');
+    let img = document.getElementById('img');
+    let info = document.getElementById('info');
+    let p = 0;  //向前计数
+    let n = 1;  //向后计数
+
+    pre.addEventListener('click', function () {
+        p = p % 5;
+        img.src = `img/${5-p}.jpg`;
+        info.innerText=`${5-p}/5`;
+        p++;
+    }, false);
+
+    next.addEventListener('click', function () {
+        n = n % 5;
+        img.src = `img/${++n}.jpg`;
+        info.innerText=`${n}/5`;
+    }, false);
+</script>

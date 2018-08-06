@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.taobao.com">淘宝</a>
+    <button id="forward">forward</button>
+    <button id="back">back</button>
+    <button id="go">go</button>
+</body>
+</html>
+<script>
+    let forward = document.getElementById('forward');
+    let back = document.getElementById('back');
+    let go = document.getElementById('go');
+    forward.onclick = function () {
+        window.history.forward();
+    };
+    back.onclick = function () {
+        window.history.back();
+    };
+    go.onclick = function () {
+        let pageN = prompt('请输入(Number):');
+        pageN = parseInt(pageN);
+        window.history.go(pageN);   //相对当前页面location, 从session history加载页面
+    };
+</script>

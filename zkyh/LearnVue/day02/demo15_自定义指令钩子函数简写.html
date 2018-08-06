@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令钩子函数简写</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo15.js" defer></script>
+</head>
+<body>
+    <div id="app1">
+        <h3 v-color="'#F66'" v-bgcolor="'#BFC'">自定义指令钩子函数简写</h3>
+        <!--
+            1.指令必须小写    eg: 这里定义指令bgColor会提示
+                [Vue warn]: Failed to resolve directive: bgcolor
+                (found in <Anonymous>)
+        -->
+    </div>
+</body>
+</html>

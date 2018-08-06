@@ -1,0 +1,93 @@
+<!--
+一.CSS Hack: 只在特定浏览器中执行的特殊代码(参考: http://css.doyoe.com/)
+    1.分类:
+        1.CSS属性前缀法
+        2.CSS选择器前缀法
+        3.IE条件注释法
+            1.<10版本
+    2.作用: 只在特定浏览器下执行,其他浏览器自动忽略(认为是注释)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 条件注释Hack</title>
+
+    <style>
+        #box1{
+            width: 400px;
+            height: 200px;
+            background-color: #FF0000;
+        }
+    </style>
+
+    <!--[if IE]>
+        <style>
+            #box1{
+                width: 400px;
+                height: 200px;
+                background-color: #019E8B;
+            }
+        </style>
+    <![end if]-->
+
+</head>
+<body>
+    <!--[if IE]>
+    <p style="color: #FF0000; font-size: 35px;">条件注释Hack: 为了您和家人的健康,请远离IE浏览器</p>
+    <![endif]-->
+
+
+    <!--实际应用-->
+    <h3>修复前</h3>
+    <img src="img/p24.png" alt="p24图片">
+    <h3>修复后</h3>
+    <img id="p24" src="img/p24.png" alt="p24图片">
+    <!--[if IE 6]>
+    <script src="purJS/DD_belatedPNG_0.0.8a.purJS"></script>
+    <script>DD_belatedPNG.fix("#p24");</script>
+    <![endif]-->
+
+    <hr>
+    <div id="box1">
+        <ol>
+            <li>非IE/IE10+浏览器显示背景色为#FF0000</li>
+            <li>IE浏览器显示背景色为#019E8B</li>
+        </ol>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

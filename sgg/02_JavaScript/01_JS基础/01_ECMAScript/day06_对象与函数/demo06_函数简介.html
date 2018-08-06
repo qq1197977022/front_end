@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数简介</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //构造函数创建函数对象
+    var fun1 = new Function('a, b', 'console.log("new调用Function构造器创建函数对象"); return a+b;');
+
+    //函数声明
+    function fun2() {
+       console.log('function关键字声明函数');
+    }
+
+    console.log('------------------------------函数构造器创建函数对象------------------------------');
+    var res1 = fun1(2, 3);
+    console.log(fun1, typeof fun1);
+    console.log('res = ' + res1);
+
+    console.log('------------------------------函数声明------------------------------');
+    fun2();
+    console.log(fun2, typeof fun2);
+
+    eval('console.log("eval函数");');
+</script>
+
+<!--
+一.函数
+    1.创建函数对象
+        1.new调用构造器
+            1.new Function('args', 'body') ~ 创建一个匿名函数对象
+        2.函数声明
+            1.function name([args]) {}
+            2.function ([args]) {}; ~ 匿名函数
+    2.CURD属性
+        1.fun.v1 = '添加函数属性'
+        2.fun.v1 = '修改函数属性'
+        3.delete fun.v1 ~ 删除函数属性
+        4.fun1.v1 ~ 引用函数属性
+    3.函数支持嵌套 ~ 类似python
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

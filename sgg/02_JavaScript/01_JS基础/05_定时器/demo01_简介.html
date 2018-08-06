@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器简介</title>
+    <style>
+        span {
+            font-size: 5em;
+        }
+    </style>
+</head>
+<body>
+    <span></span>
+</body>
+</html>
+<script>
+    let span = document.querySelector('span');
+    let count = 0;
+
+    let intervalId = window.setInterval(function () {   //设置间歇定时器
+        span.innerText = count++;
+        if (count > 100) {
+            window.clearInterval(intervalId);   //取消间歇定时器
+        }
+    }, 100);
+</script>

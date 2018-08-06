@@ -1,0 +1,234 @@
+<!--
+一.position: 规定元素的定位类型
+    1.static -- 静态定位 == 无定位
+        1.默认值, 元素出现在正常流中
+        2.忽略偏移
+
+    2.relative --- 相对定位
+        1.相对文档流中原始位置定位
+        2.不会脱离文档流(在文档流中占据的空间位置依然保留) : 类似灵魂出窍
+        3.元素会提升一层(会覆盖文档流中元素) : 灵魂
+
+    3.absolute --- 绝对定位
+        1.相对第一个非static元素或浏览器窗口定位
+        2.元素脱离文档流,生成框类型变为行内块元素
+        3.元素会提升一层
+
+    4.fixed -- 绝对固定定位
+        1.相对浏览器窗口定位
+        2.元素脱离文档流,生成框类型变为行内块元素
+        3.元素会提升一层
+
+    5.inherit
+
+
+二.偏移量
+    1.T L B R
+    2.定位元素,如果只设定定位类型,但不设置偏移,其默认偏移值与其在文档流中原始位置有关
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #F0F0AF;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6781;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: #90EE90;
+        }
+
+
+/*外边距*/
+        #box1_1{
+            width: 100px;
+            height: 100px;
+            background-color: #F0F0AF;
+        }
+        #box2_1{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6781;
+            margin: 100px 0 -100px 100px;
+        }
+        #box3_1{
+            width: 100px;
+            height: 100px;
+            background-color: #90EE90;
+        }
+
+
+
+/*相对定位*/
+        #box1_2{
+            width: 100px;
+            height: 100px;
+            background-color: #F0F0AF;
+        }
+        #box2_2{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6781;
+            position: relative;
+            left: 100px;
+            top: 100px;
+        }
+        #box3_2{
+            width: 100px;
+            height: 100px;
+            background-color: #90EE90;
+        }
+        #box2_2_1{
+            /*width: 100px;*/
+            height: 100px;
+            background-color: #ff6781;
+            position: relative;
+            left: 50px;
+            top: 100px;
+        }
+        #box3_2_1{
+            width: 100px;
+            height: 120px;
+            background-color: #90EE90;
+        }
+
+
+
+/*绝对定位*/
+        #box1_3{
+            width: 100px;
+            height: 100px;
+            background-color: #F0F0AF;
+        }
+        #box2_3{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6781;
+            position: absolute;
+            left: 108px;
+            top: 1500px;
+            /*绝对定位
+                元素脱离文档流,生成框的类型变为行内块元素
+            */
+        }
+        #box3_3{
+            width: 100px;
+            height: 100px;
+            background-color: #90EE90;
+            position: absolute;
+            top: 1500px;
+        }
+        #box2_3_1{
+            /*width: 100px;*/
+            height: 100px;
+            background-color: #ff6781;
+            position: absolute;
+            left: 108px;
+            top: 1600px;
+        }
+        #box3_3_1{
+            /*width: 100px;*/
+            height: 100px;
+            background-color: #90EE90;
+            position: absolute;
+            top: 1600px;
+        }
+        p{
+            color: #FF0000;
+        }
+
+        #b1{
+            width: 500px;
+            height: 200px;
+            background-color: #000;
+            position: fixed;
+            left: 600px;
+            top: 300px;
+        }
+        #b2{
+            /*width: 500px;*/
+            height: 200px;
+            background-color: #000;
+            color: #FF0000;
+            position: fixed;
+            left: 300px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+    <h3>需求: 使box2位于box3右侧且box3位置不变</h3>
+    <hr>
+    <p>1.通过margin外边距实现</p>
+    <div id="box1_1">box1</div>
+    <div id="box2_1">box2</div>
+    <div id="box3_1">box3</div>
+
+    <hr>
+    <p>
+        1.相对定位:relative <br>
+    </p>
+    <div id="box1_2">box1</div>
+    <div id="box2_2">box2</div>
+    <div id="box3_2">box3</div>
+
+    <div id="box2_2_1">box2</div>
+    <div id="box3_2_1">box3</div>
+    <span>1.相对文档流中原始位置定位</span> <br>
+    <span>2.不会脱离文档流(在文档流中占据的空间位置依然保留) : 类似灵魂出窍</span> <br>
+    <span>3.元素会提升一层(会覆盖文档流中元素) : 灵魂</span> <br>
+
+    <hr>
+    <p>
+        1.绝对定位:absolute <br>
+    </p>
+    <div id="box1_3">box1</div>
+    <div id="box2_3">box2</div>
+    <div id="box3_3">box3</div>
+
+    <div id="box2_3_1">box2</div>
+    <div id="box3_3_1">box3</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span>
+        绝对定位(absolute)的元素,会脱离文档流 <br>
+        生成框类型不变,但特点改变 ~ 变为和行内块元素框特点一致(参见: <a style="font-size: 14px; color: #F00;" href="../day07浮动/demo03浮动二.html">1.浮动</a> <a style="font-size: 14px; color: #F00;" href="demo02绝对定位.html">2.绝对定位</a>)
+    </span>
+
+
+    <hr>
+    <p>
+        1.固定定位:fixed <br>
+    </p>
+    <span>
+        固定定位(fixed)的元素,会脱离文档流 <br>
+        生成框的类型会变成行内块元素
+    </span>
+    <div id="b1"></div>
+    <div id="b2">fixed</div>
+
+    <h2>1.常识总结: 根据各种元素定位类型特点,工作中最长使用的是"子绝父相"</h2>
+</body>
+</html>

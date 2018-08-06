@@ -1,0 +1,120 @@
+<!--
+1.前戏: 元素间关系
+    1.父/子元素: 直接包含/被包含
+    2.祖先/后代元素: 直接或间接包含/被包含
+    3.兄弟元素: 父元素相同
+2.主题: 层级选择器
+    1.后代选择器: E F
+    2.子选择器: E>F
+        1.兼容性: IE6>= 不支持
+    3.相邻兄弟选择器: E+F
+    4.通用选择器: E~F
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="元素间关系, 层级选择器">
+        <meta name="description" content="CSS选择器之层级选择器">
+        <title>层级选择器</title>
+        <style>
+            /*后代选择器*/
+            #test1 h1{
+                font-size: 35px;
+                color: #7B68EE;
+            }
+            #test1 h3{
+                color: #7CFC00;
+            }
+            #test1 p{
+                color: #DC143C;
+                font-size: 15px;
+            }
+            /*子选择器*/
+            #test2>span{
+                font-size: 25px;
+                color: #F5DEB3;
+            }
+            /*相邻兄弟选择器
+            #test3后代中的相邻兄弟选择器
+            */
+            #test3 h1+h2{
+                color: #9ACD32;
+            }
+            /*通用选择器*/
+            #test4 h2~h1{
+                color: #8B0000;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--后代选择器-->
+        <div id="test1">
+            <p>打酱油,辅助对比</p>
+                <a href="#">
+                    <h1>后代选择器</h1>
+                    <h1>后代选择器</h1>
+                    <h1>后代选择器</h1>
+                    <div>
+                        <h1>后代选择器</h1>  <!--对比通用选择器-->
+                    </div>
+                    <h3>后代选择器</h3>
+                    <h3>后代选择器</h3>
+                    <h3>后代选择器</h3>
+                    <p>后代选择器</p>
+                </a>
+        </div>
+
+        <!--子选择器-->
+        <hr>
+        <div id="test2">
+            <span>子选择器</span>
+            <p>
+                <span>打酱油,辅助对比</span>
+            </p>
+            <span>子选择器</span>
+        </div>
+
+        <!--相邻兄弟选择器-->
+        <hr>
+        <div id="test3">
+            <h1>相邻兄弟选择器</h1>
+            <h2>相邻兄弟选择器</h2>
+            <h2>打酱油,辅助对比</h2>
+            <h1>相邻兄弟选择器</h1>
+            <h2>相邻兄弟选择器</h2>
+        </div>
+
+        <!--通用选择器-->
+        <hr>
+        <div id="test4">
+            <h2>通用选择器</h2>
+            <h1>通用选择器</h1>
+            <h2>通用选择器</h2>
+            <h1>通用选择器</h1>
+            <h3>通用选择器</h3>
+            <h1>通用选择器</h1>
+            <p>打酱油,辅助对比</p>
+            <h1>通用选择器</h1>
+            <div>
+                <h1>通用选择器</h1>  <!--对比后代选择器-->
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

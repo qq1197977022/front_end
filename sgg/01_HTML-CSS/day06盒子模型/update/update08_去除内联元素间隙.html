@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>去除内联元素间隙</title>
+    <style>
+        span {
+            background-color: #C0C0C0;
+        }
+        div {
+            font-size: 0;
+        }
+        div>span {
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <span>去除内联元素间隙</span>
+    <span>去除内联元素间隙</span>
+    <span>去除内联元素间隙</span>
+    <span>去除内联元素间隙</span>
+    <span>去除内联元素间隙</span>
+    <span>去除内联元素间隙</span>
+    <span>去除内联元素间隙</span>
+    <hr>
+    <div>
+        <span>去除内联元素间隙</span>
+        <span>去除内联元素间隙</span>
+        <span>去除内联元素间隙</span>
+        <span>去除内联元素间隙</span>
+        <span>去除内联元素间隙</span>
+        <span>去除内联元素间隙</span>
+        <span>去除内联元素间隙</span>
+    </div>
+    <ol>
+        <li>书写方式</li>
+        <li>外边距</li>
+        <li>父元素font-size:0, 内联元素再设置font-size</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div跟随鼠标练习</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: #66CDAA;
+            /*position: absolute;*/
+        }
+        body {
+            width: 1500px;
+            height: 1500px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    let div = document.querySelector('div');
+    document.onmousemove = function (e) {
+        div.style.marginLeft = `${e.clientX}px`;
+        div.style.marginTop = `${e.clientY}px`;
+        /*div.style.left = `${e.offsetX}px`;
+        div.style.top = `${e.offsetY}px`;*/
+    };
+
+    console.log(div.offsetParent);
+</script>
+
+<!--
+待看
+1.在Chrome中浏览器滚动条是body的
+2.在火狐等浏览器中浏览器滚动条是html的
+
+-->
+
+
+
+
+
+
+
+<!--
+问题: body可滚动时, 跟随div与鼠标产生距离美
+    1.因为offsetX/Y是相对于target node的padding边缘
+    2.解决
+        1.设置元素CSS position属性
+        2.计算
+-->
+
+
+<!--
+absolute
+    1.元素从正常文档流中移除, 即不在页面布局中创建空间
+    2.相对最近的定位祖先元素 或 初始化包含块定位
+    3.当z-index非auto, 该值会创建新的堆叠上下文
+    4.绝对定位的元素可以设置margin, 且不会collapse
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

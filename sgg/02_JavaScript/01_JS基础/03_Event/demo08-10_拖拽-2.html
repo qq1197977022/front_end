@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #d1 {
+            width: 100px;
+            height: 100px;
+            background-color: #EA4335;
+        }
+        #d2 {
+            width: 100px;
+            height: 100px;
+            background-color: #66CDAA;
+            position: absolute;
+            left: 400px;
+            top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+</body>
+</html>
+<script>
+    let d1 = document.getElementById('d1');
+    d1.onmousedown = function (e) {
+        let x = e.clientX - d1.offsetLeft;
+        let y = e.clientY - d1.offsetTop;
+        document.onmousemove = function (e) {
+            d1.style.marginLeft = `${e.clientX - x}px`;
+            d1.style.marginTop = `${e.clientY - y}px`;
+        };
+        document.onmouseup = function () {
+            /*
+            * document.onmousemove = null;
+            * 一.问题:
+            *   1.移动过程中, 当该元素被其他元素覆盖时
+            *       1.无法触发绑定在该元素上的onmouseup事件
+            * 二.解决方案
+            *   1.通过在document上绑定onmouseup事件来实现取消被拖拽元素的onmousemove事件
+            * */
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

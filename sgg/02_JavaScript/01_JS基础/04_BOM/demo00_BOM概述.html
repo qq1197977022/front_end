@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM概述</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    console.log('------------------------------------------');
+    console.log(`window = ${window}\t window = ${document.defaultView}`);
+    console.log(`Navigator = ${window.Navigator}`);
+    console.log(`Location = ${window.location}\t Location = ${document.location}`);
+    console.log(`History = ${window.history}`);
+    console.log(`Screen = ${window.screen}`);
+    console.log('------------------------------------------');
+</script>
+<!--
+一.BOM对象
+    1.Window: 表示一个包含一个DOM文档的窗口
+        1.document属性指向在该窗口中加载DOM文档
+        2.给定文档的窗口可以通过document.defaultView属性获得
+    2.Navigator: 表示用户代理的状态和标识
+        1.允许脚本查询和注册自身以进行一些活动
+        2.window.navigator获取Navigator对象
+    3.Location: 表示该对象链接到的location(URL)
+        1.对其所作的改变, 将反射到与其相关的对象上
+        2.Document和Window接口有一个链接的Location, 分别通过Document.location和Window.location访问
+    4.History: 允许操作浏览器的session历史
+        1.通过window.history获得
+        2.出于对隐私保护, 做了一定限制
+    5.Screen: 表示一个屏幕
+        1.通常指当前正在被渲染的窗口
+        2.通过window.screen获得
+        3.浏览器通过检测具有浏览器中心的屏幕来确定当前屏幕
+-->

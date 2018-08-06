@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo13.js" defer></script>
+    <style>
+        h3 {
+            font-size: 1.5em;
+            color: #6EC5ED;
+        }
+        button {
+            font-size: 2em;
+            color: #F00;
+        }
+        div[id] {
+            width: 300px;
+            height: 300px;
+            background-color: #4c4c4c;
+        }
+        div[flag] {
+            width: 150px;
+            height: 150px;
+            background-color: #F5DEB3;
+        }
+        a {
+            display: inline-block;
+            color: #EA4335;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.事件冒泡传播: 由内向外传播</h3>
+    <div id="app1">
+        <div @click="divHandle" flag>
+            <button @click="btnHandle" v-text="msg"></button>
+        </div>
+    </div>
+
+    <h3>2.捕获事件: 由外到内传播</h3>
+    <div id="app2">
+        <div @click.capture="divHandle" flag>   <!--开启capture模式-->
+            <button @click="btnHandle" v-text="msg"></button>
+        </div>
+    </div>
+
+    <h3>3.停止事件冒泡</h3>
+    <div id="app3">
+        <div @click="divHandle" flag>
+            <button @click.stop="btnHandle" v-text="msg"></button>  <!--停止事件冒泡-->
+        </div>
+    </div>
+
+    <h3>4.self模式</h3>
+    <dl>
+        <dt>注: 和停止事件传播区别</dt>
+        <dd>1.停止事件传播作用对象是内层元素, self模式作用元素自身</dd>
+        <dd>2.停止事件传播, 停止事件继续传播, self模式仅阻止非自身绑定事件, 没有停止事件冒泡</dd>
+    </dl>
+    <div id="app4">
+        <div @click.self="divHandle" flag>
+            <button @click="btnHandle" v-text="msg"></button>
+        </div>
+    </div>
+
+    <h3>5.阻止元素默认事件</h3>
+    <div id="app5">
+        <a @click.prevent="fun1" href="http://www.baidu.com" v-text="msg1"></a>  <!--阻止元素默认事件-->
+        <a @click = 'fun2' href="http://www.baidu.com" v-text="msg2"></a>
+    </div>
+
+    <h3>6.一次性事件</h3>
+    <div id="app6">
+        <button @click.once = 'once' v-text="msg"></button>
+    </div>
+</body>
+</html>

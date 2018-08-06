@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+    <script>
+        /*
+        Firefox: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+        Chrome:  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3386.0 Safari/537.36
+        IE8:     Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E)
+        IE9:     Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E)
+        IE10:    Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E)
+
+        IE11:    Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; rv:11.0) like Gecko
+        Edge:    Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299
+         */
+        /*var userAgent = window.navigator.userAgent;
+        console.log(userAgent);
+        if (/MSIE 8\.0/i.test(userAgent)) {
+            window.alert('IE8');
+        } else if (/MSIE 9\.0/i.test(userAgent)) {
+            window.alert('IE9');
+        } else if (/MSIE 10\.0/i.test(userAgent)) {
+            window.alert('IE10');
+        } else if (/Firefox/i.test(userAgent)) {
+            window.alert('Firefox');
+        } else if (/Chrome/i) { //无法区分Chrome和MS Edge
+            window.alert('Chrome');
+        }*/
+
+        //使用不同浏览器标准下特有对象来识别浏览器
+        /*if (window.ActiveXObject) {
+            window.alert('IE');
+        } else {
+            window.alert('非IE');
+        }
+        该属性被很多开发人员用于识别IE, 微软对此做了混淆: IE11/MS Edge中window.ActiveXObject在Boolean环境下值为false
+            1.console.log(window.ActiveXObject);
+        */
+
+        if ('ActiveXObject' in window) {    //使用关系运算符, 测试当前浏览器标准下特有对象, 以识别浏览器, 这一点微软无法混淆
+            window.alert('IE');
+        } else {
+            window.alert('非IE');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!--
+1.Navigator: 表示用户代理的状态和标识
+        1.允许脚本查询和注册自身以进行一些活动
+        2.window.navigator获取Navigator对象
+2.由于历史原因, Navigator中大部分属性已经不能正确表示用户代理状态和标识
+    1.由于IE相对主流浏览器的各种不兼容, 早期开发人员通过Navigator对象属性判断浏览器来有区别性的显示页面, 造成IE用户体验差, 微软对此做了混淆...
+    2.eg. IE11和MS Edge中Navigator.appName=Netscape
+3.可以利用不同浏览器标准中特有对象来识别浏览器
+-->

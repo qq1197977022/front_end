@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>为什么内联和行内块元素设置auto属性无效?</title>
+    <style>
+        img {
+            width: 962px;
+            margin: 0 auto;
+        }
+    </style>
+    <style>
+        div {
+            width: 962px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <p>如题: 对行内块元素img设置了width但是却无法使用auto实现居中,why?</p>
+    <ul>
+        <li>1.auto: 浏览器自动计算设置</li>
+        <li>2.对于内联和行内块元素宽高均由内容撑开</li>
+        <li>3.即同一行后边的内容均为代码间的空白内容,不属于当前内联/行内块元素</li>
+        <li>4.对于块级元素独占一行</li>
+    </ul>
+    <img src="img/0.jpg" alt="图片">
+
+    <hr>
+    <div>
+        <img src="img/0.jpg" alt="图片">
+    </div>
+</body>
+</html>

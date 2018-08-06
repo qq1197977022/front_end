@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤选择器</title>
+    <script src="js/jquery-3.3.1.js" defer></script>
+    <script src="js/demo08.js" defer></script>
+    <style>
+        button {
+            font-size: 2em;
+            color: #7CFC00;
+            background-color: #2D2D2D;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1" class="box">d1, class=box</div>
+    <div id="d2" class="box">d2, class=box</div>
+    <div id="d3">d3</div>
+    <span class="box">span, class=box</span>
+    <br>
+    <ul>
+        <li>AAA</li>
+        <li title="hello">BBB</li>
+        <li class="box">CCC</li>
+        <li title="hello">DDD</li>
+        <li title="two">BBB</li>
+        <li style="visibility: hidden">我本来是visibility隐藏的</li>
+        <li style="display: none">我本来是display隐藏的</li>
+    </ul>
+    <hr>
+    <button id="btn1">1.选择第一个div</button>
+    <button id="btn2">2.选择最后一个class=box的元素</button>
+    <button id="btn3">3.选择所有class!=box的div</button>
+    <button id="btn4">4.选择第2, 3个li</button>
+    <button id="btn5">5.选择内容为BBB的元素</button>
+    <button id="btn6">6.选择隐藏的li</button>
+    <button id="btn7">7.选择title属性的li元素</button>
+    <button id="btn8">8.选择title=hello的li元素</button>
+</body>
+</html>

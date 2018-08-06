@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS可见性</title>
+    <style>
+        #main {
+            width: 1200px;
+            margin: 50px auto 0;
+            background-color: #242424;
+        }
+        #main div {
+            width: 300px;
+            height: 300px;
+        }
+        #box {
+            overflow: hidden;
+        }
+        #d1 {
+            background-color: #AABBCC;
+        }
+        #d2 {
+            background-color: #EA4335;
+        }
+        #d3 {
+            background-color: #019E8B;
+        }
+        button {
+            width: 150px;
+            height: 50px;
+        }
+        button:focus {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p style="color: #00FF00;">Note: 点按钮变大小,点超链接变色</p>
+        <button type="button"><a href="#d1">div1</a></button>
+        <button type="button"><a href="#d2">div2</a></button>
+        <button type="button"><a href="#d3">div3</a></button>
+
+        <hr>
+        <div id="box">
+            <div id="d1"></div>
+            <div id="d2"></div>
+            <div id="d3"></div>
+        </div>
+    </div>
+</body>
+</html>

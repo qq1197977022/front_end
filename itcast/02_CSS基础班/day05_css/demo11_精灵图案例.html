@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>精灵图案例</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #nav {
+            margin-top: 50px;
+            background-color: #000;
+        }
+        nav {
+            width: 1199px;
+            margin: 0 auto;
+            position: relative;
+            /*background-color: #fe7100;*/
+        }
+        nav a {
+            /*width: 150px;*/
+            /*height: 35px;*/
+            float: left;
+            padding: 20px 28px;
+            color: #FFF;
+            text-decoration: none;
+        }
+        nav:after {
+            content: "";
+            display: block;
+            clear: left;
+        }
+        a:hover {
+            background-color: #FFF;
+            color: #000;
+        }
+    </style>
+    <!--设置精灵图-->
+    <style>
+        #hot {
+            width:24px;
+            height: 19px;
+            background: url("practice/img/sprite.png") no-repeat -59px 0;
+            position: absolute;
+            left: 363px;
+            top: -3px;
+        }
+        #new {
+            width:24px;
+            height: 19px;
+            background: url("practice/img/sprite.png") no-repeat -137px 0;
+            position: absolute;
+            left: 648px;
+            top: -3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">Java</a>
+            <a href="#">IOS</a>
+            <a href="#">UI设计</a>
+            <a href="#">前端与移动开发</a>
+            <a href="#">PHP</a>
+            <a href="#">C/C++</a>
+            <a href="#">python</a>
+            <a href="#">网络营销</a>
+            <a href="#">活动专区</a>
+            <a href="#">问答专区</a>
+            <div id="hot"></div>
+            <div id="new"></div>
+        </nav>
+    </div>
+
+    <a style="color: #0000FF; text-decoration: underline; font-size: 25px;" href="../../../0_问题_总结/demo03_导航栏居中对齐技巧.html">1.导航栏居中对齐技巧</a>
+</body>
+</html>

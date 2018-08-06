@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if和v-show指令</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo20.js" defer></script>
+    <style>
+        button {
+            font-size: 2em;
+        }
+        span {
+            color: #EA4335;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <h3 v-if="flag">v-if指令: 条件渲染</h3>
+        <ol>
+            <li>根据表达式值的真假条件渲染元素</li>
+            <li>切换时元素及其数据绑定/ 组件被销毁并重建</li>
+            <li>如果元素是template将提出其内容作为条件</li>
+            <li>当条件变化时该指令触发过渡效果 ~ <span>本例Toggle效果</span></li>
+        </ol>
+        <h3 v-show="flag">v-show指令</h3>
+        <ol>
+            <li>根据表达式值的真假, 切换元素display CSS属性</li>
+            <li>当条件变化时该指令触发过渡效果 ~ <span>本例Toggle效果</span></li>
+        </ol>
+        <button @click="toggle">Toggle</button>
+        <dl>
+            <dt>异同: 观察调试窗口</dt>
+            <dt>利用v-if和v-show条件变化时过度效果 ~ <span>本例Toggle效果</span></dt>
+            <dd>1.v-if 切换渲染消耗较高</dd>
+            <dd>2.v-show 初始渲染消耗较高</dd>
+        </dl>
+    </div>
+</body>
+</html>

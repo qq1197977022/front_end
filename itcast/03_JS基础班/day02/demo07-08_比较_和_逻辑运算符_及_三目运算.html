@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>比较_和_逻辑运算符_及_三目运算符</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+一.比较运算符
+    1.==
+    2.===           绝对等于(值相等 + 类型一致)
+    3.!=
+    4.!==           不绝对等于(值和类型其中一个或两个均不等)
+    5.>
+    6.>=
+    7.<
+    8.<=
+二.逻辑运算符
+    1.&&:   and     与
+    2.||:   or      或
+    3.!:    not     非
+三.三目运算(条件运算符)
+var v = (condition) ? true-do:false-do;
+-->
+<script>
+    var v1 = 1;
+    var v2 = '1';
+    var v3 = 1;
+    console.log(v1 == v2);  //提示可能产生强制类型转换
+    console.log(v1 === v2);
+
+    console.log(v1 == v3);
+    console.log(v1 === v3);
+
+
+    parseInt(Math.random()*100) % 2 ===0? console.log('偶数'): console.log('奇数');
+</script>
+<!--8.32-->

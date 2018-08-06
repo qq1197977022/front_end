@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象数据类型</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    var obj1 = Object();
+    //利用new关键字调用构造器创建对象
+    var obj2 = new Object();
+    var obj3 = new Object(123);
+    var obj4 = new Object('字符串');
+    var obj5 = new Object(true);
+    var obj6 = new Object(null);
+    var obj7 = new Object(undefined);
+    var obj8 = new Object(Number());
+    var obj9 = new Object(Boolean());
+    var obj10 = new Object(String());
+    var obj11 = new Object(Function());
+    console.log('创建对象------------------------');
+    console.log(obj1, typeof obj1);
+    console.log(obj2, typeof obj2);
+    console.log(obj3, typeof obj3);
+    console.log(obj4, typeof obj4);
+    console.log(obj5, typeof obj5);
+    console.log(obj6, typeof obj6);
+    console.log(obj7, typeof obj7);
+    console.log(obj8, typeof obj8);
+    console.log(obj9, typeof obj9);
+    console.log(obj10, typeof obj10);
+    console.log(obj11, typeof obj11);
+
+
+
+    console.log('++++++++++++++++++++');
+    var tom = Object();
+    console.log(tom, typeof tom);
+    //添加属性
+    console.log('添加属性------------------------');
+    tom.name = '汤姆';
+    tom['name1'] = '汤姆';    //键值对
+    tom.age = 18;
+    tom['age1'] = 18;
+
+
+
+    //调用对象属性
+    console.log('调用属性------------------------');
+    console.log(tom.name, typeof tom.name);
+    console.log(tom['name1'], typeof tom['name1']);    //键值对
+    console.log(tom.age, typeof tom.age);
+    console.log(tom['age1'], typeof tom['age1']);
+    console.log(tom, typeof tom);
+
+    console.log(tom.gender);    //获取对象不存在的属性 ---> undefined
+    // console.log(gender);    //打印不存在变量 ---> 报错
+
+    /*Note
+    * 1.使用键值对的方式添加/调用属性可以不遵守标识符命名规则
+    *   1.eg.
+    *       添加:
+    *           1.tom['123'] = 789;
+    *           2.tom['^&&%%((%%))**%&'] = 110;
+    *       调用:
+    *           1.tom['123']
+    *           2.tom['^&&%%((%%))**%&']
+    *
+    * */
+
+
+
+    //删除对象属性
+    console.log('删除对象属性------------------------');
+    delete tom.name;
+    console.log(tom.name);
+
+
+
+    //检测对象是否具有某属性 ~ in关系运算符
+    console.log('关系运算符in ~~~> 属性检测');
+    var b1 = 'age' in tom;
+    var b2 = 'name' in tom;
+    console.log(b1);
+    console.log(b2);
+
+</script>
+
+<script>
+    //对象字面
+    console.log('对象字面------------------------');
+    var obj1 = {};
+    console.log(obj1, typeof obj1);
+    obj1.name = '张三';
+
+    var obj2 = {'name': '李四', gender: '222'};
+    var obj3 = {name: '张三', age: '23'};
+
+    console.log(obj1, typeof obj1);
+    console.log(obj1.name, typeof obj1.name);
+
+    console.log(obj2, typeof obj2);
+    console.log(obj2.name, typeof obj2.name);
+
+    console.log(obj3, typeof obj3);
+    console.log(obj3.name, typeof obj3.name);
+    /*对象的属性名
+    * 1.加引号 ~ 不符合标识符规范的属性名必须加引号
+    * 2.不加引号
+    * */
+</script>
+
+<!--
+一.Object
+    1.语法
+        1.对象字面/初始化
+            1.{[name: value]}
+        2.构造器
+            2.obj = new Object([value])
+                1.new调用构造函数
+    2.分类
+        1.内置对象
+            1.Object
+            3.Function
+            4.Math
+            5.Date
+            6.etc
+        2.宿主对象
+            1.BOM
+            2.DOM
+                1.console
+                2.document ~ 接口
+                3.etc
+        3.自定义对象
+            1.
+二.基本数据类型和引用数据类型
+    1.基本数据类型
+        1.值传递
+        2.栈空间存储
+    2.引用数据类型
+        1.引用传递
+        2.栈空间存储引用,堆空间存储对象
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

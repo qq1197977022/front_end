@@ -1,0 +1,34 @@
+<!--
+1.输出
+    1.BOM
+        1.Window对象
+            1.alert()
+            2.prompt()
+            3.confirm()
+    2.DOM
+        1.DOM Document对象
+            1.write()
+            2.writeln()
+        2.DOM元素对象
+            1.innerHTML
+    3.console ~~~~~~~~~~~~> 如何分类?
+        1.log()
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输出5中方式</title>
+</head>
+<body>
+    <span id="s1">dd</span>
+</body>
+</html>
+<script>
+    alert('JavaScript,go! go! go!');
+    confirm('确定开始学习JS吗?');
+    prompt('为什么要学习JS?');
+    console.log("百度控制台信息有招聘信息...醉了");
+    document.getElementById('s1').innerHTML = 'JavaScript';
+    document.write('<h1>JavaScript</h1>');
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>规避脱标流</title>
+    <style>
+        #f1, #f2, #f3 {
+            width: 300px;
+            height: 300px;
+            background-color: #019E8B;
+            margin-bottom: 25px;
+        }
+        #s1, #s2, #s3 {
+            width: 150px;
+            height: 150px;
+            background-color: #fe7100;
+        }
+        #f3 {
+            position: relative;
+        }
+        #s1 {
+            margin-left: auto;
+        }
+        #s2 {
+            float: right;
+        }
+        #s3 {
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <p style="font-size: 35px;">优先使用: 标准流 > 浮动 > 定位</p>
+
+    <hr>
+    <h2>eg.实现子元素右对齐</h2>
+    <span>1.标准流</span>
+    <div id="f1">
+        <div id="s1">margin-left: auto;</div>
+    </div>
+
+    <span>2.浮动</span>
+    <div id="f2">
+        <div id="s2">float: right;</div>
+    </div>
+
+    <span>3.定位</span>
+    <div id="f3">
+        <div id="s3">子绝父相</div>
+    </div>
+</body>
+</html>

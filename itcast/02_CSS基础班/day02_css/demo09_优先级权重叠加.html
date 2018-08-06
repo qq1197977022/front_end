@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优先级权重叠加</title>
+    <style>
+        /*
+            选择器间是交叉关系
+            交集 = [.pri_fa .pri_so color] ∩ [p.pri_so color] = color属性
+                1.优先级(1132法则): [.pri_fa>.pri_so] > [p.pri_so]
+                2.结果: [.pri_fa .pri_so color] 覆盖 [p.pri_so color]
+        */
+        #priority .pri_fa>.pri_so{
+            color: #F00;
+        }
+        #priority p.pri_so {
+            color: #00F;
+            font-size: 25px;
+        }
+
+        /*
+            选择器间是平行关系
+            1.优先级: [p] > [继承#pri_fa1]
+            2.结果: [p color] 覆盖 [继承#pri_fa1 color]
+        */
+        #priority p {
+            color: #00F;
+        }
+        #priority #pri_fa1 {
+            color: #F00;
+        }
+    </style>
+</head>
+<body>
+    <div id="priority">
+        <div class="pri_fa">
+            <p class="pri_so">选择器优先级</p>
+        </div>
+
+        <hr>
+        <div id="pri_fa1">
+            <p>选择器优先级</p>
+        </div>
+    </div>
+    
+    <hr>
+    <a href="..\..\sgg\day03CSS选择器\demo10.html" style="color: #66CDAA; font-size: 2em;">参见: 样式继承-和-选择器优先级</a>
+</body>
+</html>

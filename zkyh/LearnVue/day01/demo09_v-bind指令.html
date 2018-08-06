@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind指令</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo09.js" defer></script>
+    <style>
+        h3 {
+            font-size: 2em;
+            color: #019E8B;
+        }
+        div {
+            width: 500px;
+            background-color: #d9e0ee;
+            border: 1px solid #019E8B;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>v-bind指令: 动态绑定元素属性 或 组件prop</h3>
+    <div>
+        <p id="app1" v-bind:title="mytitle">动态绑定p元素title属性</p>
+
+        <p id="app2" :title="mytitle">v-bind指令缩写</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定</title>
+    <script src="../vue.js" defer></script>
+    <script src="js/demo16.js" defer></script>
+    <style>
+        .red {
+            color: #F00;
+        }
+        .thin {
+            font-weight: 200;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .active {
+            letter-spacing: 0.5em;
+        }
+        .test1 {
+            color: #019E8B;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <h1 class="red thin italic active">不使用属性绑定: 普通CSS语法</h1>
+
+        <hr>
+        <h1 :class="['red', 'thin', 'italic', 'active']">1.数组语法</h1>
+        <h1 :class="[demo01, demo02]">2.数组语法</h1>
+        <h1 :class="['italic', flag? demo02: demo01]">3.数组语法</h1>
+        <h1 :class="['italic', {demo02: flag}]">4.数组语法 + 对象语法</h1>
+
+        <hr>
+        <h1 :class="{red: isRed, italic: isItalic, active: isActive}">1.对象语法</h1>   <!--内联定义-->
+        <h1 :class="obj1">2.对象语法</h1>    <!--非内联定义 或 计算属性-->
+        <h1 :class="obj2">3.对象语法</h1>    <!--非内联定义 或 计算属性-->
+        <span>Note.JS语法对象属性名引号可选</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景二</title>
+
+    <style>
+        #box1{
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+            background: #ff6781 url(img/0.png) no-repeat;
+        }
+        #box2{
+            width: 850px;
+            height: 500px;
+            margin: 0 auto;
+            background: #B0C4DE url(img/0.png) no-repeat right top;
+        }
+        #box3{
+            width: 900px;
+            height: 500px;
+            margin: 0 auto;
+            background: #F0F0AF url(img/0.png) no-repeat center center;
+        }
+        #box3_1{
+            width: 950px;
+            height: 500px;
+            margin: 0 auto;
+            background: #F0F0AF url(img/0.png) no-repeat center center fixed;
+            /*复合属性
+                1.颜色
+                2.背景图像
+                3.重复
+                4.背景图像位置
+                5.背景图像随元素内容滚动方式
+                    1.scroll: 背景图像随页面其余部分滚动(默认)
+                    2.local: 背景图像随元素滚动
+                    3.fixed: 背景图像固定
+                        1.此时背景图像定位(background-position)相对浏览器窗口
+                    4.inherit: 继承
+            */
+        }
+        #box4{
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            background: #000 url(img/0.png) no-repeat bottom right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box3_1"></div>
+    <div id="box4"></div>
+</body>
+</html>

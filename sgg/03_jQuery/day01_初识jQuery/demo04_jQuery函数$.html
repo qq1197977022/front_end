@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery函数</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <!--<script src="js/demo04.js" defer></script>-->
+    <script>
+        //1.绑定函数, 并在DOM加载完毕后执行
+        $(
+            function () {
+                let d1 = document.getElementById('d1');
+                console.log(d1.innerText);
+
+                //2.从原始HTML字符串即时创建DOM元素
+                $('<div>用法2</div>').appendTo('#d1');
+
+                //3.元素选择: 接收包含CSS选择器的字符串, 用于匹配元素集合
+                $('#btn').click(function () {
+                    alert('点击已触发...');
+                });
+                /*$('#d1').click(function () {
+                    alert('点击已触发...');
+                });
+                $('#d1').after('<h1>用法三</h1>');*/
+            }
+        );
+    </script>
+
+    <script src="js/demo04.js" defer></script>
+</head>
+<body>
+    <h1>一.jQuery函数~jQuery / $ 用法</h1>
+    <div id="d1">用法1</div>
+    <button id="btn">用法3</button>
+    <hr>
+
+    <h2>需求:</h2>
+    <h4>1.点击按钮, 显示按钮文本, 显示一个新的输入框</h4>
+    <button id="demand1">需求1</button>
+    <h4>2.遍历数组</h4>
+    <button id="demand2">需求2: 开始遍历</button>
+    <h4>3.去除两端空白字符</h4>
+    <button id="demand3">需求3</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

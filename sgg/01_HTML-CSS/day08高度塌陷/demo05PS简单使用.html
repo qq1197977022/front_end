@@ -1,0 +1,152 @@
+<!
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font: bold 12px 宋体;
+            /*网页一般以12px字体为基准*/
+        }
+        #page{
+            width: 300px;
+            margin: 50px auto 0px;
+        }
+        #top{
+            height: 43px;
+            border-top: 2px solid #019E8B;
+            background-color: #F5F5F5;
+        }
+        #left{
+            float: left;
+            margin-left: 20px;
+            font: 16px/43px 微软雅黑;
+        }
+        #right{
+            float: right;
+            margin-right: 20px;
+            font: 12px/43px 宋体;
+            text-decoration: underline;
+        }
+        #right>a{
+            color: #FF0000;
+
+        }
+        #content{
+            border: 1px solid #DEDDD9;
+            background-color: #FFF;
+            padding: 10px 20px;
+        }
+        ul{
+            list-style-type: none;
+            font: 12px/28px 宋体;
+            margin-top: 5px;
+        }
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        ul a>span{
+            color: #F00;
+            font-weight: bold;
+        }
+        a:hover{
+            color: #F00;
+            text-decoration: underline;
+        }
+        .u_left{
+            float: left;
+            text-align: left;
+        }
+        .u_right{
+            float: right;
+            text-align: right;
+        }
+        p:hover{
+            color: #F00;
+            text-decoration: underline;
+        }
+        .clear:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #java_EE{
+            border-bottom: 1px dashed #DEDDD9;
+            padding-bottom: 10px;
+        }
+        #android{
+            border-bottom: 1px dashed #DEDDD9;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        #html5{
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="page">
+        <div id="top">
+            <div id="left">近期开班</div>
+            <div id="right"><a href="#">16年面授开班计划</a></div>
+        </div>
+        <div id="content">
+            <div id="java_EE" class="clear">
+                <p><a href="#">JavaEE+云计算-全程就业班</a></p>
+                <ul class="u_left">
+                    <li><a href="#">开班时间：<span>2016-04-27</span></a></li>
+                    <li><a href="#">开班时间：<span>2016-04-07</span></a></li>
+                    <li><a href="#">开班时间：2016-03-15</a></li>
+                    <li><a href="#">开班时间：2016-02-25</a></li>
+                    <li><a href="#">开班时间：2015-12-26</a></li>
+                </ul>
+                <ul class="u_right">
+                    <li><a href="#"><span>预约报名</span></a></li>
+                    <li><a href="#"><span>无座，名额爆满</span></a></li>
+                    <li><a href="#">开班盛况</a></li>
+                    <li><a href="#">开班盛况</a></li>
+                    <li><a href="#">开班盛况</a></li>
+                </ul>
+            </div>
+
+            <div id="android" class="clear">
+                <p><a href="#">Android+人工智能-全程就业班</a></p>
+                <ul class="u_left">
+                    <li><a href="#">开班时间：<span>2016-04-10</span></a></li>
+                    <li><a href="#">开班时间：2016-03-17</a></li>
+                    <li><a href="#">开班时间：2016-02-20</a></li>
+                    <li><a href="#">开班时间：2015-12-23</a></li>
+                </ul>
+                <ul class="u_right">
+                    <li><a href="#"><span>预约报名</span></a></li>
+                    <li><a href="#">开班盛况</a></li>
+                    <li><a href="#">开班盛况</a></li>
+                    <li><a href="#">开班盛况</a></li>
+                </ul>
+            </div>
+
+            <div id="html5" class="clear">
+                <p><a href="#">前端+HTML5-全程就业班</a></p>
+                <ul class="u_left">
+                    <li><a href="#">开班时间：<span>2016-05-10</span></a></li>
+                    <li><a href="#">开班时间：2016-03-16</a></li>
+                </ul>
+                <ul class="u_right">
+                    <li><a href="#"><span>预约报名</span></a></li>
+                    <li><a href="#">开班盛况</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

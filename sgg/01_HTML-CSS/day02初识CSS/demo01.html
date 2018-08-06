@@ -1,0 +1,114 @@
+<!--
+一.简介
+1.CSS(Cascading Style Sheets): 层叠样式表
+2.CSS对网页的修饰是一个层叠覆盖的过程,用户只能看到最上层
+
+参考: http://www.w3cschool.cn/css/css-howto.html | https://www.w3cschool.cn/css/css-quote.html
+二.html中引入css方式
+    1.内部
+        1.内联样式
+            1.结构与样式耦合性强
+        2.内部样式
+    2.外部
+        1.导入式
+            1.特点: 在整个页面加载完毕后才加载css
+                1.用户体验差: 大网页可能会出现,先显示无样式效果,然后才出现带样式的效果
+                2.维护容易: 可以在一个CSS文件中引入多个CSS文件,然后再将此CSS文件导入html文件
+        2.链接式
+            1.特点: 和HTML页面同步加载
+                1.用户体验好: 总是显示带样式的效果
+                2.维护难: 要在html中导入多个CSS文件,只能分别引入,后期修改,也必须分别修改
+        3.综上,最佳引入CSS方式:
+            1.若引入一个CSS文件,使用链接方式
+            2.若引入多个CSS文件,使用链接式引入一个使用导入式导入了其他CSS文件的CSS文件
+        4.Note
+            1.link是HTML标签
+            2.@import是CSS标签
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            p{
+                color: #ff6781;
+            }
+            p{
+                color: #00FF00;
+            }
+        </style>
+    </head>
+    <body>
+        <p>css学习</p>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

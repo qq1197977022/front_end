@@ -1,0 +1,104 @@
+<!--
+一.长度单位
+    1.auto默认值,浏览器自动计算
+    2.length(px, cm, em等单位)
+        1.像素px
+            1.屏幕实际上就是由很多像素点构成,一个像素单位即屏幕上的一个点
+            2.不同屏幕像素的大小不一样
+                1.显示效果越好越清晰的屏幕,像素越小,反之越大
+                2.手机屏一个像素大小约是电脑屏像素大小的1/4
+                    1.手机浏览器在解析网页时,会乘上4倍,因而视觉效果和pc端无差
+        2.em
+            1.用于字体大小
+                1.em与px换算: 1em = 16px
+                2.用于解决IE(<9.0)浏览器无法调整字体大小
+            2.用于块大小
+                1.相对当前元素字体倍数
+    3.%相对父元素百分比
+        1.常用于自适应页面
+    4.inherit继承父元素
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本样式</title>
+
+    <style>
+        /*auto浏览器自动计算*/
+        #box1{
+            width: auto;
+            height: auto;
+            background-color: #F0F0AF;
+        }
+        /*length指定单位, px像素单位*/
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: #9932CC;
+        }
+        /*length指定单位, cm单位*/
+        #box3{
+            width: 5cm;
+            height: 5cm;
+            background-color: #9932CC;
+        }
+        /*length指定单位, em单位*/
+        #box4{
+            width: 15em;
+            height: 15em;
+            background-color: #9932CC;
+            font-size: 1em; /*1em = 16px*/
+        }
+        /*百分比,相对父元素百分比*/
+        #box5{
+            width: 300px;
+            height: 300px;
+            background-color: black;
+        }
+        #box5>p{
+            width: 70%;
+            height: 70%;
+            background-color: #90EE90;
+        }
+    </style>
+</head>
+<body>
+    <!--auto浏览器自动计算-->
+    <div id="box1">
+        auto默认值,浏览器自动计算
+    </div>
+
+    <!--length指定单位-->
+    <hr>
+    <div id="box2">
+        length指定单位 <br>
+        px像素单位
+    </div>
+
+    <!--length指定单位-->
+    <hr>
+    <div id="box3">
+        length指定单位 <br>
+        cm单位
+    </div>
+
+    <!--length指定单位-->
+    <hr>
+    <div id="box4">
+        length指定单位 <br>
+            1.用于字体大小 <br>
+                1.em与px换算: 1em = 16px <br>
+                2.用于解决IE(<9.0)浏览器无法调整字体大小 <br>
+            2.用于块大小 <br>
+                1.相对当前元素字体倍数
+    </div>
+
+    <!--百分比-->
+    <div id="box5">
+        <p>
+            百分比,相对父元素百分比
+        </p>
+    </div>
+</body>
+</html>

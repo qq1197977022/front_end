@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS属性Hack</title>
+
+    <style>
+/*属性Hack*/
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: #FF0000;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            _background-color: #00FF00;
+        }
+        #box3{
+            width: 200px;
+            height: 200px;
+            *background-color: #0000FF;
+        }
+        #box4{
+            width: 200px;
+            height: 200px;
+            background-color: #019E8B\9;
+        }
+        #box5{
+            width: 200px;
+            height: 200px;
+            background-color: #ff6781\0;
+        }
+/*选择符Hack*/
+        #box6{
+            width: 200px;
+            height: 200px;
+        }
+        * html #box6{   /*IE6-*/
+            background-color: #000;
+        }
+        * + html #box6{    /*IE7*/
+            background-color: #FF00FF;
+        }
+    </style>
+</head>
+<body>
+    <h1>一.属性Hack</h1>
+    <h3>1.非IE/IE10+浏览器显示背景色#FF0000</h3>
+    <div id="box1"></div>
+
+    <h3>2.IE6-显示背景色#00FF00</h3>
+    <div id="box2"></div>
+
+    <h3>3.IE7-显示背景色#0000FF</h3>
+    <div id="box3"></div>
+
+    <h3>4.IE6+显示背景色#019E8B</h3>
+    <div id="box4"></div>
+
+    <h3>5.IE8+显示背景色#ff6781</h3>
+    <div id="box5"></div>
+
+    <h1>一.选择符Hack</h1>
+    <div id="box6">
+        <ol>
+            <li>IE6-显示背景色#000</li>
+            <li>IE7显示背景色#FF00FF</li>
+        </ol>
+    </div>
+</body>
+</html>

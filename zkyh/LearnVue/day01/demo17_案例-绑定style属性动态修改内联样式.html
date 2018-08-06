@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定style属性动态修改内联样式</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo17.js" defer></script>
+</head>
+<body>
+    <div id="app1">
+        <h1 style="color: #F00; font-size: 2em">不使用绑定: 普通CSS语法</h1>
+
+        <hr>
+        <h1 :style="{color: '#F00'}">1.对象语法</h1>
+        <h1 :style="{color: c1, fontSize: f1}">2.对象语法</h1>
+        <h1 :style="obj1">3.对象语法</h1>
+        <h1 :style="obj2">4.对象语法</h1>
+
+        <hr>
+        <h1 :style="[obj4, obj3]">1.数组语法</h1>
+    </div>
+</body>
+</html>
+
+<div>
+    <ol>
+    </ol>
+</div>

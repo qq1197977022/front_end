@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location</title>
+</head>
+<body>
+    <button id="btn01">window.location/document.location</button> <br>
+
+    <button id="btn02">设置location</button> <br>
+
+    <button id="btn03">从浏览器缓存/服务器reload页面</button>br
+    <input type="text" title="文本框"> <br>
+
+    <button id="btn04">replace当前资源</button>
+</body>
+</html>
+<script>
+    btn01.onclick = function () {
+        let l = window.location;
+        // let l = document.location;
+        window.alert(l);
+        console.log(`href = ${l.href}`);
+        console.log(`protocol = ${l.protocol}`);
+        console.log(`host = ${l.host}`);
+        console.log(`hostname = ${l.hostname}`);
+        console.log(`port = ${l.port}`);
+        console.log(`pathname = ${l.pathname}`);
+        console.log(`search = ${l.search}`);
+        console.log(`hash = ${l.hash}`);
+        console.log(`username = ${l.username}`);
+        console.log(`password = ${l.password}`);
+        console.log(`origin = ${l.origin}`);
+    };
+    btn02.onclick = function () {
+        // window.location = 'http://www.baidu.com';   //设置当前window对象的location/URL
+        window.location.assign('http://www.taobao.com');    //加载并显示指定URL的document
+    };
+    btn03.onclick = function () {
+        let choice = prompt('0: 从浏览器缓存重新加载页面\t1: 从服务器重新加载页面<--:-->默认0');
+        choice = parseInt(choice);
+        window.location.reload(choice);
+        /*
+        * 不传参/false: 从浏览器缓存重新加载页面
+        * true: 从服务器重新加载页面
+        * */
+    };
+    btn04.onclick = function () {
+        window.location.replace('http://www.baidu.com');
+        //和reload区别: 当前页面不会再session history中保存, 即用户不能使用返回按钮导航到当前页面
+    };
+</script>

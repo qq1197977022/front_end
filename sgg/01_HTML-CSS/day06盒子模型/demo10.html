@@ -1,0 +1,169 @@
+<!--
+一.overflow: 规定当内容超过元素边框时,显示方式
+    1.visible --- 在元素框外显示
+    2.hidden --- 修剪溢出内容
+    3.scroll --- 修剪并增加滚动条
+    4.auto --- 修剪内容,自动在需要的方向上添加滚动条
+    5.inherit
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>overflow溢出处理</title>
+        <style>
+            /*默认显示方式是visible*/
+            #f1{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+            }
+            #f1>div{
+                width: 300px;
+                height: 100px;
+                background-color: #00FF00;
+            }
+            /*修剪超出框部分内容,不显示*/
+            #f2{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+                overflow: hidden;
+            }
+            #f2>div{
+                width: 300px;
+                height: 100px;
+                background-color: #00FF00;
+            }
+
+            /*修剪超出框部分内容,增加双向滚动条*/
+            /*1.单向溢出*/
+            #f3{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+                overflow: scroll;
+            }
+            #f3>div{
+                width: 300px;
+                height: 100px;
+                background-color: #00FF00;
+            }
+            /*2.双向溢出*/
+            #f33{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+                overflow: scroll;
+            }
+            #f33>div{
+                width: 300px;
+                height: 300px;
+                background-color: #00FF00;
+            }
+            /*3.无溢出*/
+            #f333{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+                overflow: scroll;
+            }
+            #f333>div{
+                width: 150px;
+                height: 150px;
+                background-color: #00FF00;
+            }
+            /*自动处理*/
+            /*1.单项溢出*/
+            #f4{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+                overflow: auto;
+            }
+            #f4>div{
+                width: 300px;
+                height: 100px;
+                background-color: #00FF00;
+            }
+            /*2.双向溢出*/
+            #f44{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+                overflow: auto;
+            }
+            #f44>div{
+                width: 300px;
+                height: 300px;
+                background-color: #00FF00;
+            }
+            /*3.无溢出*/
+            #f444{
+                width: 200px;
+                height: 200px;
+                background-color: #ff6781;
+                overflow: auto;
+            }
+            #f444>div{
+                width: 150px;
+                height: 150px;
+                background-color: #00FF00;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>1.默认显示方式</h3>
+        <div id="f1">
+            <div>内容超出框时,默认显示方式是在框外显示</div>
+        </div>
+
+        <hr>
+        <h3>2.修剪超出框部分内容,不显示</h3>
+        <div id="f2">
+            <div>修剪超出框部分内容,不显示</div>
+        </div>
+
+        <hr>
+        <h3>3.修剪超出框部分内容,增加滚动条</h3>
+        <span>1.单向溢出</span>
+        <div id="f3">
+            <div>修剪超出框部分内容,增加滚动条</div>
+        </div>
+
+        <span>1.双向溢出</span>
+        <div id="f33">
+            <div>修剪超出框部分内容,增加滚动条</div>
+        </div>
+
+        <span>1.无溢出</span>
+        <div id="f333">
+            <div>修剪超出框部分内容,增加滚动条</div>
+        </div>
+        <span>缺点:同时添加双向滚动条</span>
+
+        <hr>
+        <h3>4.自动处理</h3>
+        <span>1.单向溢出</span>
+        <div id="f4">
+            <div>
+                自动处理
+            </div>
+        </div>
+
+        <span>1.双向溢出</span>
+        <div id="f44">
+            <div>
+                自动处理
+            </div>
+        </div>
+
+        <span>1.无溢出</span>
+        <div id="f444">
+            <div>
+                自动处理
+            </div>
+        </div>
+        <span>优点: 自动识别溢出方式,根据需要添加滚动条</span>
+    </body>
+</html>

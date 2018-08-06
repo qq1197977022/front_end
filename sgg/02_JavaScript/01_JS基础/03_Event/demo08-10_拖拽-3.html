@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #d1 {
+            width: 300px;
+            height: 300px;
+            background-color: #66CDAA;
+            line-height: 100px;
+            text-align: center;
+            position: absolute;    /*避免元素移动时影响正常文档流中其他元素*/
+        }
+        #d2 {
+            width: 100px;
+            height: 100px;
+            background-color: #EA4335;
+            position: absolute;
+            left: 300px;
+            top: 200px;
+        }
+        #d3 {
+            width: 100px;
+            height: 100px;
+            background-color: #FF00FF;
+            line-height: 100px;
+            text-align: center;
+            position: absolute;    /*避免元素移动时影响正常文档流中其他元素*/
+        }
+        img {
+            position: absolute;
+            margin-left: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <p>文字内容</p>
+    <div id="d1">已处理</div>
+    <div id="d2"></div>
+    <div id="d3">未处理</div>
+    <div id="d4"><img src="img/beaute.jpg" alt="美女图片"></div>
+</body>
+</html>
+<script>
+    function drag(ele) {
+        ele.onmousedown = function (e) {
+            let x = e.clientX - ele.offsetLeft;
+            let y = e.clientY - ele.offsetTop;
+
+            document.onmousemove = function (e) {
+                ele.style.marginLeft = `${e.clientX - x}px`;
+                ele.style.marginTop = `${e.clientY - y}px`;
+            };
+
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+
+            if (ele.id !== 'd3') {  //不处理d3
+                return false;
+            }
+        };
+    }
+</script>
+<script>
+    let d1 = document.getElementById('d1');
+    let d3 = document.getElementById('d3');
+    let img = document.querySelector('img');
+    drag(d1);
+    drag(d3);
+    drag(img);
+</script>
+<!--
+一.问题:
+    1.浏览器默认行为: 当拖拽网页中的内容时, 默认执行搜索而导致拖拽功能异常
+二.现象
+    1.全选时拖拽div块, 有阴影且松开鼠标不会触发document.onmouseup事件
+三.解决
+    1.在onmousedown事件监听响应函数中return false
+    2.兼容IE<=8, setCapture, release...
+-->
+
+
+
+<!--
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+Note: 兼容性未看....
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

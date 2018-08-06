@@ -1,0 +1,154 @@
+<!--
+1.盒子模型边框和轮廓
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*盒子1*/
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #F0F0AF;
+        }
+        #box1:hover{
+            border-top: 100px solid #9932CC;
+        }
+        #box1:active{
+            border-top: 100px solid #000000;
+            border-left: 100px solid #00FF00;
+            border-right: 100px solid #ff6781;
+            border-bottom: 100px solid #7B68EE;
+        }
+        /*盒子2*/
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: #B0C4DE;
+        }
+        #box2:hover{
+            border-style: dashed solid;
+            border-width: 50px 100px;
+            border-color: #ff6781 #00FF00;
+        }
+        #box2:active{
+            border-color: #00FF00 #ff6781;
+        }
+
+        /*盒子3*/
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: #90EE90;
+            border: 20px dotted #ff6781;
+        }
+        #box3:hover{
+            border: 15px solid #000000;
+        }
+        #box3:active{
+            border: 10px dashed #FFFF00;
+        }
+
+        /*盒子4*/
+        #box4{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            border: 10px double #FF00FF;
+        }
+        #box4:hover{
+            border: 15px groove #00FF00;
+        }
+        #box4:active{
+            border: 20px ridge #FF00FF;
+        }
+    </style>
+    <!--轮廓-->
+    <style>
+        /*盒子5*/
+        #box5{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+            border: 10px solid #9932CC;
+            outline: #FF00FF dashed 10px;
+        }
+        #box5:hover{
+            border: 10px dotted #000000;
+            outline: #00FF00 double 10px;
+        }
+        #box5:active{
+            border: 10px groove #B0C4DE;
+            outline: #00FF00 ridge 10px;
+        }
+
+        #box6 {
+            width: 300px;
+            height: 300px;
+            background-color: #66CDAA;
+            border: 5px solid #000000;
+        }
+
+        #box6_1 {
+            width: 300px;
+            height: 300px;
+            background-color: #66CDAA;
+            border: 5px solid #000000;
+            outline: 30px solid #EA4335;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.边框</h3>
+    <div id="box1">
+        1.悬浮 <br>
+        2.点击 <br>
+        大不同
+    </div>
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <div id="box2">
+        1.悬浮 <br>
+        2.点击 <br>
+        大不同
+    </div>
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <div id="box3">
+        1.悬浮 <br>
+        2.点击 <br>
+        大不同
+    </div>
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <div id="box4">
+        1.悬浮 <br>
+        2.点击 <br>
+        大不同
+    </div>
+
+    <hr>
+    <h3>2.轮廓</h3>
+    <div id="box5">
+        1.悬浮 <br>
+        2.点击 <br>
+        大不同
+    </div>
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <div id="box6"></div>
+
+    <hr style="width: 800px; border-color: #F00; margin-left: 0;">
+    <pre style="font: 17px \5FAE\8F6F\96C5\9ED1; margin: 0;">
+        1.轮廓特点: 和内联元素的垂直内边距类似
+            1.同: 不影响页面布局
+            2.异:
+                1.轮廓堆叠顺序默认在上层,<a href="demo08.html">内联元素的垂直内边距堆叠顺序默认在底层</a>
+                2.轮廓不占盒子尺寸,内联元素垂直内边距占盒子尺寸
+    </pre>
+
+    <div id="box6_1"></div>
+</body>
+</html>

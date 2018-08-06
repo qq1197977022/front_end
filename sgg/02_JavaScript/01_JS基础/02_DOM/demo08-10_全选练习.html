@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>全选练习</title>
+    <style>
+        div {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <span>你的爱好是?</span>
+            <input id='all' type='checkbox'><label for='all'>全选/全不选</label>
+        </p>
+        <form action='http://www.baidu.com'>
+            <input id='zq' type='checkbox' name='hobby'><label for='zq'>足球</label>
+            <input id='lq' type='checkbox' name='hobby'><label for='lq'>篮球</label>
+            <input id='ymq' type='checkbox' name='hobby'><label for='ymq'>羽毛球</label>
+            <input id='ppq' type='checkbox' name='hobby'><label for='ppq'>乒乓球</label> <br>
+            <button id='qxbt'>全选</button>
+            <button id='qbxbt'>全不选</button>
+            <button id='fxbt'>反选</button>
+            <button id='tjbt'>提交</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    let hobbies = document.getElementsByName('hobby');
+    let all = document.getElementById('all');
+
+
+    //全选
+    let qxbt = document.getElementById('qxbt');
+    qxbt.onclick = function () {
+      qxbt.type = 'button'; //默认submit
+      for (let i = 0; i < hobbies.length; i++) {
+          hobbies[i].checked = true;    // hobbies.item(i).checked = true;
+      }
+      all.checked = true;
+    };
+
+
+    //全不选
+    let qbxbt = document.getElementById('qbxbt');
+    qbxbt.onclick = function () {
+        qbxbt.type = 'button'; //默认submit
+        for (let i = 0; i < hobbies.length; i++) {
+            hobbies[i].checked = false; // hobbies.item(i).checked = false;
+        }
+        all.checked = false;
+    };
+
+
+    //反选
+    let fxbt = document.getElementById('fxbt');
+    fxbt.onclick = function () {
+      fxbt.type = 'button'; //默认submit
+
+      all.checked = true;   //假设全选
+
+      for (let i = 0; i < hobbies.length; i++) {
+          /*if (hobbies[i].checked) {
+              hobbies[i].checked = false;
+          } else {
+              hobbies[i].checked = true;
+          }*/
+
+          /*提高逼格!
+          let ret = hobbies[i].checked ? hobbies[i].checked = false : hobbies[i].checked = true;
+          console.log(ret);*/
+
+          //继续提高逼格!!
+          hobbies[i].checked = !hobbies[i].checked; //取反
+
+          if (!hobbies[i].checked) {    //只要有一个没选, 则为非全选
+              all.checked = false;
+          }
+      }
+    };
+
+
+    /*提交
+    * button按钮默认行为即submit
+    * */
+
+
+    //全选/全不选
+    // let all = document.getElementById('all');
+    all.onclick = function () {
+        // let hobbies = document.getElementsByName('hobby');
+        for (let i = 0; i < hobbies.length; i++) {
+            hobbies[i].checked = all.checked;   //hobbies[i].checked = this.checked;
+        }
+    };
+
+
+    /*设置#all跟随hobby
+    * 所有hobby选中, #all也选中
+    * 有一个hobby没选中, #all也没选中
+    * */
+
+    //批量添加事件
+    for (let i = 0; i < hobbies.length; i++) {
+        hobbies[i].onclick = function () {
+            all.checked = true; //假设全选
+            for (let j = 0; j < hobbies.length; j++) {
+                if (!hobbies[j].checked) {  //有一个没选, 即为非全选
+                    all.checked = false;
+                    break;
+                }
+            }
+        };
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+<!--
+一.列表
+    1.分类
+        1.ol -- 有序
+        2.ul -- 无序
+        3.dl -- 定义列表(H5中改为描述列表)
+        4.menu -- 菜单列表
+            1.主流浏览器均不支持
+    2.列表项
+        1.ol, ul, menu列表项
+            1.li
+        2.dl列表项
+            1.dt
+            2.dd -- 描述列表项
+    3.Note
+        1.ul, ol, dl可以随意嵌套
+        2.ul, ol , dl, li均是块级元素
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ol>
+        <li>女一号</li>
+        <li>女二号</li>
+        <li>女三号</li>
+    </ol>
+
+    <hr>
+    <ul>
+        <li>张三丰</li>
+        <li>范冰冰</li>
+        <li>葛二蛋</li>
+    </ul>
+
+    <hr>
+    <dl>
+        <dt>宫保鸡丁</dt>
+            <dd>宫保二斤</dd>
+            <dd>鸡丁一斤</dd>
+        <dt>鱼香肉丝</dt>
+            <dd>鱼</dd>
+            <dd>香料</dd>
+            <dd>肉丝</dd>
+    </dl>
+
+    <hr>
+    <ul>
+        <li>湖南&harr;湖北(第一种嵌套)</li>
+        <!--第一种嵌套-->
+        <ol>
+            <li>湖南站</li>
+            <li>武汉站</li>
+            <li>湖北站</li>
+        </ol>
+        <li>南阳&harr;郑州(第二种嵌套)
+            <!--第二种嵌套-->
+            <ol>
+                <li>南阳站</li>
+                <li>开封站</li>
+                <li>郑州站</li>
+            </ol>
+        </li>
+        <ul>
+            <li>第三种嵌套</li>
+            <li>湖南</li>
+            <li>湖北</li>
+            <li>南阳</li>
+        </ul>
+    </ul>
+
+    <hr>
+    <ol>
+        <li>湖南&harr;湖北(第一种嵌套)</li>
+        <!--第一种嵌套-->
+        <ul>
+            <li>湖南站</li>
+            <li>武汉站</li>
+            <li>湖北站</li>
+        </ul>
+        <li>南阳&harr;郑州(第二种嵌套)
+            <!--第二种嵌套-->
+            <ul>
+                <li>南阳站</li>
+                <li>开封站</li>
+                <li>郑州站</li>
+            </ul>
+        </li>
+        <ol>
+            <li>第三种嵌套</li>
+            <li>湖南</li>
+            <li>湖北</li>
+            <li>南阳</li>
+        </ol>
+    </ol>
+</body>
+</html>

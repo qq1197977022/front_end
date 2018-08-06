@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定(注册事件监听)</title>
+</head>
+<body>
+    <h2>事件绑定(注册事件监听)</h2>
+    <button onclick="fun1()">1.HTML属性</button>
+    <button id="btn02">2.DOM元素属性</button>
+    <button id="btn03">3.EventTarget.addEventListener</button>
+</body>
+</html>
+<script>
+    function fun1() {
+        window.alert('方式一');
+    }
+    
+    let btn02 = document.getElementById('btn02');
+    btn02.onclick = function (e) {
+        window.alert(`${e}\t方式二`);
+        // window.alert(e + '\t方式二');
+        /*
+        缺点: 只能绑定一次, 后覆盖前
+         */
+    };
+    let btn03 = document.getElementById('btn03');
+    function fun3(e) {
+        window.alert(`${e}\t方式三`);
+        // window.alert(e + '方式三');
+    }
+    /*
+    * 优点: 可绑定多次
+    * 缺点: 兼容性
+    * */
+    if (btn03.addEventListener) {
+        btn03.addEventListener('click', fun3, false);   //兼容现代浏览器
+        /*
+        this指向触发该事件的元素节点对象
+         */
+    } else {
+        btn03.attachEvent('onclick', fun3, false);  //兼容IE<9版本
+        /*
+        1.this指向window对象
+        2.可利用Function对象的call()函数改变this指向
+         */
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

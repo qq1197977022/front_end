@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景一</title>
+    <style>
+        div {
+            width: 600px;
+            height: 300px;
+            border: 5px dashed #7CFC00;
+            color: #0000FF; /*前景色*/
+            text-align: center; /*水平居中*/
+        }
+        #box1 {
+            background-color: #BC8F8F;
+        }
+        #box2 {
+            background: #B0C4DE url("img/0.png");
+        }
+    </style>
+    <!--设置背景图片平铺方式-->
+    <style>
+        #box2_1 {
+            background: #B0C4DE url("img/0.png") repeat;
+        }
+        #box2_2 {
+            background: #B0C4DE url("img/0.png") repeat-x;
+        }
+        #box2_3 {
+            background: #B0C4DE url("img/0.png") repeat-y;
+        }
+        #box2_4 {
+            background: #B0C4DE url("img/0.png") no-repeat;
+        }
+        #box2_5 {
+            background: #B0C4DE url("img/0.png") inherit;
+        }
+    </style>
+    <!--设置指定对象向外裁剪区域 ~ 设置绘制背景区域-->
+    <style>
+        #box31 {
+            display: inline-block;
+            padding: 15px;
+            background-color: #BDB76B;
+            background-clip: border-box;
+        }
+        #box31_1 {
+            display: inline-block;
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-clip: border-box;
+        }
+        #box32 {
+            display:inline-block;
+            padding: 15px;
+            background-color: #BDB76B;
+            background-clip: padding-box;
+        }
+        #box32_1 {
+            display:inline-block;
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-clip: padding-box;
+        }
+        #box33 {
+            display:inline-block;
+            padding: 15px;
+            background-color: #BDB76B;
+            background-clip: content-box;
+        }
+        #box33_1 {
+            display: inline-block;
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-clip: content-box;
+        }
+    </style>
+    <!--设置背景图像尺寸-->
+    <style>
+        #box4_1 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-size: auto;
+        }
+        #box4_2 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-size: 25px;
+        }
+        #box4_3 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-size: 10%;
+        }
+        #box4_4 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-size: cover;
+        }
+        #box4_5 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png");
+            background-size: contain;
+        }
+    </style>
+    <!--设置背景图像随元素内容滚动方式-->
+    <style>
+        #box5 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png") no-repeat scroll;
+        }
+        #box5_1 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png") no-repeat local;
+        }
+        #box5_2 {
+            width: auto;
+            padding: 15px;
+            background: #B0C4DE url("img/0.png") no-repeat fixed bottom center;
+        }
+        #box5_3 {
+            padding: 15px;
+            background: #B0C4DE url("img/0.png") no-repeat;
+            background-attachment: inherit;
+        }
+    </style>
+    <!--设置背景图像位置-->
+    <style>
+        /*单词*/
+        #box6 {
+            display: inline-block;
+            width: 600px;
+            height: 600px;
+            background: #B0C4DE url("img/0.png") no-repeat left center;
+        }
+        #box6_1 {
+            display: inline-block;
+            width: 600px;
+            height: 600px;
+            background: #B0C4DE url("img/0.png") no-repeat top center;
+        }
+        #box6_2 {
+            display: inline-block;
+            width: 600px;
+            height: 600px;
+            background: #B0C4DE url("img/0.png") no-repeat center center;
+        }
+        #box6_3 {
+            display: inline-block;
+            width: 600px;
+            height: 600px;
+            background: #B0C4DE url("img/0.png") no-repeat bottom center;
+        }
+
+        /*百分比和数值单位*/
+        #box7 {
+            display: inline-block;
+            background: #B0C4DE url("img/0.png") no-repeat 20px 230px;
+        }
+        #box7_1 {
+            display: inline-block;
+            background: #B0C4DE url("img/0.png") no-repeat 230px -150px;
+        }
+
+        #box8 {
+            display: inline-block;
+            background: #B0C4DE url("img/0.png") no-repeat 3% 300%;
+        }
+        #box8_1 {
+            display: inline-block;
+            background: #B0C4DE url("img/0.png") no-repeat 150% -80%;
+        }
+        #box8_2 {
+            display: inline-block;
+            background: #B0C4DE url("img/0.png") no-repeat inherit;
+        }
+    </style>
+    <!--设置背景图像的参考原点-->
+    <style>
+        #box9 {
+            padding: 35px;
+            background: #B0C4DE url("img/0.png") no-repeat border-box 200px 200px;
+        }
+        #box9_1 {
+            padding: 35px;
+            background: #B0C4DE url("img/0.png") no-repeat padding-box 200px 200px;
+        }
+        #box9_2 {
+            padding: 35px;
+            background: #B0C4DE url("img/0.png") no-repeat content-box 200px 200px;
+        }
+    </style>
+</head>
+<body>
+    <h3>一.默认样式</h3>
+
+    <h4>1.默认背景色样式</h4>
+    <div id="box1">
+        默认---默认---默认---默认---默认---默认 <br>
+        默认---默认---默认---默认---默认---默认 <br>
+        默认---默认---默认---默认---默认---默认 <br>
+    </div>
+
+    <h4>2.默认背景图像样式</h4>
+    <div id="box2">
+        默认---默认---默认---默认---默认---默认 <br>
+        默认---默认---默认---默认---默认---默认 <br>
+        默认---默认---默认---默认---默认---默认 <br>
+    </div>
+
+
+    <hr>
+    <h4>1.设置背景图像平铺方式</h4>
+    <div id="box2_1">
+        默认 repeat___默认 repeat___默认 repeat <br>
+        默认 repeat___默认 repeat___默认 repeat <br>
+        默认 repeat___默认 repeat___默认 repeat <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box2_2">
+        repeat-x___repeat-x___repeat-x <br>
+        repeat-x___repeat-x___repeat-x <br>
+        repeat-x___repeat-x___repeat-x <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box2_3">
+        repeat-y___repeat-y___repeat-y <br>
+        repeat-y___repeat-y___repeat-y <br>
+        repeat-y___repeat-y___repeat-y <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box2_4">
+        no-repeat__no-repeat__no-repeat <br>
+        no-repeat__no-repeat__no-repeat <br>
+        no-repeat__no-repeat__no-repeat <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box2_5">
+        inherit___inherit___inherit <br>
+        inherit___inherit___inherit <br>
+        inherit___inherit___inherit <br>
+    </div>
+
+    <hr>
+    <h4>2.设置背景图像向外裁剪区域 ~ 设置元素背景绘制区域</h4>
+    <div id="box31">
+        border-box___border-box___border-box <br>
+        border-box___border-box___border-box <br>
+        border-box___border-box___border-box <br>
+    </div>
+    <div id="box31_1">
+        border-box___border-box___border-box <br>
+        border-box___border-box___border-box <br>
+        border-box___border-box___border-box <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box32">
+        padding-box___padding-box___padding-box <br>
+        padding-box___padding-box___padding-box <br>
+        padding-box___padding-box___padding-box <br>
+    </div>
+    <div id="box32_1">
+        padding-box___padding-box___padding-box <br>
+        padding-box___padding-box___padding-box <br>
+        padding-box___padding-box___padding-box <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box33">
+        content_box___content_box___content_box <br>
+        content_box___content_box___content_box <br>
+        content_box___content_box___content_box <br>
+    </div>
+    <div id="box33_1">
+        content_box___content_box___content_box <br>
+        content_box___content_box___content_box <br>
+        content_box___content_box___content_box <br>
+    </div>
+
+    <hr>
+    <h4>3.检索或设置背景图像尺寸</h4>
+    <div id="box4_1">
+        默认auto___默认auto___默认auto <br>
+        默认auto___默认auto___默认auto <br>
+        默认auto___默认auto___默认auto <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box4_2">
+        length 25px___length 25px___length 25px <br>
+        length 25px___length 25px___length 25px <br>
+        length 25px___length 25px___length 25px <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box4_3">
+        percentage 10%___percentage 10%___percentage 10%___ <br>
+        percentage 10%___percentage 10%___percentage 10%___ <br>
+        percentage 10%___percentage 10%___percentage 10%___ <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box4_4">
+        cover___cover___cover <br>
+        cover___cover___cover <br>
+        cover___cover___cover <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box4_5">
+        contain___contain___contain <br>
+        contain___contain___contain <br>
+        contain___contain___contain <br>
+    </div>
+
+    <hr>
+    <h4>4.设置背景图像随元素内容滚动方式</h4>
+    <div id="box5">
+        默认scroll___默认scroll___默认scroll___ <br>
+        默认scroll___默认scroll___默认scroll___ <br>
+        默认scroll___默认scroll___默认scroll___ <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box5_1">
+        local___local___local <br>
+        local___local___local <br>
+        local___local___local <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box5_2">
+        fixed 固定(固定定位)___fixed 固定(固定定位)___fixed 固定(固定定位) <br>
+        fixed 固定(固定定位)___fixed 固定(固定定位)___fixed 固定(固定定位) <br>
+        fixed 固定(固定定位)___fixed 固定(固定定位)___fixed 固定(固定定位) <br> <br>
+        背景图像相对浏览器窗口位置固定,背景图片只有在当前元素的背景位置才能显示 <br>
+        1.但是当前元素大小有限,因此特意设置背景色width: auto, 背景图片位置bottom center <br>
+        2.这样通过上下滑动一定能使所设置的背景图片位于当前元素的背景位置
+        3.当设置fixed时,background-origin失效
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box5_3">
+        inherit___inherit___inherit <br>
+        inherit___inherit___inherit <br>
+        inherit___inherit___inherit <br>
+    </div>
+
+
+    <hr>
+    <h4>5.背景图像位置</h4>
+    <div id="box6">
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+    </div>
+
+    <div id="box6_1">
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+    </div>
+
+    <div id="box6_2">
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+    </div>
+
+    <div id="box6_3">
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+        单词_top_right_bottom_left_center <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box7">
+        数值单位___数值单位___数值单位 <br>
+        数值单位___数值单位___数值单位 <br>
+        数值单位___数值单位___数值单位 <br>
+    </div>
+
+    <div id="box7_1">
+        数值单位___数值单位___数值单位 <br>
+        数值单位___数值单位___数值单位 <br>
+        数值单位___数值单位___数值单位 <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box8">
+        百分比___百分比___百分比 <br>
+        百分比___百分比___百分比 <br>
+        百分比___百分比___百分比 <br>
+    </div>
+    <div id="box8_1">
+        百分比___百分比___百分比 <br>
+        百分比___百分比___百分比 <br>
+        百分比___百分比___百分比 <br>
+    </div>
+    <div id="box8_2">
+        继承___继承___继承 <br>
+        继承___继承___继承 <br>
+        继承___继承___继承 <br>
+    </div>
+
+    <hr>
+    <h4>6.背景图像设置position时参考原点</h4>
+    <div id="box9">
+        border-box___border-box___border-box <br>
+        border-box___border-box___border-box <br>
+        border-box___border-box___border-box <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box9_1">
+        padding-box___padding-box___padding-box <br>
+        padding-box___padding-box___padding-box <br>
+        padding-box___padding-box___padding-box <br>
+    </div>
+
+    <hr style="width: 1500px; border-color: #F00; margin-left: 0;">
+    <div id="box9_2">
+        content-box___content-box___content-box <br>
+        content-box___content-box___content-box <br>
+        content-box___content-box___content-box <br>
+    </div>
+
+</body>
+</html>

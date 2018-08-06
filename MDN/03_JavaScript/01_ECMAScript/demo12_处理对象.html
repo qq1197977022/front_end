@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>处理对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+1.JavaScript的设计是一个简单的基于对象的范式
+2.一个对象即一些列属性(键值对)的集合
+    2.当属性值是函数时, 称之为该对象的方法
+3.对象的所有属性名都是以字符串的形式存在(非字符串会自动转换为字符串)
+-->
+<script>
+    let car1 = new Object();
+    car1.make = 'Ford';
+    car1.model = 'Mustang';
+    car1.year = 1969;
+    for (let i in car1) {
+        console.log(i, car1[i]);    //car1.i ==> undefined
+    }
+
+    console.log(car1.make, car1.model, car1.year);
+    console.log(car1.name, car1[name]); //未赋值的属性值为undefined
+
+
+    //对象初始化容器
+    let car2 = {make: 'Ford', 'model': 'Mustang', year: 1969};
+    console.log(car2, typeof car2);
+
+    //构造函数
+    function Car(make, model, year) {   //源自java
+        this.make = make;   //this指向当前对象
+        this.model = model;
+        this.year = year;
+    }
+    let car3 = new Car('Ford', 'Mustang', 1969);
+    console.log(car3, typeof car3);
+    //为对象类型定义属性
+    Car.prototype.age = 123456; //为该类型所有对象添加属性
+    console.log(car3.age);
+
+    /*
+    1.Object.creat方法, 指定原型对象和属性创建新对象
+    2.JavaScript对象至少继承于一个对象, 被继承的对象称作原型, 继承的属性可通过构造函数的prototype对象访问
+     */
+    let Animal = {
+        type: '无脊椎动物',
+        displayType: function () {
+            console.log(this.type);
+        }
+    };
+    let animal1 = Object.create(Animal);
+    animal1.displayType();
+
+    let fish = Object.create(Animal);
+    fish.type = '鱼类';
+    fish.displayType();
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

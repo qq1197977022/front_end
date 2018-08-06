@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS滑动门</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #nav {
+            background-color: #000;
+        }
+        nav {
+            width: 1196px;
+            margin: 0 auto;
+            line-height: 35px; /*单行字体垂直居中*/
+        }
+        nav a {
+            color: #FBBC05;
+            text-decoration: none;
+            padding: 10px 46px;
+            float: left;
+        }
+        nav:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        nav a:hover {
+            background-color: #b3ffff;
+            color: #FF00FF;
+        }
+    </style>
+    <!--简单滑动门-->
+    <style>
+        #simple {
+            line-height: 100px;
+        }
+
+        #simple span:first-child {
+            width: 10px;
+            height: 100px;
+            background: url("img/l.png") no-repeat;
+            float: left;
+        }
+        #simple a:nth-child(2) {
+            height: 100px;
+            color: #FFF;
+            text-decoration: none;
+            background: url("img/m.png") repeat-x;
+            float: left;
+        }
+        #simple span:last-child {
+            width: 10px;
+            height: 100px;
+            background: url("img/r.png") no-repeat;
+            float: left;
+        }
+        #simple:after { /*清除浮动*/
+            content: "";
+            display: block;
+            clear: left;
+        }
+    </style>
+    <!--复杂滑动门-->
+    <style>
+        #complex {
+            line-height: 100px;
+        }
+        #complex a {
+            height: 100px;
+            float: left;
+            background: url("img/l.png") no-repeat;
+            padding: 0 10px;
+        }
+        #complex span {
+            height: 100px;
+            float: left;
+            background: url("img/m.png ") repeat-x;
+            color: #FFF;
+        }
+        #complex div {
+            height: 100px;
+            float: left;
+            background: url("img/r.png") no-repeat right;
+         }
+        #complex:after {
+            content: "";
+            display: block;
+            clear: left;
+        }
+
+
+        #complex a:hover {
+            background-image: url("img/l1.png ");
+        }
+        #complex span:hover {
+            background-image: url("img/m1.png");
+        }
+        #complex div:hover {
+            background-image: url("img/r1.png");
+        }
+    </style>
+
+    <style>
+        #c {
+            line-height: 100px;
+        }
+        #c>a:before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 100px;
+            background: url("img/l.png") no-repeat;
+        }#c>a:after{
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 100px;
+            background: url("img/r.png") no-repeat;
+        }
+        #c span {
+            display: inline-block;
+            height: 100px;
+            background: url("img/m.png") repeat-x;
+            vertical-align: top;
+            color: #FFF;
+        }
+        #c>a:before:hover {
+            background: url("img/l1.png") no-repeat;
+        }
+        #c>a:after:hover {
+            background-image: url("img/r1.png");
+        }
+        #c span:hover {
+            background-image: url("img/m1.png");
+        }
+        
+    </style>
+
+    <style>
+        #c1, #c2, #c3 {
+            line-height: 35px;
+        }
+        #c1>a, #c2>a, #c3>a {
+            height: 35px;
+            background: url("img/bg_r1.png") no-repeat;
+            float: left;
+            padding-left: 7px;
+        }
+        #c1>a>span, #c2>a>span, #c3>a>span {
+            height: 35px;
+            background: url("img/bg_r2.png") no-repeat right;
+            float: left;
+            padding-right: 30px;
+        }
+
+        #c1>a:hover, #c2>a:hover, #c3>a:hover {
+            background-image: url("img/bg_b1.png");
+        }
+        #c1>a>span:hover, #c2>a>span:hover, #c3>a>span:hover {
+            background-image: url("img/bg_b2.png");
+        }
+
+        #c3:after {
+            content: "";
+            display: block;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <nav>
+            <a href="#" id="a1"><span>首页</span></a>
+            <a href="#"><span>滑动门</span></a>
+            <a href="#"><span>火车票</span></a>
+            <a href="#"><span>机票</span></a>
+            <a href="#"><span>汽车票</span></a>
+            <a href="#"><span>首页</span></a>
+            <a href="#"><span>滑动门</span></a>
+            <a href="#"><span>火车票</span></a>
+            <a href="#"><span>机票</span></a>
+        </nav>
+    </div>
+
+    <a style="color: #0000FF; text-decoration: underline; font-size: 25px;" href="../../../0_问题_总结/demo03_导航栏居中对齐技巧.html">1.导航栏居中对齐技巧</a>
+
+    <hr>
+    <h2>一.简单滑动门</h2>
+    <div id="simple">
+        <span></span>
+        <a href="#">简单滑动门 --- 滑动</a>
+        <span></span>
+    </div>
+
+    <h2>二.复杂滑动门</h2>
+    <div id="complex">
+        <div><a href="#"><span>百度 --- 滑动</span></a></div>
+    </div>
+
+    <hr>
+    <div id="c">
+        <a href="#"><span>复杂滑动门</span></a>
+    </div>
+
+    <hr>
+    <div id="c1">
+        <a href="#"><span>百度</span></a>
+    </div>
+
+    <div id="c2">
+        <a href="#"><span>百度一下</span></a>
+    </div>
+
+    <div id="c3">
+        <a href="#"><span>装逼一下,你就知道!</span></a>
+    </div>
+
+    <hr>
+    <h2>CSS滑动门技术简介:</h2>
+    <ol>
+    <li>实用性,能够根据导航条菜单文本长度自动调节宽度</li>
+    <li>简洁性,它可以用简单背景小图来实现炫彩的导航条风格,大大减少网页载入内容</li>
+    <li>适用性,可以多层套用,实现双层滑动门炫彩风格,也可以实现网页其他模块的一些特殊效果</li>
+    </ol>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

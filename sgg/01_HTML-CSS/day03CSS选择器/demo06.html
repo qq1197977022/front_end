@@ -1,0 +1,116 @@
+<!--
+一.属性选择器
+    1.分类
+        1.[attribute] -- 选取带有指定属性的元素
+        2.[attribute=value] -- 选取带有指定属性和值的元素
+
+        3.[attribute~=value] -- 选取属性值中包含指定词汇的元素
+        4.[attribute|=value] -- 选取属性值以指定词汇开头的元素
+
+        5.[attribute^=value] -- 匹配属性值以指定值开头的所有元素
+        6.[attribute$=value] -- 匹配属性值以指定值结尾的所有元素
+        7.[attribute*=value] -- 匹配属性值中包含指定值的所有元素
+
+    2.注意上述描述词: "词汇" 和 "值"的区别
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="属性选择器">
+        <meta name="description" content="属性选择器学习,哎呦..不错啊">
+        <meta name="author" content="By:狂草">
+        <title>属性选择器</title>
+
+        <style>
+            /*选取带有指定属性的元素*/
+            [title]{
+                font-size: 25px;
+            }
+            /*选取带有指定属性和值的元素*/
+            [title="s1"]{
+                background-color: #7CFC00;
+                font-size: 15px;
+            }
+            /*选取属性值中包含指定指定元素*/
+            [title~="b"]{
+                font-size: 10px;
+                color: #8B0000;
+            }
+            /*选取属性值以指定词汇开头的元素*/
+            [id|="p1"]{
+                background-color: black;
+                color: #ff6781;
+            }
+            /*选取属性值以指定值开头的元素*/
+            [class^="p"]{
+                font-size: 10px;
+                color: #9932CC;
+            }
+            /*选取属性值以指定值结尾的元素*/
+            [id$="c"]{
+                font-size: 25px;
+                background-color: #F0F0AF;
+            }
+            /*选取属性值中包含指定值的元素*/
+            [id*="oo"]{
+                font-size: 15px;
+                color: #DC143C;
+            }
+        </style>
+        <style>
+            div[id][class] {
+                height: 32px;
+                line-height: 32px;
+                color: #00FF00;
+                text-align: center;
+                background-color: #4c4c4c;
+            }
+        </style>
+    </head>
+    <body>
+        <p title="t">
+            选取带有指定属性的元素
+        </p>
+        <span title="tt">选取具有指定属性的元素</span>
+
+        <hr>
+        <span title="s1">选取带有指定属性和值的元素</span>
+        <span title="s2">选取带有指定属性和值的元素</span>
+        <span title="s1">选取带有指定属性和值的元素</span>
+
+        <hr>
+        <h3 title="h1a">选取属性值中含有指定词汇的元素</h3>
+        <h3 title="h1 b c">选取属性值中含有指定词汇的元素</h3>
+        <h3 title="h2a">选取属性值中含有指定词汇的元素</h3>
+        <h3 title="h2a b c">选取属性值中含有指定词汇的元素</h3>
+
+        <hr>
+        <p id="p12">选取属性值以指定词汇开头的元素</p>
+        <p id="p1">选取属性值以指定词汇开头的元素</p>
+        <p id="p13">选取属性值以指定词汇开头的元素</p>
+        <p id="p1 a">选取属性值以指定词汇开头的元素</p>
+
+        <hr>
+        <p class="p">选取属性值以指定值开头的元素</p>
+        <p class="p1">选取属性值以指定值开头的元素</p>
+        <p class="p12">选取属性值以指定值开头的元素</p>
+        <p class="p123">选取属性值以指定值开头的元素</p>
+
+        <hr>
+        <p id="c1c">选取属性值以指定值结尾的元素</p>
+        <p id="c1a">选取属性值以指定值结尾的元素</p>
+        <p id="c2cac">选取属性值以指定值结尾的元素</p>
+
+        <hr>
+        <p id="good">选取属性值中包含指定值的元素</p>
+        <p id="bgo">选取属性值中包含指定值的元素</p>
+        <p id="acgoo">选取属性值中包含指定值的元素</p>
+        <p id="oog">选取属性值中包含指定值的元素</p>
+
+        <hr>
+        <p style="font-size: 50px;">第一次更新 2017年12月7日22:18:35</p>
+        <p>1.多属性选择</p>
+        <div id="d1" class="d1">多属性选择</div>
+    </body>
+</html>

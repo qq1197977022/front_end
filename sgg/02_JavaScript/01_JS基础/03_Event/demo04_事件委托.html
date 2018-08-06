@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+    <style>
+        ul {
+            background-color: #FFE4C4;
+        }
+        li {
+            background-color: #b3ffff;
+        }
+        a {
+            background-color: #000;
+            color: #FF00FF;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.不使用事件委托</h3>
+    <ul id="u1">
+        <li><button>添加超链接</button></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+    </ul>
+
+    <h3>2.事件委托</h3>
+    <ul id="u2">
+        <li><button>添加超链接</button></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+    </ul>
+
+    <h3>3.事件委托, 细节处理: 只有点击a标签才触发委托事件</h3>
+    <ul id="u3">
+        <li><button>添加超链接</button></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+        <li><a href="javascript:">超链接,点我!</a></li>
+    </ul>
+</body>
+</html>
+<script>
+    let btns = document.querySelectorAll('button');
+    let uls = document.querySelectorAll('ul');
+</script>
+<!--不使用委托-->
+<script>
+    function addAClick1(index) { //从指定下标开始为元素添加事件
+        let aAll = document.querySelectorAll('#u1 a');
+        for (let i = index; i < aAll.length; i++) {
+            alert(`u1 \t i = ${i}`);
+            aAll[i].onclick = function () {
+                window.alert('哎呀, 我被点了');
+            };
+        }
+    }
+    window.onload = function () {
+        addAClick1(0);
+    };
+
+    function addEle(index) {
+        let li = document.createElement('li');
+        li.innerHTML = '<li><a href="javascript:">新建超链接, 点我!</a></li>';
+        uls[index].append(li);
+    }
+
+    btns[0].onclick = function () {
+        addEle(0);
+
+        let childEleCount = uls[0].childElementCount;
+        addAClick1(childEleCount-2); //-1-1,第一个-1: 下标从0开始, 第二个-1: u1下第一个子节点元素
+    };
+</script>
+<!--事件委托-->
+<script>
+    uls[1].onclick = function () {
+        window.alert(`事件冒泡 ---> 委托`);
+    };
+
+    btns[1].onclick = function (e) {
+        e.cancelBubble = true;  // 取消冒泡
+        addEle(1);  //添加子元素节点
+    };
+</script>
+<!--事件委托, 细节处理-->
+<script>
+    uls[2].onclick = function (e) {
+        if (e.target.href === 'javascript:') {
+            window.alert(`事件冒泡 ---> 委托`);
+        }
+    };
+    btns[2].onclick = function (e) {
+        e.cancelBubble = true;  // 取消冒泡
+        addEle(2);  //添加子元素节点
+    };
+</script>
+
+
+<!--
+一.事件委托
+    1.本质: 事件冒泡
+    2.作用: 减少事件绑定次数, 提高性能
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

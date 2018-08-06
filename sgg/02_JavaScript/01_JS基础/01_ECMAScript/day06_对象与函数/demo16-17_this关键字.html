@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this关键字</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //全局上下文
+    console.log(this);
+
+    //函数上下文
+    function fun1() {
+        return this;
+    }
+    window.console.log(fun1());
+
+    function fun2() {
+        'use strict';   //启用严格模式
+        return this;
+    }
+    window.console.log(fun2());
+
+
+</script>

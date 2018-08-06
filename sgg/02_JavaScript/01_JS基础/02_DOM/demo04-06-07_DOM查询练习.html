@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM查询练习</title>
+    <style>
+        #main {
+            width: 700px;
+            padding: 0 40px;
+            margin: 0 auto;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;  /*实际上清除的是上下默认外边距*/
+        }
+        li {
+            display: inline;
+            width: 45px;
+            height: 45px;
+            background-color: #99ff99;
+            border: 1px solid #FF0000;
+            margin: 20px 0 20px 10px;
+            font-size: 1.5em;
+        }
+        p {
+            margin: 5px 0 20px 0;
+        }
+        #choice {
+            float: left;
+        }
+        #main:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #top, #bottom {
+            border: 1px solid;
+        }
+        #top {
+            padding-bottom: 10px;
+        }
+        #bottom {
+            margin-top: 20px;
+            padding: 10px 0;
+        }
+
+        span {
+            font-size: 8px;
+        }
+    </style>
+
+    <style>
+        #demand {
+            float: right;
+        }
+        button {
+            display: block;
+            width: 300px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <!--选项-->
+        <div id="choice">
+            <div id="top">
+                <p>1.喜欢的城市</p>
+                <ul id="city">
+                    <li id="bj">北京<span>测试innerHTML和innerText用</span></li>
+                    <li id="sh">上海</li>
+                    <li>东京</li>
+                    <li>首尔</li>
+                </ul>
+                <p>2.喜欢的单机游戏</p>
+                <ul>
+                    <li>红警</li>
+                    <li>实况</li>
+                    <li>极品飞车</li>
+                    <li>魔兽</li>
+                </ul>
+                <p>3.手机操作系统</p>
+                <ul id="phone">
+                    <li>IOS</li>
+                    <li id="android">Android</li>
+                    <li>Windows Phone</li>
+                </ul>
+            </div>
+            <div id="bottom">
+                Gender:
+                <input id="male" type="radio" name="gender" value="male"><label for="male">Male</label>
+                <input id="female" type="radio" name="gender" value="female"><label for="female">Female</label> <br>
+
+                <label for="userName">Name:</label>
+                <input id="userName" type="text" placeholder="杨一帆">
+            </div>
+        </div>
+        <!--需求-->
+        <div id="demand">
+            <button id="btn01">查找#bj节点</button>
+            <button id="btn02">查找所有li节点</button>
+            <button id="btn03">查找name=gender的所有节点</button>
+            <button id="btn04">查找#city下所有li节点</button>
+            <button id="btn05">返回#city的所有子节点</button>
+            <button id="btn06">返回#phone的第一个子节点</button>
+            <button id="btn07">返回#bj的父节点</button>
+            <button id="btn08">返回#android的前一个兄弟节点</button>
+            <button id="btn09">返回#username的value属性值</button>
+            <button id="btn10">设置#username的value属性值</button>
+            <button id="btn11">返回#sh的文本值</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // 查找#bj节点
+    let btn01 = document.getElementById('btn01');
+    btn01.addEventListener('click', function aa() {
+        let bj = document.getElementById('bj');
+        window.alert(bj);
+        window.console.log(`innerText = ${bj.innerText}\n-----------\n`);   //Node兼容性表?
+        window.console.log(`innerHTML = ${bj.innerHTML}\n-----------\n`);   //W3c中说不是标准内容   醉了...
+    }, false);
+
+    //查找所有li节点
+    let btn02 = document.getElementById('btn02');
+    btn02.addEventListener('dblclick', function () {
+        let lis = document.getElementsByTagName('li');
+        window.alert(lis);
+        for (let i = 0; i < lis.length; i++) {
+            console.log(`${i}\t${lis.item(i).innerHTML}`);
+        }
+    }, false);
+
+    //查找name=gender的所有节点
+    let btn03 = document.getElementById('btn03');
+    btn03.addEventListener('wheel', function () {
+        let gender = document.getElementsByName('gender');
+        window.alert(gender);
+        for (let i = 0; i < gender.length; i++) {
+            console.log(`${i}\t${gender.item(i).value}`);
+        }
+    }, false);
+</script>
+<script>
+    //查找#city下所有li节点
+    let btn04 = document.getElementById('btn04');
+    btn04.onclick = function () {
+        let city = document.getElementById('city');
+        let lis = city.getElementsByTagName('li');
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i].innerHTML);
+        }
+    };
+
+    //返回#city的所有子节点
+    let btn05 = document.getElementById('btn05');
+    btn05.onclick = function () {
+        let city = document.getElementById('city');
+
+        console.log('-----> 所有子节点');
+        let lis1 = city.childNodes;     //获取所有子节点
+        for (let i = 0; i < lis1.length; i++) {
+            console.log(`${i}\t${lis1[i]}`);
+        }
+
+        console.log('-----> 所有子元素节点');
+        let lis2 = city.children;   //获取所有子元素节点 ~ element兼容性列表
+        for (let i = 0; i < lis2.length; i++) {
+            console.log(`${i}\t${lis2[i]}`);
+        }
+
+    };
+
+    //返回#phone的第一个子节点
+    let btn06 = document.getElementById('btn06');
+    btn06.onclick = function () {
+        let phone = document.getElementById('phone');
+        let firstN = phone.firstChild;  //第一个子节点
+        let firstEN = phone.firstElementChild;  //第一个子元素节点 ~ element兼容性表
+        console.log(`第一个子节点--->${firstN}`);
+        console.log(`第一个子节点元素--->${firstEN}\t\t${firstEN.innerHTML}`);
+    };
+</script>
+<script>
+    //返回#bj的父节点
+    let btn07 = document.getElementById('btn07');
+    btn07.onclick = function () {
+        let bj = document.getElementById('bj');
+        let bjPN = bj.parentNode;   //父节点
+        let bjPEN = bj.parentElement;    //父元素节点
+        console.log(`父节点--->${bjPN}\t`);
+        console.log(`父元素节点--->${bjPEN}\t`);
+    };
+
+    //返回#android的前一个兄弟节点
+    let btn08 = document.getElementById('btn08');
+    btn08.onclick = function () {
+        let android = document.getElementById('android');
+        let androidPreSibE = android.previousElementSibling;    //前一个兄元素节点
+        let androidPreSibN = android.previousSibling;   //前一个兄节点
+        console.log(`前一个兄节点元素${androidPreSibE}`);
+        console.log(`前一个兄节点${androidPreSibN}`);
+    };
+</script>
+<script>
+    //返回#username的value属性值
+    let btn09 = document.getElementById('btn09');
+    btn09.onclick = function () {
+        let userName = document.getElementById('userName');
+        let userNameValue = userName.value;
+        console.log(userNameValue);
+    };
+
+    //设置#username的value属性值
+    let btn10 = document.getElementById('btn10');
+    btn10.onclick = function () {
+        let userName = document.getElementById('userName');
+        userName.value = window.prompt('请输入:');
+    };
+
+    // 返回#sh的文本值
+    let btn11 = document.getElementById('btn11');
+    btn11.onclick = function () {
+        let sh = document.getElementById('sh');
+        console.log(sh.innerText);
+        console.log(sh.firstChild.nodeValue);
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

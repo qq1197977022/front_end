@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高度塌陷问题</title>
+
+    <style>
+        .m{
+            height: 100px;
+            background-color: #ff6781;
+        }
+        #f{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+        }
+        #s{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+        }
+
+        #f_1{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+        }
+        #s_1{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+
+        /*解决高度塌陷问题,方式一*/
+        #f_11{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            height: 100px;
+        }
+        #s_11{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        父元素
+        <div id="s">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <hr>
+    <h3>一.高度塌陷问题</h3>
+    <p>
+        原因: <br>
+        <ol>
+        <li>父元素是块级元素,高度由内容(即这里的子元素)撑开</li>
+        <li>但是子元素设置浮动,即脱离文档流</li>
+            <ul>
+                <li>脱离文档流,即收回元素在文档流中所占空间使用权</li>
+                    <ul>
+                        <li>此时文档流中的父元素的内容不在文档流中占据空间 --- 自然无法撑开高度</li>
+                    </ul>
+                <li>但该元素依然存在(占用空间),只是变成了流浪汉,停在哪里就在哪里占据空间</li>
+            </ul>
+        </ol>
+    </p>
+    <div id="f_1">
+        父元素
+        <div id="s_1">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3>二.解决高度塌陷问题</h3>
+    方式1.父元素设置固定高度 <br>
+    <dl>
+        <dt>不推荐:</dt>
+            <dd>1.此时元素高度不是由内容撑开,无法做到内容(子元素)高度变化时,同时变化</dd>
+    </dl>
+    <div id="f_11">
+        父元素
+        <div id="s_11">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <a href="demo02解决高度塌陷问题.html"><h3>方式2.开启隐藏属性BFC</h3></a>
+    <a href="demo04解决高度塌陷终极解决方案__清除浮动.html"><h3>方式3.清除浮动</h3></a>
+</body>
+</html>

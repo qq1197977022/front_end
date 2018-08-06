@@ -1,0 +1,162 @@
+<!--
+一.内联元素盒子模型
+    1.内容尺寸
+    2.内边距
+    3.边框
+    4.外边距
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内联元素盒子模型</title>
+
+    <style>
+        .d1{
+            width: 500px;
+            height: 100px;
+            background-color: #9ACD32;
+        }
+        span{
+            background-color: #ff6781;
+        }
+        /*CSS内容尺寸属性测试*/
+        #s1{
+            height: 100px;
+            width: 100px;
+        }
+        /*水平内边距测试*/
+        #s2{
+            padding: 0 50px;
+        }
+        /*垂直内边距属性测试*/
+        #s3{
+            padding: 50px 0;
+        }
+        /*边框属性测试*/
+        #s4{
+            border: 5px solid #00FF00;
+        }
+        /*水平外边距属性测试*/
+        #s5{
+            margin: 0 50px;
+        }
+        /*垂直外边距属性测试*/
+        #s6{
+            margin: 50px 0;
+        }
+
+        /*内联元素相邻水平外边距探究*/
+        .ss1{
+            margin: 0 100px;
+        }
+    </style>
+    <!--update-->
+    <style>
+        a[update] {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">块级元素div</div>
+
+    <hr>
+    <h3>1.CSS内容尺寸属性测试</h3>
+    <!--尺寸属性测试-->
+    <span>内联元素span</span>
+    <span id="s1">1.内联元素不支持CSS内容尺寸属性</span>
+    <span>内联元素span</span>
+    <p>
+        测试结果: <br>
+        1.内联元素不支持CSS内容尺寸属性
+    </p>
+
+    <hr>
+    <h3>2.CSS水平内边距测试</h3>
+    <!--水平内边距属性测试-->
+    <span>内联元素span</span>
+    <span id="s2">2.内联元素水平内边距测试</span>
+    <span>内联元素span</span>
+    <p>
+        测试结果: <br>
+        1.内联元素支持水平内边距
+    </p>
+
+    <hr>
+    <h3>3.CSS垂直内边距测试</h3>
+    <br>
+    <!--垂直内边距属性测试-->
+    <span>内联元素span</span>
+    <span id="s3">2.内联元素垂直内边距测试</span>
+    <span>内联元素span</span>
+    <p>
+        测试结果: <br>
+        1.内联元素支持垂直内边距,但不会影响页面布局 <br>
+        <a href="demo02.html">2.与CSS轮廓属性类似</a>
+    </p>
+
+    <hr>
+    <h3>4.CSS边框属性测试</h3>
+    <!--边框属性测试-->
+    <span>内联元素span</span>
+    <span id="s4">2.内联元素边框属性测试</span>
+    <span>内联元素span</span>
+    <p>
+        测试结果: <br>
+        1.内联元素支持边框属性
+    </p>
+
+    <hr>
+    <h3>5.CSS水平外边距测试</h3>
+    <!--水平外边距属性测试-->
+    <span>内联元素span</span>
+    <span id="s5">2.内联元素水平外边距属性测试</span>
+    <span>内联元素span</span>
+    <p>
+        测试结果: <br>
+        1.内联元素支持水平外边距属性
+    </p>
+
+    <hr>
+    <h3>5.CSS垂直外边距测试</h3>
+    <!--水平外边距属性测试-->
+    <span>内联元素span</span>
+    <span id="s6">2.内联元素垂直外边距属性测试</span>
+    <span>内联元素span</span>
+    <p>
+        测试结果: <br>
+        1.内联元素支持不支持垂直外边距属性
+    </p>
+
+
+    <hr>
+    <h2>6.内联元素相邻水平外边距探究</h2>
+    <span>内联元素span</span>
+    <span class="ss1">内联元素span</span>
+    <span class="ss1">内联元素span</span>
+    <span>内联元素span</span>
+    <p>
+        结论: <br>
+        内联元素相邻水平外边距不会发生重叠,而是累加
+    </p>
+
+    <hr>
+    <div class="d1">块级元素div</div>
+
+    <h1>总结:</h1>
+    <dl>
+        <dt>1.CSS内容尺寸属性 --- 不支持</dt>
+        <dt>2.内边距</dt>
+            <dd>1.CSS水平内边距属性 --- 支持</dd>
+            <dd>2.CSS垂直内边距属性 --- 支持,但不会影响网页布局</dd>
+        <dt>3.CSS边框属性 --- 支持</dt>
+        <dt>4.外边距</dt>
+            <dd>1.CSS水平外边距属性 --- 支持</dd>
+            <dd>2.CSS垂直外边距属性 --- 不支持</dd>
+    </dl>
+    <h2>更新2018年5月28日09:03:13</h2>
+    <a update="" href="update/update08_去除内联元素间隙.html">1.去除内联元素间隙</a>
+</body>
+</html>

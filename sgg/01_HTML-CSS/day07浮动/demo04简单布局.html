@@ -1,0 +1,89 @@
+<!--
+一.布局分类
+    1.固定布局
+    2.自适应布局(响应式布局)
+        1.根据不同设备不同屏幕分辨率,自动适应
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单布局</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        #top{
+            height: 30px;
+            margin-bottom: 10px;
+            background-color: #F5DEB3;
+            border: 1px solid #000000;
+        }
+
+        #page{
+            width: 1000px;
+            margin:0 auto;
+        }
+
+        #header{
+            height: 150px;
+            background-color: #90EE90;
+        }
+        #header_1{
+            height: 30px;
+            background-color: #FF0000;
+            margin-top: 5px;
+            border: 3px ridge #9ACD32;
+        }
+        #content{
+            height: 600px;
+            /*background-color: #B0C4DE;*/
+            margin: 10px 0 20px;
+        }
+        #content>#news{
+            width:200px;
+            height: 600px;
+            background-color: #FFFF00;
+            float: left;
+        }
+        #content>#center{
+            width: 580px;
+            height: 600px;
+            background-color: #FF00FF;
+            float: left;
+            margin: 0 10px;
+        }
+        #content>#sport{
+            width: 200px;
+            height: 600px;
+            background-color: #ff6781;
+            float: left;
+        }
+        #footer{
+            height: 100px;
+            background-color: #8B0000;
+        }
+    </style>
+</head>
+<body>
+    <!--页面顶部-->
+    <div id="top"></div>
+    <div id="page">
+        <!--页头-->
+        <div id="header"></div>
+        <div id="header_1"></div>
+        <!--网页内容区-->
+        <div id="content">
+            <div id="news"></div>
+            <div id="center"></div>
+            <div id="sport"></div>
+        </div>
+        <!--页脚-->
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

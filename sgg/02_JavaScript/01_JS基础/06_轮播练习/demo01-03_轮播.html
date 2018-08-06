@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #main {
+            width: 500px;
+            border: 5px solid #FFE4C4;
+            margin: 50px auto 0;
+
+            overflow: hidden;
+        }
+        #picDiv {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+
+            background-color: #66CDAA;
+        }
+        img {
+            float: left;
+            vertical-align: top;
+        }
+        /*img:nth-child(2) {*/
+            /*filter:  drop-shadow(16px 16px 20px red) invert(75%);*/   /*设置图像效果*/
+        /*}*/
+        #picDiv:after {
+            content: '';
+            display: block;
+            clear: left;
+        }
+    </style>
+    <style>
+        #navBtn {
+            float: left;
+            margin-top: -25px;
+        }
+        #main:after {   /*本例中不清float无影响*/
+            content: '';
+            display: block;
+            clear: left;
+        }
+        button {
+            width: 15px;
+            height: 15px;
+            padding: 0;
+            border-width: 0;
+            vertical-align: top;    /*清除button标签与div顶部默认0.5px距离*/
+
+            float: left;
+            margin-left: 10px;
+            background-color: #DEDDD9;
+        }
+        button:hover {
+            border: 1px solid #FF0000;
+            background-color: #99ff99;
+        }
+        #navBtn:after {    /*本例中不清float无影响*/
+            content: '';
+            display: block;
+            clear: left;
+        }
+    </style>
+    <script src="js/demo01-03.js" defer></script>
+</head>
+<body>
+    <div id="main">
+        <div id="picDiv">
+            <img src="../02_DOM/img/1.jpg" alt="图片">
+            <img src="../02_DOM/img/2.jpg" alt="图片">
+            <img src="../02_DOM/img/3.jpg" alt="图片">
+            <img src="../02_DOM/img/4.jpg" alt="图片">
+            <img src="../02_DOM/img/5.jpg" alt="图片">
+        </div>
+        <div id="navBtn">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+
+    <h2>说明:</h2>
+    <ol>
+        <li>自动轮播停顿间断短(1s)</li>
+        <li>手动轮播间断长(5s) ~ 因为用户既然手动选择查看图片, 必然是对该产品有兴趣</li>
+    </ol>
+    <h2>轮播监控: <span style="color: #F00;"></span></h2>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

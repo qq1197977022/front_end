@@ -1,0 +1,261 @@
+<!--
+一.根据w3c标准,所有元素都有一个隐含属性BFC: Block, Formatting, Context
+    1.默认关闭
+    2.开启方式
+        1.脱离文档流
+            1.浮动
+            2.绝对定位
+        2.display 设置元素生成框的类型为inline-block
+            1.Note: 所有脱离文档流的元素的生成框的类型均会变成inline-block
+        3.overflow: 设置为非默认属性(visible)
+    3.开启后效果
+        1.垂直外边距不会和子元素重叠
+        2.不会被浮动元素覆盖
+        3.可以包含浮动子元素
+二.兼容问题
+    1.IE < 6.0版本不支持BFC --- MS和w3c处于混战争霸时期
+    2.IE中也有一个隐含属性 hasLayout
+        1.默认关闭
+        2.开启方式
+            1.zoom --- 设置放大倍数
+            2.元素设置尺寸属性width
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解决高度塌陷问题</title>
+
+    <style>
+        .m{
+            height: 100px;
+            background-color: #ff6781;
+        }
+
+        #f{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+        }
+        #s{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+        }
+/*浮动*/
+        #f_1{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            float: left;
+        }
+        #s_1{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+/*绝对定位*/
+        #f_2{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            position: absolute;
+        }
+        #s_2{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+/*设置display*/
+        #f_3{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            display: inline-block;
+        }
+        #s_3{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+/*设置overflow非默认值*/
+        /*1.scroll*/
+        #f_4{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            overflow: scroll;
+        }
+        #s_4{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+        /*2.hidden*/
+        #f_5{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            overflow: hidden;
+        }
+        #s_5{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+        /*3.auto*/
+        #f_6{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            overflow: auto;
+        }
+        #s_6{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+
+/*兼容IE<6.0*/
+        /*1.zoom*/
+        #f_7{
+            background-color: #9ACD32;
+            border: 5px solid #000000;
+            zoom: 1; /*兼容IE < 6.0/7.0*/
+            overflow: hidden; /*兼容w3c标准下的浏览器*/
+        }
+        #s_7{
+            width: 100px;
+            height: 100px;
+            background-color: #F5DEB3;
+            float: left;
+        }
+
+
+    </style>
+</head>
+<body style="margin-bottom: 800px;">
+    <div id="f">
+        父元素
+        <div id="s">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <hr>
+    <h1>开启隐藏属性BFC <span> <a href="http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html" style="font-size: 18px; vertical-align: middle;">(深入理解BFC和Margin Collapse)</a></span></h1>
+    <h3>一.脱离文档流</h3> <br>
+    <span>1.浮动</span>
+    <dl>
+        <dt>副作用:</dt>
+            <dd>1.脱离文档流之后的元素,生成框的类型均会变成行内块</dd>
+            <dd>2.但是布局混乱</dd>
+    </dl>
+    <div id="f_1">
+        父元素
+        <div id="s_1">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <br>
+    <hr>
+    <span>2.绝对定位</span>
+    <dl>
+        <dt>副作用: </dt>
+        <dd>同浮动</dd>
+    </dl>
+    <div id="f_2">
+        父元素
+        <div id="s_2">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <hr>
+    <h3>二.display设置元素生成框的类型为inline-block</h3>
+    <span>1.inline-block</span>
+    <dl>
+        <dt>1.副作用: </dt>
+            <dd>1.元素生成框类型改变</dd>
+        <dt>2.优点:</dt>
+            <dd>1.页面布局不变</dd>
+    </dl>
+    <div id="f_3">
+        父元素
+        <div id="s_3">子元素</div>
+    </div>
+    <div class="m"></div>
+
+
+    <hr>
+    <h3>三.overflow设置非默认属性(visible)</h3>
+    <span>1.scroll</span>
+    <dl>
+        <dt>1.副作用: </dt>
+            <dd>1.同时生成双向滚动条</dd>
+        <dt>2.优点</dt>
+            <dd>1.页面布局不变</dd>
+    </dl>
+
+    <div id="f_4">
+        父元素
+        <div id="s_4">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <span>2.hidden</span>
+    <dl>
+        <dt>1.副作用: </dt>
+            <dd>1....................................................有待总结</dd>
+        <dt>2.优点</dt>
+            <dd>1.页面布局不变</dd>
+    </dl>
+
+
+    <div id="f_5">
+        父元素
+        <div id="s_5">子元素</div>
+    </div>
+    <div class="m"></div>
+
+
+    <span>2.auto</span>
+    <dl>
+        <dt>1.副作用: </dt>
+            <dd>1....................................................有待总结</dd>
+        <dt>2.优点</dt>
+            <dd>1.页面布局不变</dd>
+    </dl>
+
+
+    <div id="f_6">
+        父元素
+        <div id="s_6">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <hr>
+    <h3>四.兼容IE<6.0,开启隐藏属性hasLayout</h3>
+    <span>1.zoom(Note: 在IE<6.0/7.0下测试)</span>
+    <dl>
+        <dt>1.副作用: </dt>
+        <dd>1....................................................有待总结</dd>
+        <dt>2.优点</dt>
+        <dd>1.页面布局不变</dd>
+    </dl>
+
+
+    <div id="f_7">
+        父元素
+        <div id="s_7">子元素</div>
+    </div>
+    <div class="m"></div>
+
+    <h3>兼容性提示: 同时开启w3c标准下的BFC隐藏属性和MS标准下的hasLayout隐藏属性</h3>
+    <h3>就当前来说,w3c和MS混战已结束,新的浏览器基本都以w3c标准为准</h3>
+
+
+    <p style="font-size: 80px;">第一次更新: 2017年10月26日20:41:25</p>
+    <p style="font-size: 25px;">
+        1.CSS参考手册中定位属性分类中有overflow属性 <br>
+        2.<a href="https://www.w3cschool.cn/cssref/3ps212do.html#box">CSS参考手册中框属性分类[--盒子(box)--]中也有类似属性</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!--
+外边距
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: #ff6781;
+            margin-top: 100px;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: #90EE90;
+            margin-left: 100px;
+        }
+        #box3{
+            width: 200px;
+            height: 200px;
+            background-color: #FFFF00;
+            margin-left: -100px;
+            margin-bottom: -100px;
+        }
+        #box4{
+            width: 200px;
+            height: 200px;
+            background-color: #98FB98;
+        }
+        #box5{
+            width: 300px;
+            height: 300px;
+            background-color: #ff6781;
+            margin-left: auto;
+        }
+        #box6{
+            width: 300px;
+            height: 300px;
+            background-color: #ff6781;
+            margin-right: auto;
+        }
+        #box7{
+            width: 300px;
+            height: 300px;
+            background-color: #ff6781;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+       元素布局默认是左上对齐
+    </div>
+    <div id="box2">
+       元素布局默认是左上对齐
+    </div>
+
+    <hr>
+    <div id="box3">
+        外边距可以是负值
+    </div>
+    <div id="box4">
+        外边距可以是负值
+    </div>
+
+    <hr>
+    <div id="box5">
+        auto值,浏览器自动计算,设置外边距为指定方向上的最大值 <br>
+        margin-left: auto;
+    </div>
+    <div id="box6">
+        auto值,浏览器自动计算,设置外边距为指定方向上的最大值 <br>
+        margin-right: auto;
+    </div>
+    <div id="box7">
+        auto值,浏览器自动计算,设置外边距为指定方向上的最大值 <br>
+        可以利用这一特性,实现元素在父元素水平居中 <br>
+        margin: 0 auto;
+    </div>
+
+    <hr>
+    <div id="box8">
+
+    </div>
+</body>
+</html>

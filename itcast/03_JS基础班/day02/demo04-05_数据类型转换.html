@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型最转换</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+一.类型转换
+    1.显式转换
+        1.全局函数/构造函数
+            1.Number()
+                1.空串/null/空白字符串    -- > 0
+                2.非数字字符        -- > NaN
+            2.String()
+            3.Boolean()
+            4.parseInt()
+            5.parseFloat()
+        2.实例方法
+            1.toString()
+        3.一元运算符
+            1.+/-字符串         -- > number
+            2.+/-非数字字符串    -- > NaN
+    2.隐式转换
+        1.number + null(-- > 0)
+        2.string + null(-- > 'null')
+        3.string + 1(-- > null)
+        4.string(-- > number) - 1
+        5.输出时会自动调用该对象的toString()方法
+-->
+<script>
+    console.log(Number(''));            //空串
+    console.log(Number(null));          //null
+    console.log(Number('    '));        //空白字符
+    console.log(typeof '5');
+    console.log(typeof +'5');           //一元运算符
+    console.log(typeof -'5');
+    console.log(String(null));
+    console.log(Boolean(null));
+</script>

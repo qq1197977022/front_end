@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #EA4335;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    let div = document.querySelector('div');
+    //鼠标按下
+    div.onmousedown = function (e) {
+        let x = e.clientX- div.offsetLeft;
+        let y = e.clientY-div.offsetTop;
+
+        //鼠标移动
+        document.onmousemove = function (e) {
+            div.style.marginLeft = `${e.clientX - x}px`;
+            div.style.marginTop = `${e.clientY - y}px`;
+        };
+    };
+    //鼠标松开
+    div.onmouseup = function () {
+        document.onmousemove = null;
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

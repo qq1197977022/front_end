@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #66CDAA;
+            border: 3px solid #FF00FF;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <label for="userName">用户名: </label><input id='userName' type="text" placeholder='只能输入非数字'>
+    <div></div>
+</body>
+</html>
+<script>
+    let userName = document.getElementById('userName');
+    userName.onkeydown = function (e) {
+        console.log(`e.code = ${e.code}`);
+        console.log(`e.key = ${e.key}`);
+        console.log(`e.keyCode = ${e.keyCode}`);
+
+        /*return false; 取消默认行为
+        *应用:
+        * 输入控制
+        * */
+        console.log(e.keyCode);
+        if (48 <= e.keyCode && e.keyCode <= 57) {   //只能输入非数字字符
+            return false;
+        }
+    };
+</script>
+<script>
+    let div = document.querySelector('div');
+    let distLeft = 20;
+    let distTop = 20;
+    let offsetDist;
+    document.onkeydown = function (e) {
+        if (e.altKey) { //按下ALT时加速
+            offsetDist = 50;
+        } else {
+            offsetDist = 10;
+        }
+        switch (e.keyCode) {
+            case 37:
+                distLeft -= offsetDist;
+                break;
+            case 39:
+                distLeft += offsetDist;
+                break;
+            case 38:
+                distTop -= offsetDist;
+                break;
+            case 40:
+                distTop += offsetDist;
+                break;
+        }
+
+        div.style.marginLeft = `${distLeft}px`;
+        div.style.marginTop = `${distTop}px`;
+    };
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

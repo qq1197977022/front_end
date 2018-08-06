@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多Tab点击切换</title>
+    <script src="js/jquery-3.3.1.js" defer></script>
+    <script src="js/demo12.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+        }
+        li {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+        ul:after {
+            content:"";
+            display: block;
+            clear: left;
+        }
+        #m10, #d1 {
+            background-color: #ffe5e5;
+        }
+        #m30, #d2 {
+            background-color: #00ffff;
+        }
+        #m50, #d3 {
+            background-color: #ff00ff;
+        }
+        #d1, #d2, #d3 {
+            width: 400px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+        #d2, #d3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="m10">10元套餐</li>
+        <li id="m30">30元套餐</li>
+        <li id="m50">50元包月</li>
+    </ul>
+    <div id="d1">
+        AAAAAAAAAAAAAAAAA
+    </div>
+    <div id="d2">
+        BBBBBBBBBBBBBBBB
+    </div>
+    <div id="d3">
+        CCCCCCCCCCCCCCCC
+    </div>
+    <hr>
+    <h1>首次单击显示, 二次单击隐藏, 三次单击显示</h1>
+    <span>(第一个Tab, 初始化时即完成首次单击)</span>
+</body>
+</html>

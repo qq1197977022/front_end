@@ -1,0 +1,5 @@
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide
+--->引用--->表达式和运算符--->Spread syntax(扩展语法/句)
+链接出错:
+    1.错误: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+    2.正确: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_operator

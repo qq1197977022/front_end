@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定定位</title>
+
+    <style>
+        #f{
+            width: 200px;
+            height: 200px;
+            background-color: #90EE90;
+        }
+        #s{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6781;
+        }
+
+        #f1{
+            width: 200px;
+            height: 200px;
+            background-color: #90EE90;
+        }
+        #s1{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6781;
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+        }
+    </style>
+
+    <!--第一次更新-->
+    <style>
+        #f2 {
+            border: 5px solid #000;
+        }
+        #s2 {
+            width: 200px;
+            height: 100px;
+            background-color: #34A853;
+        }
+
+        #f3 {
+            border: 5px solid #000;
+        }
+        #s3 {
+            width: 200px;
+            height: 100px;
+            background-color: #34A853;
+            position: fixed;
+        }
+
+        #f4 {
+            border: 5px solid #000;
+            margin-top: 120px;
+        }
+        #s4 {
+            background-color: #34A853;
+            position: fixed;
+        }
+
+        #fl {
+            width: 200px;
+            height: 200px;
+            background-color: #AABBCC;
+            float: right;
+        }
+    </style>
+</head>
+<body style="height: 1600px;">
+    <div id="f">
+        父元素
+        <div id="s">子元素</div>
+    </div>
+
+    <hr>
+    固定定位 <br>
+    相对于浏览器窗口定位
+    <div id="f1">
+        <div id="s1"></div>
+    </div>
+
+
+    <p style="font-size: 100px;">第一次更新 2017年10月28日21:27:55</p>
+    <div id="f2">
+        <div id="s2"></div>
+    </div>
+
+    <p>
+        1.固定定位类型的元素会脱离文档流,元素生成框类型不变,但特点改变
+    </p>
+    <div id="f3">
+        <div id="s3"></div>
+    </div>
+
+    <div id="f4">
+        <div id="s4">固定定位</div>
+    </div>
+
+    <div>
+        <a href="../day07浮动/demo03浮动二.html">1.浮动</a> <br>
+        <a href="demo02绝对定位.html">2.绝对定位</a> <br>
+        <a href="demo03固定定位.html">3.固定定位</a> <br>
+        <p>都会使元素脱离文档流,不会改变元素生成框的类型,但会改变其特点 ~ 和行内块元素生成框类型一致<span style="color: #F00; font-size: 25px;">(联系生活: 南橘北枳)</span></p>
+        <h3><a href="demo04层级问题.html">4.关于层级问题</a></h3>
+    </div>
+
+</body>
+</html>

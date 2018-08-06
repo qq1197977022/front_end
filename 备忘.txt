@@ -1,0 +1,16 @@
+1.sgg/02_JavaScript/06_轮播练习/js/demo01-03.js
+  1.当前图片与按钮对应, 变色
+  2.点击按钮图片轮播后呈现而不是闪现
+  3.参见D:\learning\前端\尚硅谷\2.javascript\源码、课件、笔记、工具\源码\day17\source\day17\js\tools.js
+  4.前期课程未看懂...醉了... ~ 有时间重看
+
+
+sgg/03_jQuery/day01_初识jQuery/demo02_基本使用.html
+    未听懂
+        1.括号什么的定义一个模块...
+
+sgg/03_jQuery/day01_初识jQuery/demo03_jQuery两把利器.html:6
+    1.匿名函数
+        (function (a) {
+            console.log(a);
+        })(33)  //匿名函数

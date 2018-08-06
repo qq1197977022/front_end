@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表达式_运算符</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+一.运算符
+    1.赋值运算符
+        1.分类
+            1.普通赋值运算符
+                1. =
+            2.复合赋值运算符
+                1.加法赋值:         +=
+                2.减法赋值:         -=
+                3.乘法赋值:         *=
+                4.除法赋值:         /*
+                5.取模(余)赋值:     %=
+                6.求幂赋值:         **=
+                7.左移赋值:         <<=
+                8.右移赋值:         >>=
+                9.无符号右移赋值:    >>>=
+                10.按位与赋值:       &=
+                11.按位异或赋值:     ^==
+                12.按位或赋值:       |=
+        2.解构赋值
+            1.从数组 或 对象字面量提取数据
+            <script>
+                /*JS<ES6版本不支持
+                var foo = ['one', 'two', 'three'];
+                var [one, two, three] = foo;
+                console.log(one, two, three);
+                 */
+            </script>
+
+    2.比较运算符
+        1.操作数
+            1.数字
+            2.字符串: 基于标准字典顺序, 比较Unicode值
+            3.逻辑值
+            4.对象值
+        2.比较运算符
+            1.等于:       ==
+            2.不等于:     !=
+            3.全等:       ===     ~       值 + 类型
+            4.不全等:      !==
+            5.大于:        >
+            6.小于:        <
+            7.大于等于:     >=
+            8.小于等于:     <=
+
+    3.算数运算符
+        1.操作数
+            1.字面
+            2.变量
+        2.分类
+            1.+
+            2.-
+            3.*
+            4./
+            5.求余:   %
+            6.自增:   ++
+            7.自减:   --
+            8.一元正:  +
+                1.若操作数不是Number, 则将其转换为Number
+            9.一元负:  -
+            10.指数运算符: **
+
+    4.位运算符
+        1.操作数
+            1.操作数被转换为32bit二进制序列, 超过32bit则取低32bit, 返回标准JavaScript值
+        2.分类
+            1.位逻辑运算符
+                1.按位与:         &
+                2.按位或:         |
+                3.按位非:         ~
+                4.按位异或:       ^
+            2.移位运算符
+                5.左移:          <<
+                6.右移:          >>
+                7.无符号右移:     >>>
+
+    5.逻辑运算符
+        1.操作数
+            1.!
+                1.布尔值
+            2.&&, ||
+                1.布尔值
+                2.非布尔值
+            3.逻辑运算符&&, ||返回的实际上是其中一个操作数, 所以当操作数是非布尔值时, 结果可能是非布尔值
+        2.分类
+            1.逻辑与:  &&
+            2.逻辑或:  ||
+            3.逻辑非:  !
+        3.短路求值
+            1.false && anything: false
+            2.true || anything: true
+        4.可转换为false的值
+            1.null
+            2.undefined
+            3.0
+            4.NaN
+            5.空串
+-->
+<script>
+    console.log('逻辑运算符---------------------------------');
+    var v1 = true && false;
+
+    var v2 = true && '333';
+    var v3 = false || '333';
+    console.log(v1, typeof v1);     //逻辑运算符, 非布尔值操作数, 结果为非布尔值
+    console.log(v2, typeof v2);
+    console.log(v3, typeof v3);
+</script>
+<script>
+    console.log('字符串运算符---------------------------------');
+    /*
+    6.字符串运算符
+        1.+
+        2.+=
+     */
+    var v1 = 'my' + 'string';
+    var v2 = 'my';
+    v2 += 'string';
+
+    console.log(v1);
+    console.log(v2);
+</script>
+<script>
+    console.log('条件运算符(三目运算)---------------------------------');
+    /*
+    7.条件运算符(三目运算符)
+        1.条件 ? 值1 : 值2;
+     */
+    var age = 18;
+    var status = (age >= 18) ? 'adult' : 'minor';
+    console.log(status);
+</script>
+<script>
+    console.log('逗号操作符---------------------------------');
+    /*
+    8.逗号操作符
+        1.对两个操作数求值, 返回最终操作数的值
+        2.常用于for循环, 每次对多个变量更新
+     */
+    for (var i = 0, j = 9; i < j; i++, j--) {
+        console.log(i ** j);    //这里的红色波浪线为WebStorm误报
+    }
+</script>
+<script>
+    console.log('一元运算符---------------------------------');
+    /*
+    9.一元运算符
+        1.delete
+            1.不能删除var声明
+            2.可行返回true, 反之返回false
+     */
+    var a = 3;
+    b = 3;
+    var arr1 = [1, 2, 3];
+    console.log(delete a);  //不能删除var声明
+    console.log(delete b);
+    console.log(arr1.length, delete arr1[0], arr1.length);  //delete数组元素, 数组长度不变, 对应元素值变为undefined
+    /*
+        2.typeof
+            1.语法格式
+                1.typeof
+                2.typeof()
+
+        3.void
+            1.语法格式
+                1.void([expression])
+                2.void [expression]
+            2.应用
+                1.改变超链接行为
+                    1.阻断超链跳转: <a href="javascript:void(0)">Click here to do nothing</a>
+                    2.提交表单: <a href="javascript:void(document.form.submit())">点击提交表单</a>
+     */
+</script>
+<script>
+    console.log('关系操作符---------------------------------');
+    /*
+    10.关系操作符
+        1.in
+        2.instanceof
+     */
+    var arr1 = new Array("redwood", "bay", "cedar", "oak", "maple");
+    console.log(0 in arr1);
+    console.log('bay' in arr1);     //只能用元素下标判断 ... 也是醉了
+</script>
+<!--
+    11.运算符优先级
+-->
+
+
+<!--
+二.表达式
+    1.基本表达式
+        1.this: 当前对象的引用
+        2.分组操作符(): 控制优先级
+        3.数值推导
+            1.数列数值推导: [for (x of y) x]
+            2.生成器数值推导: (for (x of y) y)
+    2.左值表达式
+        1.new: 创建自定义或内置类型实例对象
+        2.super: 调用父类方法
+    3.扩展语句
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

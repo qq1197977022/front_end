@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本数据类型</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // let v1;
+    // function f1() {}
+    // function f2() {
+    //     return a;
+    // }
+    //
+    // window.console.log('变量默认初始化为: ', v1);
+    // window.console.log('函数默认返回值为: ', f1());
+    // window.console.log('null和undefined类型不同', null === undefined, '值相等: ', null == undefined);
+    // window.console.log(f2());
+
+//string ~ 字符串
+    let str1 = '单引号定界';
+    let str2 = "双引号定界";
+    console.log(str1, str2);
+    //访问字符串中某个字符(JS中没有字符类型,所以获取的依然是字符串 ~ 我能不能勉强称之为获取子串? .... 汗 ...)
+    console.log(str1[0], typeof str1[0]);
+
+//Number ~ 数字
+    console.log(Number.MAX_VALUE);
+
+    console.log(Number.POSITIVE_INFINITY);  //Number对象预定义属性
+    console.log(Number.NEGATIVE_INFINITY);
+    console.log(Infinity, typeof Infinity);  //全局属性 ~ 全局对象的属性
+
+    console.log(Number.NaN, typeof Number.NaN);
+    console.log(NaN, typeof NaN);  //全局属性 ~ 全局对象的属性
+
+
+    console.log(0.1+0.2);
+    console.log(eval('1+22'));
+
+//Boolean ~ 布尔
+    let b1 = false;
+    let b2 = true;
+    let b3 = b1 == b2;  //值比较
+    let b4 = b1 === b2; //值+类型比较
+    console.log(b1, typeof b1);
+    console.log(b2, typeof b2);
+    console.log(b3, typeof b3);
+    console.log(b4, typeof b4);
+
+
+
+//null ~ 空
+    let nu1 = null;
+    console.log(nu1, typeof nu1);
+
+//undefined
+    let un1;
+    let un2 = undefined;
+    console.log(un1, typeof un1);
+    console.log(un2, typeof un2);
+
+//==============================================类型转换==============================================
+    //1.other - - -> String
+    console.log('1.other ------------------------------------------------------------');
+    let con1 = 123;
+    let con2 = true;
+    let con3 = null;
+    let con4 = undefined;
+    console.log(con1, typeof con1);
+    console.log(con2, typeof con2);
+    console.log(con3, typeof con3);
+    console.log(con4, typeof con4);
+    console.log('1.other - - -> String ----------------------------------------------');
+
+    let con1_s1 = con1.toString();  //实例方法
+    let con1_s2 = String(con1);     //构造器
+
+    let con2_s1 = con2.toString();
+    let con2_s2 = String(con2);
+
+    //let con3_s1 = con3.toString();
+    let con3_s2 = String(con3);
+
+    //let con4_s1 = con4.toString();
+    let con4_s2 = String(con4);
+
+    console.log(con1_s1, typeof con1_s1);
+    console.log(con1_s2, typeof con1_s2);
+
+    console.log(con2_s1, typeof con2_s1);
+    console.log(con2_s2, typeof con2_s2);
+
+    console.log(con3_s2, typeof con3_s2);
+    console.log(con4_s2, typeof con4_s2);
+
+
+
+    //2.other - - -> Number
+    console.log('2.other ------------------------------------------------------------');
+    let con5 = '123.45';
+    let con6 = '123.45abc';
+    let con7 = 'abc123.45';
+    let con8 = true;
+    let con9 = null;
+    let con10 = undefined;
+
+    console.log(con5, typeof con5);
+    console.log(con6, typeof con6);
+    console.log(con7, typeof con7);
+    console.log(con8, typeof con8);
+    console.log(con9, typeof con9);
+    console.log(con10, typeof con10);
+    console.log('2.other - - -> Number ----------------------------------------------');
+
+    let con5_n1 = Number(con5);                         //构造器
+    let con5_n2 = parseInt(con5);                       //全局函数
+    let con5_n3 = parseInt(con5, 10);                   //方法 ~ 默认基数 = 10
+    let con5_n4 = Number.parseInt(con5, 10);            //方法 ~ 默认基数 = 10
+    let con5_n5 = Number.parseFloat(con5, 10);          //方法 ~ 默认基数 = 10
+
+    let con6_n1 = Number(con6);
+    let con6_n2 = parseInt(con6);
+    let con6_n3 = parseFloat(con6);
+    let con6_n4 = Number.parseInt(con6);
+    let con6_n5 = Number.parseFloat(con6);
+
+    let con7_n1 = Number(con7);
+    let con7_n2 = parseInt(con7);
+    let con7_n3 = parseFloat(con7);
+    let con7_n4 = Number.parseInt(con7);
+    let con7_n5 = Number.parseFloat(con7);
+
+    let con8_n1 = Number(con8);
+    let con8_n2 = parseInt(con8);
+    let con8_n3 = parseFloat(con8);
+    let con8_n4 = Number.parseInt(con8);
+    let con8_n5 = Number.parseFloat(con8);
+
+    let con9_n1 = Number(con9);
+    let con9_n2 = parseInt(con9);
+    let con9_n3 = parseFloat(con9);
+    let con9_n4 = Number.parseInt(con9);
+    let con9_n5 = Number.parseFloat(con9);
+
+    let con10_n1 = Number(con10);
+    let con10_n2 = parseInt(con10);
+    let con10_n3 = parseFloat(con10);
+    let con10_n4 = Number.parseInt(con10);
+    let con10_n5 = Number.parseFloat(con10);
+
+    console.log('++++++++++++++++++++++++++++++other == 纯数字字符串');
+    console.log(con5_n1, typeof con5_n1);
+    console.log(con5_n2, typeof con5_n2);
+    console.log(con5_n3, typeof con5_n3);
+    console.log(con5_n4, typeof con5_n4);
+    console.log(con5_n5, typeof con5_n5);
+
+    console.log('++++++++++++++++++++++++++++++other == 数字开头的非纯数字字符串\n\n现象: 截取数字部分转换,忽略非数字部分 ~~~ 爽!\n\n');
+    console.log(con6_n1, typeof con6_n1);
+    console.log(con6_n2, typeof con6_n2);
+    console.log(con6_n3, typeof con6_n3);
+    console.log(con6_n4, typeof con6_n4);
+    console.log(con6_n5, typeof con6_n5);
+
+    console.log('++++++++++++++++++++++++++++++other == 非数字开头的非纯数字字符串');
+    console.log(con7_n1, typeof con7_n1);
+    console.log(con7_n2, typeof con7_n2);
+    console.log(con7_n3, typeof con7_n3);
+    console.log(con7_n4, typeof con7_n4);
+    console.log(con7_n5, typeof con7_n5);
+
+    console.log('++++++++++++++++++++++++++++++other == boolean');
+    console.log(con8_n1, typeof con8_n1);
+    console.log(con8_n2, typeof con8_n2);
+    console.log(con8_n3, typeof con8_n3);
+    console.log(con8_n4, typeof con8_n4);
+    console.log(con8_n5, typeof con8_n5);
+
+    console.log('++++++++++++++++++++++++++++++other == null');
+    console.log(con9_n1, typeof con9_n1);
+    console.log(con9_n2, typeof con9_n2);
+    console.log(con9_n3, typeof con9_n3);
+    console.log(con9_n4, typeof con9_n4);
+    console.log(con9_n5, typeof con9_n5);
+
+    console.log('++++++++++++++++++++++++++++++other == undefined');
+    console.log(con10_n1, typeof con10_n1);
+    console.log(con10_n2, typeof con10_n2);
+    console.log(con10_n3, typeof con10_n3);
+    console.log(con10_n4, typeof con10_n4);
+    console.log(con10_n5, typeof con10_n5);
+
+    console.log('++++++++++++++++++++++++++++++Note: 其他知识点');
+    console.log('1.数字可以以其他进制表示');
+    console.log('1.空串 ---> Number == 0');
+
+
+
+    //3.other - - -> Boolean
+    let con11 = 123.45;
+    let con12 = '123.45';
+    let con13 = '123.45abc';
+    let con14 = 'abc123.45';
+    let con15 = '';
+    let con16 = null;
+    let con17 = undefined;
+    let con18 = Infinity;
+    let con19 = NaN;
+
+    console.log('3.other ------------------------------------------------------------');
+    console.log(con11);
+    console.log(con12);
+    console.log(con13);
+    console.log(con14);
+    console.log(con15);
+    console.log(con16);
+    console.log(con17);
+    console.log(con18);
+    console.log(con19);
+
+    console.log('3.other - - -> Boolean ----------------------------------------------');
+    let con11_b1 = Boolean(con11);
+    let con12_b1 = Boolean(con12);
+    let con13_b1 = Boolean(con13);
+    let con14_b1 = Boolean(con14);
+    let con15_b1 = Boolean(con15);
+    let con16_b1 = Boolean(con16);
+    let con17_b1 = Boolean(con17);
+    let con18_b1 = Boolean(con18);
+    let con19_b1 = Boolean(con19);
+
+    console.log(con11_b1);
+    console.log(con12_b1);
+    console.log(con13_b1);
+    console.log(con14_b1);
+    console.log(con15_b1);
+    console.log(con16_b1);
+    console.log(con17_b1);
+    console.log(con18_b1);
+    console.log(con19_b1);
+</script>
+<!--
+
+参考
+    1.https://www.cnblogs.com/starof/p/6368048.html
+    2.https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Grammar_and_Types
+
+一.数据类型
+    1.特点
+        1.弱类型, 动态类型
+    2.分类
+        1.基本数据类型primitive value/primitive data type
+            1.特点
+                1.值传递
+                2.不是对象,没有方法
+                3.不可变immutable
+            2.分类
+                1.Number数字
+                    1.JS不区分整数和浮点数
+                2.String字符串
+                    1.单双/引号定界
+                    2.模板字符串(E2015新增)
+                        1.字符串插值             ~~~         类似python中的字符串格式化输出
+                            1.eg. '${let}'
+                        2.跨行字符串             ~~~         类似go语言中的多行字符串
+                            1.eg. let poem =
+                                    `Roses are red,
+                                     Violets are blue.
+                                     Sugar is sweet,
+                                     and so is foo.`
+                3.Boolean布尔
+                4.null
+                    1.标识变量没有指向任何对象
+                5.undefined
+                    1.变量默认初始化值为undefined
+                    2.函数默认返回undefined
+                    3.方法默认返回undefined
+                    4.语句返回undefined
+                6.Symbol(ECMAScript6新增)
+        2.引用类型Object
+            1.特点: 引用传递
+            2.分类
+                1.Function
+                2.Array
+                3.Date
+                4.etc
+二.类型转换
+    1.隐式转换
+        1.数据类型转换
+        2.自动拆装箱
+            1.JS会自动把基本类型转换为一个临时对象,待声明周期结束时销毁该对象
+    2.强制转换
+
+
+三.
+    1.other - - -> String型
+        1.构造器
+            1.new String()   ~  创建String对象
+            2.String()       ~  类型转换
+        2.方法
+            1.toString()
+    2.other - - -> Number
+        1.构造器
+            1.new Number()   ~  创建Number对象
+            2.Number()       ~  类型转换
+        2.全局函数
+            1.parseInt()
+            2.parseFloat()
+        3.方法
+            1.parseInt()
+            2.parseFloat()
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

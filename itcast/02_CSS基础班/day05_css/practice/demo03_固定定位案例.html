@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定定位案例</title>
+    <style>
+        body {
+            margin: 0;
+            /*padding: 0;*/
+            background-color: #c0a78c;
+        }
+        #main {
+            width: 1519px;
+            margin: 0 auto;
+            background-color: #e4d9ce;
+        }
+        #top {
+            position: fixed;
+            top: 0;
+        }
+        #content {
+            width: 998px;
+            margin: 49px auto 0;
+        }
+        #content>#left, #content>#right{
+            position: fixed;
+            top: 200px;
+        }
+        #content>#left {
+            left: 25%;
+        }
+        #content>#right {
+            right: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <img src="img/top.png" alt="导航栏图">
+        </div>
+        <div id="content">
+            <img src="img/content.png" alt="内容区图">
+            <img id="left" src="img/left.png" alt="左广告图">
+            <img id="right" src="img/right.png" alt="右广告图">
+        </div>
+    </div>
+</body>
+</html>

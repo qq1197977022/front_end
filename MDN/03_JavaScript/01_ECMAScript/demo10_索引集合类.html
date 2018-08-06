@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>索引集合类</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arr1 = new Array(1, 2, 'three');
+    var arr2 = Array(1, 2, 'three');
+    var arr3 = [1, 2, 'three'];
+    console.log(arr1, typeof arr1, arr1 instanceof Array, arr1 instanceof Object);
+    console.log(arr2, typeof arr2, arr2 instanceof Array, arr1 instanceof Object);
+    console.log(arr3, typeof arr3, arr3 instanceof Array, arr1 instanceof Object);
+
+    var obj = {prop: [1, 2, 3]};
+    console.log(obj, typeof obj.prop, obj.prop instanceof Array);
+
+
+    console.log('----------------------------------------------------------------');
+    var arr4 = [];
+    arr4['name'] = '杨一帆';   //添加对象属性
+    arr4.age = 18;
+
+    arr4[0] = 3;    //添加元素值
+
+    arr4.length = 5;    //length属性可写
+
+    console.log(arr4);
+    console.log(arr4['name'], arr4.name, arr4['age'], arr4.age, arr4.length, arr4['length']);   //访问数组对象属性
+
+
+    console.log('----------------------------------------------------------------');
+    var arr5 = ['one', 'two', 'three', 'four', 'five'];
+    arr5.forEach(function (value, index, array) {
+        console.log(value, index, array);
+    });
+
+
+    function printArguments() {
+//----------------------------------------------------不懂....
+        // Array.forEach(arguments, function(item) {
+        //     console.log(item);
+        // });
+//----------------------------------------------------不懂....
+        for (var i in arguments) {  //这样不是更明了?
+            if (arguments.hasOwnProperty(i)) {
+                console.log(i, arguments[i]);
+            }
+        }
+    }
+
+    printArguments(1, 2, 3, 4);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

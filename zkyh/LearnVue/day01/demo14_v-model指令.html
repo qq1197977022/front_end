@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-model指令</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo14.js" defer></script>
+    <style>
+        input {
+            width: 300px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.V-model指令: 在表单控件或组件上创建双向绑定</h3>
+    <div id="app1">
+        <span v-text="msg1"></span> <br> <br>
+        <span v-text="msg2"></span> <br>
+        <input type="text" title="表单控件" v-model="msg2">
+    </div>
+</body>
+</html>
+
+
+

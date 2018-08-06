@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航条练习</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            width: 1000px;
+            margin: 50px auto 0; /*上外边距50px, 左右外边距auto, 下外边距0px*/
+        }
+/*动态伪类之链接伪类选择器*/
+        a:link{
+            display: inline-block; /*改变元素生成框类型为行内块*/
+            margin-right: -5px;
+            /*
+            1.行内块,默认有5px右外边距
+            2.该外边距不属于元素(盒子模型)
+            */
+            width: 12.5%;
+            height: 31px;
+            font: bold 16px/31px 微软雅黑 serif;
+            color: #FAFAFE;
+            text-decoration: none; /*去掉超链接默认下划线*/
+            text-align: center; /*文字水平对齐方式*/
+            background-color: #6495ED;
+        }
+        a:visited{
+            color: #FAFAFE;
+        }
+        a:hover{
+            background-color: #CC0000;
+        }
+        a:active{
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="nav">-->
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">新闻</a>
+            <a href="#">联系</a>
+            <a href="#">关于</a>
+            <a href="#">首页</a>
+            <a href="#">新闻</a>
+            <a href="#">联系</a>
+            <a href="#">关于</a>
+        </nav>
+    <!--</div>-->
+</body>
+</html>

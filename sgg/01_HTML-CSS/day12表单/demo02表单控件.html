@@ -1,0 +1,29 @@
+<!--
+1.单/复选按钮通过name分组
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件</title>
+</head>
+<body>
+    <form action="#" method="get">
+        Name: <input type="text" name="name" title="用户名"> <br>
+        PassWord: <input type="password" name="password" title="密码"> <br>
+        <input id="r1" type="radio" name="gender" value="male"><label for="r1">男</label> <input id="r2" type="radio" name="gender" value="female"><label for="r2">女</label> <br>
+        <select name="man" title="明星">
+            <optgroup label="女" title="女">
+              <option value="fbb">范冰冰</option>
+              <option value="cjk">苍井空</option>
+              <option value="fda">饭岛爱</option>
+            </optgroup>
+            <optgroup label="男" title="男">
+            <option value="zyx">张艺兴</option>
+            <option value="lyf">李易峰</option>
+            </optgroup>
+        </select> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

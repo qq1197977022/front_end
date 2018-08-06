@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+一.JS中一切皆对象
+    1.分类
+        1.内建对象
+            1.数值
+            2.字符串
+            3.布尔
+            4.数组
+            5.数学
+            6.正则表达式
+            7.日期
+            8.函数
+        2.自定义对象
+        3.Note: 对象是一种特殊数据类型,拥有属性和方法
+            1.访问属性: obj.property
+                1.读 ~ 取
+                2.写 ~ 添加
+            2.访问方法: obj.method
+                1.读 ~ 取
+                2.写 ~ 添加
+    2.创建对象
+        1.定义并创建对象实例
+        2.使用函数定义对象并创建对象实例
+一.Date对象
+    1.作用: 处理时期date和时间time
+    2.实例化
+        1.new Date();   //当前时期和时间
+        2.new Date(milliseconds);   //格林威治时间(从1970-1-1至今的秒数)
+        3.new Date(dateString);
+        4.new Date(year, month, day, hours, minutes, seconds, milliseconds);
+        5.Note ~ 参数值默认为0
+
+三.Math对象
+    1.作用: 数学操作
+    2.特点: 直接使用,无须定义,没有构造函数
+-->
+<script>
+//JS对象 --------------------------------------------------> 待细化总结...
+    //创建对象 ~ 语法1
+    p1 = new Object();
+    //添加属性
+    p1.name = '张三';
+    p1.age = 28;
+    console.log(p1);
+
+    //创建对象 ~ 语法2
+    var p2 = Object;
+    //添加属性
+    p2.name = '李四';
+    p2.age = 22;
+    console.log(p2);
+
+    //创建对象,并实例化 ~ 语法3
+    var p3 = {name: '王五', 'age': 23};
+    console.log(p3);
+
+    //创建对象 ~ 构造函数
+    function person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    p4 = new person('马六', 21);
+    console.log(p4);
+
+
+//Date对象
+
+    //实例化
+    var now = new Date();                               console.log(now);
+    var d1 = new Date('December 19, 2017, 20:13:00');   console.log(d1);
+    var d2 = new Date(1979, 5, 24);                     console.log(d2);
+    var d3 = new Date(79, 5, 24, 11, 33, 0);            console.log(d3);
+
+    var d4 = now.getDate();        console.log(d4 + typeof d4);
+    var d5 = now.getDay();         console.log(d5 + typeof d5);
+    var d6 = now.getFullYear();    console.log(d6 + typeof d6);
+    var d7 = now.getMonth();       console.log(d7 + typeof d7);    console.log(d7 + 1 + typeof d7);
+//Math对象
+
+</script>

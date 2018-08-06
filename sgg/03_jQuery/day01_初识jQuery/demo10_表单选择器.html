@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选择器</title>
+    <script src="js/jquery-3.3.1.js" defer></script>
+    <script src="js/demo10.js" defer></script>
+    <style>
+        button {
+            font-size: 2em;
+            color: #7CFC00;
+            background-color: #2D2D2D;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <label>账号: <input type="text"></label><br>
+        <label>密码: <input type="password"></label><br>
+        <span>爱好: </span>
+        <label><input type="checkbox" name="hobby">篮球</label>
+        <label><input type="checkbox" name="hobby">足球</label>
+        <label><input type="checkbox" name="hobby">羽毛球</label><br>
+        <span>性别</span>
+        <label><input type="radio" name="gender">男</label>
+        <label><input type="radio" name="gender">女</label><br>
+        <label>邮箱: <input type="email" title="邮箱" disabled></label><br>
+        <label for="area">所在地: </label>
+        <select name="area" id="area">
+            <option value="hns">河南省</option>
+            <option value="sds">山东省</option>
+            <option value="hbs">河北省</option>
+            <option value="jss">江苏省</option>
+        </select><br>
+        <input type="submit" title="提交"><input type="reset" title="重置">
+    </form>
+
+    <hr>
+    <button id="btn1">1.选择不可用文本输入框</button>
+    <button id="btn2">2.统计选中爱好个数</button>
+    <button id="btn3">3.显示选中城市名称</button>
+</body>
+</html>

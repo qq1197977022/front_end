@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件传播</title>
+    <style>
+        #d1 {
+            width: 500px;
+            height: 500px;
+            background-color: #F5DEB3;
+        }
+        #d2 {
+            width: 350px;
+            height: 350px;
+            background-color: #EA4335;
+        }
+        #d3 {
+            width: 150px;
+            height: 150px;
+            background-color: #b3ffff;
+        }
+
+        #d11 {
+            width: 500px;
+            height: 500px;
+            background-color: #F5DEB3;
+        }
+        #d22 {
+            width: 350px;
+            height: 350px;
+            background-color: #EA4335;
+        }
+        #d33 {
+            width: 150px;
+            height: 150px;
+            background-color: #b3ffff;
+        }
+    </style>
+</head>
+<body>
+    <h2>1.冒泡阶段</h2>
+    <div id="d1">
+        <div id="d2">
+            <div id="d3"></div>
+        </div>
+    </div>
+
+    <h2>2.捕获阶段</h2>
+    <div id="d11">
+        <div id="d22">
+            <div id="d33"></div>
+        </div>
+    </div>
+    <!--
+    一.事件传播
+        1.微软: 由内向外传播, 即事件在冒泡阶段执行
+            1.优先触发当前元素上事件
+        2.网景: 由外向内传播, 即事件在捕获阶段执行
+            1.优先触发祖先元素上相同事件
+        3.W3C: 综合两个公司方案, 把事件传播分为三个阶段
+            1.捕获阶段: 从祖先元素向目标元素进行事件的捕获, 依次触发
+            2.目标阶段: 事件捕获到目标元素, 捕获结束并在目标元素上触发事件
+            3.冒泡阶段: 从目标元素向祖先元素冒泡, 依次触发
+        4.addEventListener()第三个参数指定事件监听器类型
+            1.false: 冒泡阶段
+            2.true: 捕获阶段
+        Note.
+            1.IE<8版本, 没有捕获阶段
+    -->
+</body>
+</html>
+<script>
+    let d1 = document.getElementById('d1');
+    let d2 = document.getElementById('d2');
+    let d3 = document.getElementById('d3');
+    d1.addEventListener('click', function () {
+        window.alert('外');
+    }, false);
+    d2.addEventListener('click', function () {
+        window.alert('中');
+    }, false);
+    d3.addEventListener('click', function () {
+        window.alert('内');
+    }, false);
+
+    let d11 = document.getElementById('d11');
+    let d22 = document.getElementById('d22');
+    let d33 = document.getElementById('d33');
+    d11.addEventListener('click', function () {
+        window.alert('外');
+    }, true);
+
+    d22.addEventListener('click', function () {
+        window.alert('中');
+    }, true);
+    d33.addEventListener('click', function () {
+        window.alert('内');
+    }, true);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

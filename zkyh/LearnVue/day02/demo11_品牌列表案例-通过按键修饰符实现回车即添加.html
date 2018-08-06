@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按键修饰符</title>
+    <script src="../vue.js"></script>
+    <script src="js/demo11.js" defer></script>
+    <style>
+        #app1 {
+            width: 500px;
+            margin: 100px auto 0;
+            border: 1px solid #F00;
+            text-align: center;
+        }
+        input {
+            margin: 8px 0;
+        }
+        hr {
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            text-align: center;
+            border: 1px solid #EA4335;
+            padding: 5px;
+        }
+        a {
+            text-decoration-line: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>在Name输入框按下Enter键即添加, 无需单击添加按钮</h2>
+
+    <div id="app1">
+        <label>ID: <input v-model="id" type="text"></label>
+        <label>Name: <input v-model="name" type="text" @keydown.enter="add"></label>
+        <!--
+            1.非特殊按键Vue没有提供别名, 可通过修改全局配置(Vue.config)添加
+            2.自动匹配按键修饰符
+        -->
+        <button @click="add">添加</button>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Ctime</th>
+                <th>Operation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="item in search()" :key="item.id">
+                <!--
+                    1.不带括号表示事件绑定
+                    2.带括号表示方法调用
+                -->
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.ctime | cimeFormat}}</td>
+                <td><a @click.prevent="del(item)" href="">删除</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <input v-model="keywords" type="text" placeholder="请输入品牌名称关键字">
+    </div>
+</body>
+</html>

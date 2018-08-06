@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素样式</title>
+    <style>
+        div {
+            /*width: 800px;*/
+            height: 30em;
+            background-color: #222429;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 30em;
+        }
+        button {
+            padding: 10px 15px;
+            border: 2px solid #ff6781;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="currentBtn01">当前style值</button>
+</div>
+</body>
+</html>
+<script>
+    let div = document.querySelector('div');
+    let currentBtn01 = document.getElementById('currentBtn01');
+    currentBtn01.onclick = function () {
+        //仅适用于内联style
+        console.log(`内联style\n\t背景色: \t${div.style.backgroundColor}\n\t宽: \t${div.style.width}\n\t高: \t${div.style.height}`);
+        /*用于不支持模板字符串的浏览器
+        console.log('内联style\n\t背景色: \t'+div.style.backgroundColor+'\n\t宽: \t'+div.style.width+'\n\t高: \t'+div.style.height+'');*/
+
+        /*
+        //仅适用于IE
+        // console.log(div.currentStyle.backgroundColor);
+
+        //IE < 9, 不支持
+        let cssStyDec1 = window.getComputedStyle(div);  //返回CSSStyleDeclaration对象(---自动实时更新---) ---> 和 HTMLElement.style返回值一样
+        let cssStyDec2 = window.getDefaultComputedStyle(div);
+
+        console.log(`计算后的style\t${cssStyDec1}\n\t背景色: \t${cssStyDec1.backgroundColor}\n\t宽: \t${cssStyDec1.width}\n\t高: \t${cssStyDec1.height}`);
+        console.log(`默认计算后的style(忽略作者StyleSheets)\t${cssStyDec2}\n\t背景色: \t${cssStyDec2.backgroundColor}\n\t宽: \t${cssStyDec2.width}\n\t高: \t${cssStyDec2.height}`);*/
+
+        //提高兼容性
+        let cssStyDec = getCssStyDec(div);
+        console.log(`计算后的style\t${cssStyDec}\n\t背景色: \t${cssStyDec.backgroundColor}\n\t宽: \t${cssStyDec.width}\n\t高: \t${cssStyDec.height}`);
+        console.log(`默认计算后的style(忽略作者StyleSheets)\t${cssStyDec}\n\t背景色: \t${cssStyDec.backgroundColor}\n\t宽: \t${cssStyDec.width}\n\t高: \t${cssStyDec.height}`);
+
+        /*用于不支持模板字符串的浏览器
+        console.log('计算后的style\t'+cssStyDec+'\n\t背景色: \t'+cssStyDec.backgroundColor+'\n\t宽: \t'+cssStyDec.width+'\n\t高: \t'+cssStyDec.height+'');
+        console.log('默认计算后的style(忽略作者StyleSheets)\t'+cssStyDec+'\n\t背景色: \t'+cssStyDec.backgroundColor+'\n\t宽: \t'+cssStyDec.width+'\n\t高: \t'+cssStyDec.height+'');*/
+    };
+    
+    function getCssStyDec(obj) {
+        // let cssStyDec;
+        // if (window.getComputedStyle) {
+        //     /*原理
+        //      * 1.JavaScript中访问未声明变量名 ---> 报错, 但是访问对象未定义属性返回undefined ---> 在Boolean环境自动转换为false
+        //      * 2.在IE < 9版本规范中, window全局对象没有getComputedStyle方法 ---> undefined ---> false
+        //      *                                                      反之 ---> CSSStyleDeclaration对象 ---> true
+        //      */
+        //     // cssStyDec = window.getComputedStyle(obj).item(attr);
+        //     // cssStyDec = window.getComputedStyle(obj)[attr];
+        //
+        //     //不如直接返回CSSStyleDeclaration对象
+        //     cssStyDec = window.getComputedStyle(obj);
+        // } else {
+        //     // cssStyDec = obj.currentStyle[attr];
+        //
+        //     //不如直接返回CSSStyleDeclaration对象
+        //     cssStyDec = obj.currentStyle;
+        // }
+        //
+        // return cssStyDec;
+
+        return window.getComputedStyle ? window.getComputedStyle(obj) : obj.currentStyle;   //一言蔽之
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

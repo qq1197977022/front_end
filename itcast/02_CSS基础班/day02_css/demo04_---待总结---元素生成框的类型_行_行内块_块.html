@@ -1,0 +1,83 @@
+<!--
+1.根据元素的生成框的类型分类
+    1.内联元素
+        eg.
+            1.span
+            2.a
+    2.行内块
+        eg.
+            1.img
+            2.input
+            3.button
+    3.块
+        eg.
+            1.h1~6
+            2.div
+            3.p
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素生成框的类型_行_行内块_块</title>
+    <style>
+        body {
+            background-color: #F5DEB3;
+            text-align: center;
+        }
+        img {
+            width: 280px;
+            height: 100px;
+        }
+        input.text1 {
+            width: 280px;
+            height: 100px;
+        }
+        input.text2 {
+            width: 280px;
+            height: 100px;
+            vertical-align: top;
+        }
+        input.text3 {
+            width: 280px;
+            height: 100px;
+            vertical-align: middle;
+        }
+        input.text4 {
+            width: 280px;
+            height: 100px;
+            vertical-align: bottom;
+        }
+        div {
+            width: 280px;
+            height: 100px;
+            background-color: #34A853;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <img src="practice/img/lol.jpg" alt="lol图片">
+    <input class="text1" type="text" placeholder="默认垂直对齐: 元素放置在父元素的基线上" title="文本框">
+    <img src="practice/img/lol.jpg" alt="lol图片">
+    <input class="text2" type="text" placeholder="设置当前元素的顶端与行内最高元素顶端对齐" title="文本框">
+    <img src="practice/img/lol.jpg" alt="lol图片">
+    <input class="text3" type="text" placeholder="把当前元素放置在父元素中部" title="文本框">
+    <img src="practice/img/lol.jpg" alt="lol图片">
+    <input class="text4" type="text" placeholder="把当前元素与行中最低元素底端对齐" title="文本框">
+
+    <hr>
+    <img src="practice/img/lol.jpg" alt="lol图片">
+    <div></div>
+    <img src="practice/img/lol.jpg" alt="lol图片">
+    <div>123</div>
+    <img src="practice/img/lol.jpg" alt="lol图片">
+    <div>
+        <p>同左边~~~>默认垂直对齐</p>
+        <p>为什么添加文字后,对齐样式变了?</p>
+    </div>
+
+    <hr>
+    <h3>问题出在哪里?</h3>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算符</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+//2.非布尔值逻辑运算
+    //&&运算
+    var v1 = 1 && 0;    //隐式转换: 1 ---> true, 0 ---> false
+    var v2 = 0 && 2;
+    var v3 = 1 && 2;
+    var v4 = 2 && 1;
+    console.log('---------------------\t&&运算');
+    console.log(v1, typeof v1);
+    console.log(v2, typeof v2);
+    console.log(v3, typeof v3);
+    console.log(v4, typeof v4);
+
+    //||运算
+    var v5 = 1 || 0;
+    var v6= 0 || 2;
+    var v7 = 1 || 2;
+    var v8 = 2 || 1;
+    console.log('---------------------\t||运算');
+    console.log(v5, typeof v5);
+    console.log(v6, typeof v6);
+    console.log(v7, typeof v7);
+    console.log(v8, typeof v8);
+</script>
+
+<!--
+一.逻辑运算符
+    1.&&    逻辑与         短路与
+    2.||        或            或
+    3.!     非            非
+二.非布尔值的逻辑运算
+    1.返回使判定成立的第一个值 ~ 与短路特点一致
+-->

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>算数运算符</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var add1 = 1 + 2;
+    var add2 = true + 3;          //隐式转换 ~ true ---> 1
+    var add3 = false + 3;         //隐式转换 ~ false ---> 0
+    var add4 = true + false;
+    var add5 = 3 + NaN;           //任何值+NaN = NaN
+    var add6 = true + '字符串';    //隐式转换 ~ true ---> 'true', 级联
+    var add7 = 3 + '5';           //隐式转换3 ---> '3', 级联
+    var add8 = 3 + '5abc';
+    var add9 = 5 + 'abc5';
+    var add10 = '6' + '7';         //字符串级联
+    var add11 = 'foo' + 'bar';
+
+    //低版本JavaScript不支持模板字符串,可以使用 + 实现多行字符串
+    var add12 = '多行字符串'+
+              'abc'+
+              'def'+
+              '多行字符串';
+
+    console.log('******************************************\t+运算符');
+    console.log(add1, '\t', typeof add1);
+    console.log(add2, '\t', typeof add2);
+    console.log(add3, '\t', typeof add3);
+    console.log(add4, '\t', typeof add4);
+    console.log(add5, '\t', typeof add5);
+    console.log(add6, '\t', typeof add6);
+    console.log(add7, '\t', typeof add7);
+    console.log(add8, '\t', typeof add8);
+    console.log(add9, '\t', typeof add9);
+    console.log(add10, '\t', typeof add10);
+    console.log(add11, '\t', typeof add11);
+
+    console.log(add12, '\t', typeof add12);
+
+
+    console.log('******************************************\t-运算符');
+    var sub1 = 3 - 4;
+    var sub2 = 4 - 3;
+    var sub3 = 3 - '4';       //隐式转换 ~ '4' ---> 4
+    var sub4 = '4' - 3;
+    var sub5 = 3 - NaN;
+    console.log(sub1, '\t', typeof sub1);
+    console.log(sub2, '\t', typeof sub2);
+    console.log(sub3, '\t', typeof sub3);
+    console.log(sub4, '\t', typeof sub4);
+    console.log(sub5, '\t', typeof sub5);
+
+
+    console.log('******************************************\t*运算符');
+    var mul1 = 3 * 4;
+    var mul2 = 4 * 3;
+    var mul3 = 3 * '4';       //隐式转换 ~ '4' ---> 4
+    var mul4 = '4' * 3;
+    var mul5 = 3 * NaN;
+    console.log(mul1, '\t', typeof mul1);
+    console.log(mul2, '\t', typeof mul2);
+    console.log(mul3, '\t', typeof mul3);
+    console.log(mul4, '\t', typeof mul4);
+    console.log(mul5, '\t', typeof mul5);
+
+
+    console.log('******************************************\t/运算符');
+    var div1 = 3 / 4;
+    var div2 = 4 / 3;
+    var div3 = 3 / '4';       //隐式转换 ~ '4' ---> 4
+    var div4 = '4' / 3;
+    var div5 = 4 / NaN;
+    var div6 = NaN / 4;
+    console.log(div1, '\t\t', typeof div1);
+    console.log(div2, '\t\t', typeof div2);
+    console.log(div3, '\t\t', typeof div3);
+    console.log(div4, '\t\t', typeof div4);
+    console.log(div5, '\t\t', typeof div5);
+    console.log(div6, '\t\t', typeof div6);
+
+
+    console.log('******************************************\t%运算符');
+    var rem1 = 3 % 4;
+    var rem2 = 4 % 3;
+    console.log(rem1, '\t', typeof rem1);
+    console.log(rem2, '\t', typeof rem2);
+
+    // console.log('******************************************\t**运算符'); ~ 当前JavaScript版本不支持
+    // console.log(3 ** 4);
+    // console.log(4 ** 3);
+    // console.log(3 ** '4');       //隐式转换 ~ '4' ---> 4
+    // console.log('4' ** 3);
+</script>
+
+<!--
+一.算数运算符
+    1.+
+        1.数学运算
+        2.字符串级联
+    2.-
+    3.*
+    4./
+    5.%
+    6.**
+-->

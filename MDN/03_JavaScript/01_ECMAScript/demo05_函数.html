@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--
+一.定义函数
+    1.函数声明
+        1.也称函数定义/语句
+        2.声明方式
+            2.关键字: function
+            2.Function构造器
+        3.Note
+            1.类似python函数可以嵌套
+     2.函数表达式 ~ 匿名函数
+        1.可命名 ~ 用赋值的方式和某标识符绑定
+        2.在调试器堆栈跟踪中可识别
+     3.Note
+        1.当函数是某对象属性时, 称之为方法
+        3.函数本身也是对象, 也有属性和方法
+
+二.调用函数
+    1.函数声明提升 ~ 因为JS是解释型语言(从上往下, 从左到右),所以这也算是一个特性....醉了...
+        1.仅适用于函数声明, 不适用于函数表达式
+
+三.函数作用域
+
+四.作用域和函数堆栈
+    1.递归
+        1.实现方式
+            1.函数名
+            2.arguments.callee: 指向当前函数      ~       arguments.caller: 指向调用当前函数的函数
+            3.作用域下指向该函数对象的变量名
+            4.eg.
+                var foo = function bar() {
+                    bar();                  //1.递归
+                    arguments.callee();     //2.递归
+                    foo();                  //3.递归
+                };                          //1. 2, 3等价
+    2.嵌套函数
+        1.类似Python函数可以嵌套
+        2.内部函数对外部函数是私有的, 内部函数自身形成闭包: 函数和该函数所在词法环境的组合
+    3.保存变量
+        function outSide(x) {
+            function inSide(y) {
+                return x + y;
+            }
+            return inSide;
+        }
+        外部函数每次调用都会重新创建一个新的闭包(因为内部函数不变, 但其所在此法环境可能发生变化), 当返回的inSide不在被引用时, 闭包被垃圾回收
+    4.多层嵌套函数
+        1.作用域链
+    5.命名冲突
+        1.优先级: 就近原则
+五.闭包
+
+六.arguments对象
+    1.函数参数会被保存在arguments对象中
+
+七.函数参数
+    1.默认值参数
+        1.ES6新增
+    2.任意/剩余参数
+        1.ES6新增
+        2.剩余参数会以数组的元素的形式存在
+    3.Note
+        1.ES5中实参和形参不必对应 .... 也是醉了 ...
+            <script>
+                function f1() {
+                    console.log(arguments, arguments.length);
+                }
+                f1(1, 2, 3, 4);         //Arguments(4) [1, 2, 3, 4, callee: ƒ, Symbol(Symbol.iterator): ƒ] 4
+
+                function f2(a, b, c, d) {
+                    console.log(arguments, arguments.length);
+                }
+                f2(1, 2);              //Arguments(2) [1, 2, callee: ƒ, Symbol(Symbol.iterator): ƒ] 2
+            </script>
+
+八.箭头函数
+    1.ES6新增
+    2.更简洁的函数
+    3.this词法
+
+九.预定义函数
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

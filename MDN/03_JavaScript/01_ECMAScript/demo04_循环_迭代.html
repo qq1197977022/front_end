@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环_迭代</title>
+</head>
+<body>
+    <form name="selectForm">
+        <p>
+            <label for="musicTypes">Choose some music types, then click the button below:</label>
+            <select id="musicTypes" name="musicTypes" multiple="multiple">
+                <option selected="selected">R&B</option>
+                <option>爵士</option>
+                <option>布鲁斯</option>
+                <option>新纪元</option>
+                <option>古典</option>
+                <option>戏剧</option>
+            </select>
+        </p>
+        <p><input id="btn" type="button" value="选择了多少个选项?" /></p>
+    </form>
+
+</body>
+</html>
+<script>
+/*
+一.for语句
+ */
+    function howMany(selectObj) {
+        var selectedNum = 0;
+        for (var i = 0; i < selectObj.length; i++) {
+            if (selectObj[i].selected) {
+                selectedNum++;
+            }
+        }
+        return selectedNum;
+    }
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function () {             //添加监听事件
+        alert(howMany(document.selectForm.musicTypes));
+    });
+</script>
+<!--
+二.do...while语句
+
+
+三.while语句
+-->
+<script>
+/*
+四.label语句
+ */
+    console.log('------------------------10以内素数');
+next:
+    for (var outer = 2; outer < 10; outer++) {
+        for (var inner = 2; inner < outer; inner++) {
+            if (outer % inner === 0) {
+                continue next;  //链接到label
+            }
+        }
+        console.log(outer);
+    }
+    console.log('------------------------10以内素数');
+</script>
+<script>
+/*
+五.break语句
+    1.跳出当前循环
+    2.跳出当前switch
+    3.链接到label
+
+
+六.continue语句
+    1.结束本次循环,开始下次循环
+    2.链接到label
+ */
+
+
+/*
+七.for...in语句
+    1.迭代
+ */
+    console.log('------------------------for...in语句');
+    var obj1 = {name: '杨一帆', age: 18, height: 175};
+    //迭代对象
+    for (var attr in obj1) {
+        console.log(attr, obj1[attr]);
+    }
+
+    //迭代数组
+    var arr1 = ['杨一帆', '路虎', '嫩模', '老鸨', '草泥马'];
+    for (var ele in arr1) {
+        console.log(ele, arr1[ele]);
+    }
+
+/*
+八.for...of语句
+    1.迭代
+    2.ES6新增
+    3.Note: for..in 和 for...of区别
+        1.for...in迭代结果为元素下标
+        2.for...of迭代结果为元素值
+            eg.
+                let arr = [3, 5, 7];
+                arr.foo = "hello";
+
+                for (let i in arr) {
+                   console.log(i); // logs "0", "1", "2", "foo"
+                }
+
+                for (let i of arr) {
+                   console.log(i); // logs "3", "5", "7" // 注意这里没有 hello
+                }
+ */
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

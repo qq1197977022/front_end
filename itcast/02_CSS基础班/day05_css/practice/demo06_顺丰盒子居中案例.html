@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>顺丰盒子居中案例</title>
+    <style>
+        #main {
+            width: 1259px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #banner>img:nth-child(2) {
+            position: absolute; /*相对于第一个非static定位类型的父元素(main而不是banner)定位*/
+            bottom: 61px;
+            left: 150px;
+        }
+        #banner>img:nth-child(3) {
+            position: absolute; /*相对于第一个非static定位类型的父元素定位*/
+            bottom: 52px;
+            left: 221px;
+            z-index: 1;
+        }
+        #main>nav {
+            width: 960px;
+            margin: -64px auto 0;
+            background-color: #333;
+            position: relative;
+        }
+        nav>a {
+            /*float: left;*/                            /*思路一: ---------------------------------------------------------------浮动*/
+            display: inline-block;                      /*思路二: ----------------改变元素生成框的类型*/                             /* | */
+            /*width: 160px;*/                                                          /* | */                                    /* | */
+            width: 156px;                               /*---------------修改元素CSS尺寸属性,去掉一个空格的空白4px*/                  /* | */
+            color: #FFF;                                                                                                          /* | */
+            font: 16px/60px \5FAE\8F6F\96C5\9ED1;                                                                                 /* | */
+            text-align: center;                                                                                                   /* | */
+        }                                                                                                                         /* | */
+        /*nav:after {*/                                 /*----------------------------------------------------------------------需要清除浮动*/
+            /*content: "";*/
+            /*display: block;*/
+            /*clear: left;*/
+        /*}*/
+        nav>a:hover {
+            background-color: #FFF;
+            color: #333;
+        }
+        /*当前已选中导航*/
+        nav>a:hover:first-child {
+            background: #333;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="banner">
+            <img src="img/sf.png" alt="banner图">
+            <img src="img/3.png" alt="图">
+            <img src="img/4.png" alt="图">
+        </div>
+        <nav>
+            <a id="checked" href="#">运单查询</a>
+            <a href="#">运费查询</a>
+            <a href="#">时效查询</a>
+            <a href="#">服务网点查询</a>
+            <a href="#">收送范围查询</a>
+            <a href="#">客户专区</a>
+        </nav>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
